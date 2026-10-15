@@ -1,0 +1,87 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  python-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install ruff
+        # 钉版本 = 与 .pre-commit-config.yaml 的 rev 同一把尺子。
+        # 曾用 `ruff>=0.6.0`（浮动到最新），新版本规则集与钩子 0.6.0 不同，
+        # 本地绿 CI 红的漂移极难排查。
+        run: pip install ruff==0.6.0
+      - name: Lint
+        run: ruff check .
+      # 无 `ruff format --check .`：全树从未被 ruff format 过（2000+ 文件的
+      # 历史代码），加这道门 = 一次性重排整个仓库、与所有并行分支冲突。
+      # 格式化仍由 pre-commit 的 ruff-format 钩子对**新增/改动**文件把关。
+      - name: Dead-field contract (前端响应字段 × 后端生产点)
+        # 纯 stdlib 静态扫描（ast + re），无需装依赖即可跑。
+        # 只拦基线之外的新增漂移；存量已复核项见 scripts/dead_field_baseline.json。
+        run: python scripts/check_dead_fields.py
+
+  python-test:
+    runs-on: ubuntu-latest
+    # 阻断（2026-10-07 撤 advisory）：曾因测试从未在 CI 环境跑过而临时设为
+    # continue-on-error；测试现已全绿（216 条失败清零），advisory 的使命结束。
+    # 保留它会掩盖将来的真回归，并让徽章的 success 失去含义。
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          # 装齐测试真正用到的 extras：alpha(torch/scipy/sklearn) + tg(openai/
+          # telethon/sqlalchemy) + test(pyarrow/akshare)。只装 [dev] 时
+          # alpha-core 的 torch 测试、tg-ingest 的 openai 测试、pandas 的
+          # feather 读写会在**收集/执行阶段**就 ImportError。
+          # 不含 stock/cn/dex/ai：stock 依赖 selene-space-pulse 等本地包
+          # （不在 PyPI，root extras 装不动）；其依赖由下面两遍循环从各自
+          # pyproject 装入。
+          pip install -e ".[dev,alpha,tg,test]"
+          # 两遍装：包之间互相依赖（如 agent-runtime → selene-space-backtest），
+          # 按字母序的单遍循环会在装前者时找不到后者、回落到 PyPI 并失败。
+          # 第一遍 --no-deps 只把每个包本身注册进环境，第二遍再解析依赖。
+          for pkg in packages/*/ services/local-api; do
+            if [ -f "$pkg/pyproject.toml" ]; then
+              pip install -e "$pkg" --no-deps -q
+            fi
+          done
+          for pkg in packages/*/ services/local-api; do
+            if [ -f "$pkg/pyproject.toml" ]; then
+              pip install -e "$pkg" -q
+            fi
+          done
+      - name: Run tests
+        run: pytest packages/ tests/ -q --tb=short -k "not test_normalize_ticker and not test_storage_crud_roundtrip"
+      # A7a 文本/AST 字段 grep 阻断（fail=1）；A7b AST 结构相似度为 report-only，
+      # 需人工复核留痕 —— 本 step 的 stdout 即为复核依据（CI 日志可查）
+
+  frontend-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: apps/desktop/package-lock.json
+      - name: Install dependencies
+        working-directory: apps/desktop
+        run: npm ci
+      - name: Type check
+        working-directory: apps/desktop
+        run: npx tsc --noEmit
+      - name: Build
+        working-directory: apps/desktop
+        run: npm run build

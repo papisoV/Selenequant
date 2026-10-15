@@ -1,0 +1,79 @@
+# ICT FVG Strategy
+# Fair Value Gap based entry with Order Block confirmation
+
+id: template-ict-fvg
+name: ICT FVG Reentry
+type: ict
+description: >
+  ICT Fair Value Gap strategy.
+  Entry when FVG zone is detected (exists operator).
+  Simple version using only registered indicators.
+symbols:
+  - BTC/USDT
+interval: 4h
+parameters:
+  fvg_min_gap_atr: 0.1
+  ob_move_threshold: 2.0
+
+entry_rules:
+  long:
+    # FVG detected (exists operator checks if zones > 0)
+    - indicator: fvg
+      params:
+        period: 3
+        min_gap_atr: 0.1
+      operator: exists
+      comparator: 0
+
+    # Order Block confirmation (optional)
+    - indicator: order_block
+      params:
+        period: 20
+        move_threshold: 2.0
+      operator: exists
+      comparator: 0
+
+  short:
+    # FVG detected for short
+    - indicator: fvg
+      params:
+        period: 3
+        min_gap_atr: 0.1
+      operator: exists
+      comparator: 0
+
+    # Order Block confirmation
+    - indicator: order_block
+      params:
+        period: 20
+        move_threshold: 2.0
+      operator: exists
+      comparator: 0
+
+exit_rules:
+  close_long:
+    # RSI overbought exit
+    - indicator: rsi
+      params:
+        period: 14
+      operator: greater_than
+      comparator: 70
+
+  close_short:
+    # RSI oversold exit
+    - indicator: rsi
+      params:
+        period: 14
+      operator: less_than
+      comparator: 30
+
+risk_params:
+  stop_loss_pct: 0.02
+  take_profit_pct: 0.04
+  max_position_pct: 0.1
+  max_open_positions: 1
+
+tags:
+  - ict
+  - fvg
+  - price_action

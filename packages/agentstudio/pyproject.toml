@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "selene-space-agentstudio"
+version = "0.1.0"
+description = "Multi-agent R&D loops + domain prompt library (inspired by commercial quant terminals, clean-room reimplementation)"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.0",
+    "pandas>=2.0",
+]
+
+[project.optional-dependencies]
+rd = ["rdagent"]  # Microsoft R&D agent framework (PyPI: rdagent; provider layer inspired by rdagent 0.8.0 patterns, clean-room reimplementation)
+dev = ["pytest>=7.0", "pytest-asyncio>=0.21", "ruff", "mypy"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["selene_space_agentstudio*"]

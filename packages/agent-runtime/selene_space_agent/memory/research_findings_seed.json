@@ -1,0 +1,31 @@
+{
+  "entries": [
+    {
+      "id": "whale-netflow-nogo",
+      "claim": "链上巨鲸向交易所大量净流入意味着即将下跌(鲸鱼充值=抛压)",
+      "verdict": "NO-GO",
+      "date": "2026-09-18",
+      "evidence": "CoinMetrics 免费档 5,626 日回测: 净流入激增(z>=2, n=240) 14d 前瞻 mean -8.6% vs 对照 -7.1%, 分离度仅 +1.5pp; 3 天窗口 hit 23% vs 对照 17%; z>=3 无剂量效应(-8.9%≈-8.6%) — 大概率是波动率代理效应, 非独立预测力",
+      "keywords": ["鲸鱼", "巨鲸", "流入", "流出", "净流入", "充值", "提现", "whale", "netflow", "on-chain", "链上", "交易所流入"],
+      "findings_path": "internal-archive/FINDINGS.md"
+    },
+    {
+      "id": "vpvr-cluster-nogo",
+      "claim": "价格与 VPVR 成交量簇(POC/Value Area)交互可做入场信号, 博客称胜率 61% vs 传统 42%",
+      "verdict": "NO-GO",
+      "date": "2026-09-19",
+      "evidence": "Binance BTCUSDT 1h 4 年预注册回测: S1 均值回归@4h hit 54.6% 但 mean -0.004%(方向对却无收益, 赢小输大); S2 放量突破延续 hit 47.7%(反证, 突破更常被回补); 桶宽 x0.5/x1/x2 敏感性一致 — VPVR 保持止损防御角色, 不做入场",
+      "keywords": ["成交量簇", "成交密集", "VPVR", "POC", "价值区", "Value Area", "volume profile", "成交量分布", "61%", "假突破", "突破"],
+      "findings_path": "internal-archive/FINDINGS.md"
+    },
+    {
+      "id": "rsi-81-nogo",
+      "claim": "RSI 最优窗口是 81 天, RSI(81)>70 时后续收益反而更高(超买=趋势延续)",
+      "verdict": "NO-GO",
+      "date": "2026-09-20",
+      "evidence": "日线 1,460 天: RSI(81)>70 四年仅出现 5 次(空集伪命题), 14d mean -3.7%; 价格<MA200 时事件数 0。意外发现: RSI(14)>70 动量效应真实(n=158, +4.6%, hit 68.4%)但超额全部来自价格>MA200 = 牛市漂移, 正确形态是 regime 过滤器而非择时信号",
+      "keywords": ["RSI", "超买", "81天", "81 天", "相对强弱", "超卖", "overbought"],
+      "findings_path": "internal-archive/FINDINGS.md"
+    }
+  ]
+}

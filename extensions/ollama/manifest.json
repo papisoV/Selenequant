@@ -1,0 +1,7 @@
+{
+  "name": "selene-space-ext-ollama",
+  "version": "0.1.0",
+  "description": "Ollama local LLM provider for SeleneQuant (default http://localhost:11434)",
+  "capabilities": ["llm_provider"],
+  "entry_point": "selene_space_ext_ollama.plugin:setup"
+}

@@ -1,0 +1,54 @@
+# Trading Strategy — Common Risk (全状态通用风险管理)
+# Cleanroom original: authored for SeleneQuant (AGPL-3.0-only) from Al Brooks public
+# publications only. No text derived from any third-party codebase.
+# Sources (method basis, no verbatim quotes):
+#   - Al Brooks, "Reading Price Charts Bar by Bar" (Wiley, 2009),
+#     Ch. 2-4 (bar basics, signal quality, stop placement logic),
+#     Ch. 24 (trader's edge, risk management mindset).
+#   - Al Brooks, "Trading Price Action Trends" (Wiley, 2011),
+#     Ch. 21-23 (channels, measured moves, probability context).
+# Applicable to ALL states; evaluated AFTER the state-specific file.
+
+## 0. 适用与优先级
+
+本文件适用于 trend_up / trend_down / range / breakout 全部状态,在状态
+策略文件的入场判断之后评估。状态策略给出 trade 候选时,本文件做最后
+风控否决;状态策略给出 wait/reject 时本文件不推翻。
+
+## 1. 风险回报比硬门(R:R gate)
+
+1. 任何 trade 候选必须满足:结构止损距离与首要止盈目标之比
+   >= 1:1.5(以诊断 summary 的 ATR 与K线结构度量);
+2. 止损距离 > 3×ATR 的候选 → 终止 → wait(结构位太远说明入场点差);
+3. 止盈目标 < 1×ATR 的候选 → 终止 → wait(目标太近覆盖不了成本)。
+
+## 2. 信号质量否决
+
+1. 信号K线实体 < 其全长的 1/3(十字星/纺锤)→ 信号无效,终止 → wait;
+2. 信号K线影线吞掉前根K线实体 → 信号无效;
+3. 连续多根K线收盘价几乎相同(均衡化)→ 结构未选择方向,wait。
+
+## 3. 连续性否决(与 continuity guard 呼应)
+
+1. 前次决策被确定性规则(reversal_cooldown / limit_order_expiry /
+   stop_loss_invalidation)否决且尚未消化 → 本轮不做同前次方向决策,
+   终止 → wait;
+2. 前次止损刚被打掉(<= 3 根K线内)→ 同方向重入须降级:仅当出现
+   比前次更优的结构信号(更近的结构止损)才允许,否则 wait。
+
+## 4. 数据可信度否决
+
+1. 诊断 summary 的 bars 覆盖不足(增量模式下新增K线 < 5 根)→
+   wait(样本不足以重新评估);
+2. ATR 计算窗内出现单根 > 5×ATR 的巨幅K线(异常数据或事件尖刺)→
+   该K线不作为任何结构位/信号位的依据;
+3. 增量模式:上次诊断距今超过 100 根K线 → 本次视为全新诊断,不引用
+   prior_diagnosis 做连续性推断。
+
+## 5. 输出契约提醒
+
+Stage2 输出必须携带:decision / terminal_outcome(trade|wait|reject|
+proceed) / order(trade 时非空,含 direction、entry、stop_loss、
+take_profit、type) / trace / decision_summary。order 中 stop_loss 与
+take_profit 必须是具体价位(结构位推导),不得是百分比或"移动止损"
+等无法回测的模糊描述。

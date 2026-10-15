@@ -1,0 +1,17 @@
+{
+ "metrics": {
+  "cumulative_return": 0.03669330224933787,
+  "annual_return": 0.10616730931789364,
+  "sharpe": 4.472127298937999,
+  "max_drawdown": -0.012350287460456855,
+  "win_rate": 0.6190476190476191,
+  "volatility": 0.09779675935647492,
+  "time_in_market": 0.23333333333333334,
+  "invested_win_rate": 0.6190476190476191,
+  "calmar_ratio": 8.596343174830553,
+  "sortino_ratio": 4.659092752630719,
+  "max_consecutive_losses": 2,
+  "avg_turnover": 0.0
+ },
+ "universe_note": "universe_note: 回测使用请求传入的当前成分股列表，存在生存偏差（已退市/调出股票不在池内）。PIT 历史成分可通过 universe/hs300_history.parquet 插槽喂入。"
+}

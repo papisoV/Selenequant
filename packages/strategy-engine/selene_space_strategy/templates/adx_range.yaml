@@ -1,0 +1,42 @@
+# ADX Range Strategy
+# ADX-based range trading in low volatility markets.
+
+id: template-adx-range
+name: ADX Range Strategy
+type: adx_range
+description: >
+  ADX-based range trading strategy.
+  Trades when ADX < threshold indicating low volatility/ranging market.
+symbols:
+  - BTC/USDT
+interval: 1h
+parameters:
+  adx_period: 14
+  adx_range_threshold: 20
+
+entry_rules:
+  long:
+    - indicator: adx
+      params:
+        period: 14
+      operator: less_than
+      comparator: 20
+    - indicator: rsi
+      params:
+        period: 14
+      operator: crosses_above
+      comparator: 50
+
+exit_rules:
+  close_long:
+    - indicator: adx
+      params:
+        period: 14
+      operator: greater_than
+      comparator: 25
+
+risk_params:
+  stop_loss_pct: 0.02
+  take_profit_pct: 0.04
+  max_position_pct: 0.1
+  max_open_positions: 1

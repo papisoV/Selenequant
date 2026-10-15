@@ -1,0 +1,43 @@
+# Trading Overlay — Wedge (楔形收缩叠加物料)
+# Cleanroom original: authored for SeleneQuant (AGPL-3.0-only) from Al Brooks public
+# publications only. No text derived from any third-party codebase.
+# Sources (method basis, no verbatim quotes):
+#   - Al Brooks, "Reading Price Charts Bar by Bar" (Wiley, 2009),
+#     Ch. 10-12 (wedge reversals, climax pushes, channel behavior).
+#   - Al Brooks, "Trading Price Action Trends" (Wiley, 2011),
+#     Ch. 21-23 (channel contraction, transition from trend to range).
+# Injected ONLY when the deterministic detector flags wedge on the
+# inertia window; otherwise this file is absent from the prompt.
+
+## 0. 触发条件(由确定性检测器给出)
+
+输入 overlay_patterns 含 pattern="wedge" 时本文件才被注入。检测器
+给出惯性窗内摆动高点与摆动低点相向收缩(上升楔形=高点降+低点升;
+下降楔形镜像)。本文件不做二次判断,只给决策规则。
+
+## 1. 楔形含义
+
+1. 楔形 = 三次推进后动能衰竭:每一段推动的空间递减,买卖双方
+   都无法把价格推出新的有效区间;
+2. 楔形之后的常见路径是反向突破而非顺势延续——楔形本身是反转
+   结构,不是持续结构;
+3. 楔形收缩越紧(净区间相对 ATR 越小),突破后的爆发越急,但也
+   越容易先假突破反向一两次。
+
+## 2. 决策规则
+
+1. 状态策略给出与楔形反转方向一致的 trade 候选 → 正常评估,
+   但止损须放在楔形最后一个摆动点之外(结构位),不可收紧到
+   楔形内部(噪音会扫掉);
+2. 状态策略给出顺势(与楔形反转方向相反)的 trade 候选 →
+   降一档:仅当信号窗出现对楔形收缩方向的强力突破K线(实体
+   > 2/3 全长且收盘贴极端)才允许,否则 wait;
+3. 楔形检测 + 连续性 guard 冷却窗口重叠 → 一律 wait(两个独立
+   否决信号叠加,不做豁免)。
+
+## 3. 与四窗的合成
+
+1. 惯性窗检出楔形且长程窗仍强趋势 → 楔形按趋势内回调衰竭处理,
+   反转目标=近期窗的波段端点,不越级看长程端点;
+2. 惯性窗检出楔形且长程窗已走平(净位移/窗幅 < 20%)→ 按区间
+   反转处理,突破方向由信号窗的跟进K线决定。

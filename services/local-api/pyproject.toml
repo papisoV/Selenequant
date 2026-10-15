@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "selene-space-local-api"
+version = "0.1.0"
+description = "SeleneQuant local FastAPI entrypoint and API composition layer"
+readme = {text = "SeleneQuant local API service.", content-type = "text/plain"}
+license = "AGPL-3.0-only"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    # shadow_profile.py 用 File(...)/UploadFile（表单上传）—— fastapi 的
+    # multipart 支持是可选依赖，缺它时请求期抛 RuntimeError（非导入期，
+    # 故本地靠全局环境掩盖，CI 才暴露）。
+    "python-multipart>=0.0.9",
+    "cryptography>=43.0",
+    "redis[hiredis]>=5.0.0",
+    "selene-space-types",
+    "selene-space-core",
+    "selene-space-exchange",
+    "selene-space-market",
+    "selene-space-security",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+    "httpx>=0.27.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]

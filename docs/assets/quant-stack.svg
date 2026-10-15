@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 490" width="1200" height="490" role="img" aria-label="The SeleneQuant platform: Market data (klines and ticks from 6 sources, derivatives such as funding and open interest and options and liquidations, order flow from 13 aggregators, and news / Telegram / macro / funds) feeds Engines (strategy engine with 49 templates, backtest with realistic costs, anti-overfit statistics such as DSR, PBO and purged K-fold), which feed an AI research organization (a three-perspective council, versioned conclusions, and a five-phase daily cycle). The organization is delivered as a web app with 142 pages, a CLI with 8 command groups, and a FastAPI service with 523 endpoints.">
+  <defs>
+    <linearGradient id="stkbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#05080d"/>
+      <stop offset="0.55" stop-color="#070c13"/>
+      <stop offset="1" stop-color="#0a1018"/>
+    </linearGradient>
+    <linearGradient id="stktop" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#309cfb" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#309cfb" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#f7a07d" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="stkhalo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#309cfb" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#309cfb" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="stkarrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#309cfb"/>
+    </marker>
+    <style>
+      .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+      .sans { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+      .lab  { font-family: "SFMono-Regular", Consolas, Menlo, monospace; font-size: 11.5px; letter-spacing: 1.8px; fill: #5b6673; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="490" fill="url(#stkbg)"/>
+  <rect x="0" y="0" width="1200" height="1.5" fill="url(#stktop)"/>
+  <ellipse cx="985" cy="190" rx="260" ry="170" fill="url(#stkhalo)"/>
+
+  <!-- ================= DATA panel ================= -->
+  <g>
+    <rect x="40" y="72" width="350" height="240" rx="12" fill="#0a0f16" stroke="#1d2937"/>
+    <line x1="40" y1="110" x2="390" y2="110" stroke="#18222e"/>
+    <text x="60" y="97" class="mono" font-size="12.5" letter-spacing="1.6" fill="#7f8b98">MARKET DATA</text>
+
+    <rect x="56" y="116" width="318" height="42" rx="8" fill="#0b121b" stroke="#1d2937"/>
+    <text x="72" y="133" class="sans" font-size="12.5" fill="#c3ccd6">klines + ticks</text>
+    <text x="72" y="149" class="mono" font-size="11" fill="#7f8b98">6 sources</text>
+
+    <rect x="56" y="166" width="318" height="42" rx="8" fill="#0b121b" stroke="#1d2937"/>
+    <text x="72" y="183" class="sans" font-size="12.5" fill="#c3ccd6">derivatives</text>
+    <text x="72" y="199" class="mono" font-size="11" fill="#7f8b98">funding / OI / options / liq</text>
+
+    <rect x="56" y="216" width="318" height="42" rx="8" fill="#0b121b" stroke="#1d2937"/>
+    <text x="72" y="233" class="sans" font-size="12.5" fill="#c3ccd6">order flow</text>
+    <text x="72" y="249" class="mono" font-size="11" fill="#7f8b98">13 aggregators</text>
+
+    <rect x="56" y="266" width="318" height="42" rx="8" fill="#0b121b" stroke="#1d2937"/>
+    <text x="72" y="292" class="sans" font-size="12.5" fill="#c3ccd6">news / TG / macro / funds</text>
+  </g>
+
+  <!-- ================= ENG panel ================= -->
+  <g>
+    <rect x="425" y="72" width="350" height="240" rx="12" fill="#0a0f16" stroke="#1d2937"/>
+    <line x1="425" y1="110" x2="775" y2="110" stroke="#18222e"/>
+    <text x="445" y="97" class="mono" font-size="12.5" letter-spacing="1.6" fill="#7f8b98">ENGINES</text>
+
+    <rect x="441" y="134" width="318" height="42" rx="8" fill="#0b121b" stroke="#1d2937"/>
+    <text x="457" y="151" class="sans" font-size="12.5" fill="#c3ccd6">strategy engine</text>
+    <text x="457" y="167" class="mono" font-size="11" fill="#7f8b98">49 templates</text>
+
+    <rect x="441" y="190" width="318" height="42" rx="8" fill="#0b121b" stroke="#1d2937"/>
+    <text x="457" y="207" class="sans" font-size="12.5" fill="#c3ccd6">backtest</text>
+    <text x="457" y="223" class="mono" font-size="11" fill="#7f8b98">realistic costs</text>
+
+    <rect x="441" y="246" width="318" height="42" rx="8" fill="#0b121b" stroke="#1d2937"/>
+    <text x="457" y="263" class="sans" font-size="12.5" fill="#c3ccd6">anti-overfit stats</text>
+    <text x="457" y="279" class="mono" font-size="11" fill="#7f8b98">DSR / PBO / purged K-fold</text>
+  </g>
+
+  <!-- ================= ORG panel ================= -->
+  <g>
+    <rect x="810" y="72" width="350" height="240" rx="12" fill="#0a1219" stroke="#309cfb" stroke-opacity="0.45"/>
+    <line x1="810" y1="110" x2="1160" y2="110" stroke="#1d3a52"/>
+    <circle cx="830" cy="92" r="4.2" fill="#309cfb"/>
+    <text x="842" y="97" class="mono" font-size="12.5" letter-spacing="1.6" fill="#7fa6d6">AI RESEARCH ORG</text>
+
+    <rect x="826" y="134" width="318" height="42" rx="8" fill="#0b121b" stroke="#1d3a52"/>
+    <text x="842" y="151" class="sans" font-size="12.5" fill="#cfe3ff">council</text>
+    <text x="842" y="167" class="mono" font-size="11" fill="#7f8b98">3 perspectives</text>
+
+    <rect x="826" y="190" width="318" height="42" rx="8" fill="#0b121b" stroke="#1d3a52"/>
+    <text x="842" y="216" class="sans" font-size="12.5" fill="#cfe3ff">versioned conclusions</text>
+
+    <rect x="826" y="246" width="318" height="42" rx="8" fill="#0b121b" stroke="#1d3a52"/>
+    <text x="842" y="272" class="sans" font-size="12.5" fill="#cfe3ff">5-phase daily cycle</text>
+  </g>
+
+  <!-- ================= panel -> panel edges ================= -->
+  <path d="M390 192 L421 192" fill="none" stroke="#309cfb" stroke-width="1.7" marker-end="url(#stkarrow)"/>
+  <path d="M775 192 L806 192" fill="none" stroke="#309cfb" stroke-width="1.7" marker-end="url(#stkarrow)"/>
+
+  <!-- ================= organisation -> surfaces bus ================= -->
+  <text x="40" y="360" class="lab">SURFACES</text>
+  <path d="M985 312 L985 352" fill="none" stroke="#309cfb" stroke-width="1.6"/>
+  <path d="M215 352 L985 352" fill="none" stroke="#309cfb" stroke-width="1.6"/>
+  <path d="M215 352 L215 376" fill="none" stroke="#309cfb" stroke-width="1.6" marker-end="url(#stkarrow)"/>
+  <path d="M600 352 L600 376" fill="none" stroke="#309cfb" stroke-width="1.6" marker-end="url(#stkarrow)"/>
+  <path d="M985 352 L985 376" fill="none" stroke="#309cfb" stroke-width="1.6" marker-end="url(#stkarrow)"/>
+
+  <!-- ================= surfaces ================= -->
+  <g>
+    <rect x="40" y="380" width="350" height="72" rx="11" fill="#0b121b" stroke="#1d2937"/>
+    <rect x="40" y="380" width="3.5" height="72" rx="1.75" fill="#309cfb"/>
+    <text x="62" y="410" class="sans" font-size="15" font-weight="600" fill="#e9eff6">web app</text>
+    <text x="62" y="432" class="mono" font-size="11.5" fill="#8b95a2">142 pages</text>
+  </g>
+  <g>
+    <rect x="425" y="380" width="350" height="72" rx="11" fill="#0b121b" stroke="#1d2937"/>
+    <rect x="425" y="380" width="3.5" height="72" rx="1.75" fill="#309cfb"/>
+    <text x="447" y="410" class="sans" font-size="15" font-weight="600" fill="#e9eff6">CLI</text>
+    <text x="447" y="432" class="mono" font-size="11.5" fill="#8b95a2">8 command groups</text>
+  </g>
+  <g>
+    <rect x="810" y="380" width="350" height="72" rx="11" fill="#0b121b" stroke="#1d2937"/>
+    <rect x="810" y="380" width="3.5" height="72" rx="1.75" fill="#309cfb"/>
+    <text x="832" y="410" class="sans" font-size="15" font-weight="600" fill="#e9eff6">FastAPI</text>
+    <text x="832" y="432" class="mono" font-size="11.5" fill="#8b95a2">523 endpoints</text>
+  </g>
+</svg>

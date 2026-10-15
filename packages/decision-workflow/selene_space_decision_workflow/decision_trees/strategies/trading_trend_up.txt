@@ -1,0 +1,51 @@
+# Trading Strategy — Trend Up (多头趋势状态)
+# Cleanroom original: authored for SeleneQuant (AGPL-3.0-only) from Al Brooks public
+# publications only. No text derived from any third-party codebase.
+# Sources (method basis, no verbatim quotes):
+#   - Al Brooks, "Trading Price Action Trends" (Wiley, 2011),
+#     Ch. 3-5 (always-in direction, major trend patterns, pullback entries),
+#     Ch. 11-13 (double top bear flags / double bottom bull flags),
+#     Ch. 21-23 (channels, trend channel line, measured moves).
+#   - Al Brooks, "Reading Price Charts Bar by Bar" (Wiley, 2009),
+#     Ch. 11-12 (trend bars, follow-through bars, three pushes).
+# Applicable when Stage1 diagnosis_summary["state"] == "trend_up".
+
+## 0. 状态再确认(引用诊断 trace)
+
+本策略文件仅在 Stage1 trace 已确认以下两点后适用;任一不成立即退出本文件,
+终止 → wait:
+
+1. 诊断 bar_range 内高低点序列整体抬升,多头K线(收盘>开盘)占优;
+2. 最近一根K线未收在最近 N 根(建议 20)低点之下(否则状态已可能翻空)。
+
+## 1. 入场条件(全部满足才可 trade)
+
+1. 回调定位:价格自趋势内局部高点回撤,回撤幅度未破坏结构(未跌破
+   最近摆动低点),回调K线数量建议 <= 5 根;
+2. 回调衰竭信号:出现多头信号K线(收盘位处K线高点附近,下影明显),
+   或回调中量能萎缩;
+3. 顺势确认:信号K线之后一根K线收盘价越过信号K线高点(follow-through)。
+
+## 2. 方向
+
+仅做多(long)。trend_up 状态下出现任何做空信号 → 终止 → wait,
+留待下一次诊断重新定状态。
+
+## 3. 止损参照(结构位,非固定点数)
+
+1. 首选:最近摆动低点下方一个 tick(结构性止损);
+2. 若摆动低点距入场过远(风险>1.5×ATR),可缩至最近回调低点下方;
+3. 止损不可设在明显会被 1-2 根噪音K线扫损的位置(如恰在区间中枢)。
+
+## 4. 止盈参照
+
+1. 首要目标:趋势通道线延伸处或最近摆动高点;
+2. 到达 1R(风险单位)后可考虑移动止损至保本,此后按结构抬升;
+3. 若通道线连续多次被测试且未突破,警示趋势可能衰竭,收紧管理。
+
+## 5. 事件窗口否决
+
+以下任一成立 → 终止 → wait,禁止入场:
+1. 处于重大数据发布前后各 2 根K线窗口内(事件窗);
+2. 回调正在加速(连续 3 根以上同向空头K线,量能递增);
+3. 前次决策止损失效信号尚未消化(见 continuity guard 结果)。

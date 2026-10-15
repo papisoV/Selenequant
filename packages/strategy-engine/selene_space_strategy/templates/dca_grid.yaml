@@ -1,0 +1,50 @@
+# DCA Grid Strategy
+# Dollar Cost Averaging with Grid Entry
+# MA crossover triggers initial entry, then grid-based DCA adds positions
+# Unlike pure martingale, has stop loss to prevent liquidation
+
+id: template-dca-grid
+name: DCA Grid
+name_zh: DCA网格策略
+type: dca_grid
+description: >
+  Dollar Cost Averaging with Grid Entry. MA crossover triggers initial entry,
+  then grid-based DCA adds positions with increasing size. Has stop loss to
+  prevent unlimited downside.
+description_zh: >
+  美元平均成本网格策略。均线金叉后初始买入，然后按网格线分批加仓，
+  加仓量倍投。带有止损防止被套和爆仓。
+category: TREND
+symbols:
+  - BTC/USDT
+interval: 1h
+direction: long_only
+parameters:
+  fast_ma: 10
+  slow_ma: 30
+  ma_type: ema
+  base_size: 5.0
+  max_trades: 9
+  grid_spacing: 0.004
+  grid_price_scale: 1.19
+  grid_volume_scale: 1.8
+  take_profit_pct: 0.015
+  stop_loss_pct: 0.05
+  enable_long: true
+  enable_short: false
+
+entry_rules: {}
+
+exit_rules: {}
+
+risk_params:
+  stop_loss_pct: 0.05
+  take_profit_pct: 0.015
+  max_position_pct: 0.5
+  max_open_positions: 1
+
+tags:
+  - trend
+  - grid
+  - dca
+  - martingale

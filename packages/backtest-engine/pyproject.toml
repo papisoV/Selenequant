@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "selene-space-backtest"
+version = "0.1.0"
+description = "Backtesting engine for SeleneQuant — event-driven strategy backtesting with simulated execution"
+readme = {text = "Backtesting engine for SeleneQuant.", content-type = "text/plain"}
+license = "AGPL-3.0-only"
+requires-python = ">=3.11"
+dependencies = [
+    "selene-space-types",
+    "pandas>=2.2.0",
+    "numpy>=1.26.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pyarrow>=14.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["selene_space_backtest"]

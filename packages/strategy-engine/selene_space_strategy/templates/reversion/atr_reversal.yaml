@@ -1,0 +1,47 @@
+# ATR Volatility Breakout Reversal Strategy
+# Mean-reversion when price extends beyond ATR-based bands
+
+id: template-atr-reversal
+name: ATR Volatility Reversal
+type: atr_reversal
+description: >
+  Mean-reversion strategy using ATR-based volatility bands.
+  Goes long when price drops significantly below recent average
+  (price < SMA - 2*ATR), expecting reversion to mean.
+symbols:
+  - BTC/USDT
+interval: 1h
+parameters:
+  atr_period: 14
+  sma_period: 20
+  atr_multiplier: 2.0
+
+entry_rules:
+  long:
+    - indicator: close
+      operator: less_than
+      comparator:
+        indicator: sma
+        params:
+          period: 20
+        operator: subtract
+        value_indicator:
+          indicator: atr
+          params:
+            period: 14
+          multiplier: 2.0
+
+exit_rules:
+  close_long:
+    - indicator: close
+      operator: greater_than
+      comparator:
+        indicator: sma
+        params:
+          period: 20
+
+risk_params:
+  stop_loss_pct: 0.025
+  take_profit_pct: 0.04
+  max_position_pct: 0.1
+  max_open_positions: 1

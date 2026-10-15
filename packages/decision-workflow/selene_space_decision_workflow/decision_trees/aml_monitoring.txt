@@ -1,0 +1,56 @@
+# AML (Anti-Money Laundering) Monitoring Decision Tree
+# Clean-room sample from EXAMPLES.md §2.3.
+# Terminals: malicious, suspicious, clear, manual_review
+
+## 0. 全局原则
+
+本决策树用于反洗钱可疑交易监测，按数据完整性 → 制裁黑名单 → 交易模式顺序执行。
+任何制裁名单命中或结构化交易特征直接判定为 malicious。
+所有数据缺失情况一律走"否"分支终止为 manual_review。
+
+## 1. 数据完整性闸门
+
+### 1.1 客户身份信息是否完整
+是：进入 §1.2
+否：终止 → manual_review
+
+### 1.2 交易记录是否完整
+是：进入 §1.3
+否：终止 → manual_review
+
+### 1.3 风险评级数据是否可用
+是：进入 §2.1
+否：终止 → manual_review
+
+## 2. 制裁与黑名单闸门
+
+### 2.1 客户是否在制裁名单中
+是：终止 → malicious
+否：进入 §2.2
+
+### 2.2 交易对手是否在黑名单中
+是：终止 → malicious
+否：进入 §2.3
+
+### 2.3 是否涉及高风险司法管辖区
+是：终止 → suspicious
+否：进入 §3.1
+
+## 3. 交易模式判断
+
+### 3.1 交易金额是否超阈值
+是[单笔>5万USD]：进入 §3.2
+是[日累计>20万USD]：进入 §3.2
+否：进入 §3.3
+
+### 3.2 是否存在结构化交易特征
+是：终止 → malicious
+否：进入 §3.3
+
+### 3.3 交易频率是否异常
+是：进入 §3.4
+否：进入 §3.4
+
+### 3.4 资金流向是否合理
+是：终止 → clear
+否：终止 → suspicious

@@ -1,0 +1,51 @@
+# Trading Strategy — Multi-Scale Windows (多尺度四窗读法,全状态通用)
+# Cleanroom original: authored for SeleneQuant (AGPL-3.0-only) from Al Brooks public
+# publications only. No text derived from any third-party codebase.
+# Sources (method basis, no verbatim quotes):
+#   - Al Brooks, "Reading Price Charts Bar by Bar" (Wiley, 2009),
+#     Ch. 2-4 (multiple timeframes of a single chart, bar-by-bar context),
+#     Ch. 11-12 (trend bars, inertia, momentum context).
+#   - Al Brooks, "Trading Price Action Trends" (Wiley, 2011),
+#     Ch. 21-23 (broader context vs immediate signal, breakout mode).
+# Applicable to ALL states; evaluated AFTER the state-specific file,
+# BEFORE the common-risk file.
+
+## 0. 四窗定义(与输入数据 windows 字段一一对应)
+
+输入 summary 的 windows 对象把整个窗口切成四个尺度,均以全局K编号
+标注(K1=最老),四窗终点相同(都到最后一根),深度不同:
+
+1. 长程窗(long_range):60 根且止于最新前 20 根,看结构方向(刻意
+   不覆盖最新 20 根,量的是结构不是边缘;窗宽随数据不足时优雅收缩);
+2. 近期窗(recent):最后 40 根,看当前波段;
+3. 惯性窗(inertia):最后 8 根,看推动是否还在;
+4. 信号窗(signal):最后 10 根,看即时触发。
+
+四窗重叠是设计使然:近期/惯性/信号都止于最新K线,差别在纵深。
+
+## 1. 读法规则
+
+1. 长程与近期同向(净位移同号且 close_pos_in_range 同侧)→ 方向
+   有结构支撑,信号窗的触发可按正常质量标准评估;
+2. 长程与近期矛盾(一升一降或 close_pos 分居两端)→ 视为波段切换
+   中,信号窗任何触发都降级处理(入场条件收紧一档);
+3. 惯性窗 bull_bars 与 bear_bars 之比 > 2:1 且净位移明显 → 推动
+   仍在;反之推动衰竭,优先等回调或反转信号而非顺势追入;
+4. 信号窗 close_pos_in_range < 0.2 或 > 0.8 → 价格贴边,要么突破
+   在即要么假突破回灌,须结合突破物料的存活基率评估(见 global_rules
+   基率行)。
+
+## 2. 与状态策略的合成
+
+1. 状态策略(trend_up 等)给出 trade 候选后,本文件做尺度一致性
+   复核:任何一窗与决策方向显著矛盾且无解释 → 终止 → wait;
+2. 区间状态下长程窗若仍单向(净位移占窗高差 > 60%),提示区间可能
+   只是主趋势中的回调段,反转目标的期望应下调;
+3. 本文件不独立产生 trade,只复核/降级/放行;连续两轮诊断中惯性窗
+   占比翻转方向,视为结构变化信号,下一轮状态判断须重新评估。
+
+## 3. 数据边界
+
+1. bars_total < 50 时 windows 不存在 → 本文件不适用,直接跳过;
+2. windows 各窗的 k_range 必须落在输入数据实际K线范围内,引用
+   超界的K编号 = 数据完整性违规,终止 → wait。

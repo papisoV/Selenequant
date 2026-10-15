@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>TGWatcher</title>
+<script src="/static/chart.min.js?v=2"></script>
+<style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('/static/fonts/Inter-Regular.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('/static/fonts/Inter-Medium.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('/static/fonts/Inter-SemiBold.woff2') format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url('/static/fonts/JetBrainsMono-Regular.woff2') format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url('/static/fonts/JetBrainsMono-Medium.woff2') format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:600;font-display:swap;src:url('/static/fonts/JetBrainsMono-SemiBold.woff2') format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:700;font-display:swap;src:url('/static/fonts/JetBrainsMono-Bold.woff2') format('woff2')}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg-0:#0a0e17;--bg-1:#0f1520;--bg-2:#141a26;--bg-3:#1a2030;--bg-4:#222a3a;
+  --text-0:#e8ecf1;--text-1:#a0aec0;--text-2:#6b7a8d;--text-3:#4a5568;
+  --cyan:#00e5ff;--cyan-dim:#00b8d4;--cyan-bg:rgba(0,229,255,.08);--cyan-border:rgba(0,229,255,.25);
+  --green:#00ff88;--amber:#ffb300;--red:#ff3d71;--purple:#a855f7;--pink:#f472b6;
+  --border:rgba(255,255,255,.06);--grid-line:#1a1f2e;
+  --font-ui:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-mono:'JetBrains Mono','Fira Code','Cascadia Code',monospace;
+  --row-h:32px;--ctrl-h:28px;--top-h:40px;--panel-w:220px;
+  --fs-xs:11px;--fs-sm:12px;--fs-md:13px;--fs-lg:16px;--fs-xl:24px;--fs-2xl:32px;
+}
+body{font-family:var(--font-ui);font-size:var(--fs-md);background:var(--bg-0);color:var(--text-0);display:flex;flex-direction:column;height:100vh;overflow:hidden}
+[data-theme=light]{
+  --bg-0:#f5f7fa;--bg-1:#ebedf2;--bg-2:#e2e5ea;--bg-3:#d5d9e0;--bg-4:#c8ccd4;
+  --text-0:#1a2030;--text-1:#4a5568;--text-2:#718096;--text-3:#a0aec0;
+  --cyan:#0077b6;--cyan-dim:#005f8a;--cyan-bg:rgba(0,119,182,.08);--cyan-border:rgba(0,119,182,.25);
+  --green:#16a34a;--amber:#d97706;--red:#dc2626;
+  --border:rgba(0,0,0,.08);--grid-line:#e2e5ea;
+}
+[data-theme=light] .data-table tbody tr:nth-child(odd) td{background:var(--bg-1)}
+[data-theme=light] .data-table tbody tr:nth-child(even) td{background:var(--bg-2)}
+[data-theme=light] .filter-input,.login-input{background:#fff;color:var(--text-0);border-color:var(--border)}
+[data-theme=light] select{background:#fff;color:var(--text-0)}
+
+/* ===== LOGIN ===== */
+.login-overlay{position:fixed;inset:0;background:var(--bg-0);z-index:100;display:flex;align-items:center;justify-content:center}
+.login-panel{background:var(--bg-1);border:1px solid var(--border);padding:32px;width:360px;max-width:90vw}
+.login-panel h1{font-family:var(--font-mono);font-size:var(--fs-lg);color:var(--cyan);margin-bottom:4px;display:flex;align-items:center;gap:10px}
+.login-panel h1 span{font-family:var(--font-ui);font-size:var(--fs-xs);color:var(--text-2);font-weight:400}
+.login-panel p{color:var(--text-1);font-size:var(--fs-sm);margin-bottom:20px;line-height:1.5}
+.login-step{display:none}.login-step.active{display:block}
+.login-input{width:100%;background:var(--bg-4);border:1px solid var(--border);padding:8px 12px;color:var(--text-0);font-size:var(--fs-sm);outline:none;font-family:var(--font-mono);margin-bottom:10px}
+.login-input:focus{border-color:var(--cyan)}
+.login-input::placeholder{color:var(--text-3)}
+.login-btn{width:100%;background:var(--cyan-bg);color:var(--cyan);border:1px solid var(--cyan-border);padding:8px;font-size:var(--fs-sm);cursor:pointer;font-family:var(--font-mono);font-weight:500;transition:background .15s}
+.login-btn:hover{background:rgba(0,229,255,.15)}
+.login-btn:disabled{opacity:.4;cursor:not-allowed}
+.login-error{color:var(--red);font-size:var(--fs-xs);margin-top:6px}
+.login-info{color:var(--text-2);font-size:var(--fs-xs);margin-top:8px;line-height:1.5}
+.login-link-btn{background:none;border:none;color:var(--cyan);font-size:var(--fs-xs);cursor:pointer;margin-top:6px;padding:0;text-decoration:underline}
+.login-link-btn:hover{opacity:.8}
+.login-link-btn:disabled{opacity:.4;cursor:default;text-decoration:none}
+.login-help{margin-top:8px;padding:8px;background:var(--bg-0);border:1px solid var(--border);font-size:var(--fs-xs);color:var(--text-2);line-height:1.7}
+.login-help code{background:var(--bg-4);padding:1px 4px;font-family:var(--font-mono);font-size:10px}
+.login-theme-btn{background:none;border:1px solid var(--border);color:var(--text-2);padding:2px 8px;cursor:pointer;font-size:var(--fs-xs);font-family:var(--font-mono)}
+
+/* ===== TOP BAR ===== */
+.top-bar{height:var(--top-h);background:var(--bg-2);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 16px;gap:12px;flex-shrink:0}
+.top-bar__logo{font-family:var(--font-mono);font-size:var(--fs-lg);font-weight:600;color:var(--cyan);display:flex;align-items:center;gap:6px}
+.conn-dot{width:6px;height:6px;border-radius:50%;background:var(--text-3);flex-shrink:0}
+.conn-dot.connected{background:var(--green);box-shadow:0 0 4px var(--green)}
+.conn-dot.running{background:var(--amber);box-shadow:0 0 4px var(--amber)}
+.tab-switcher{display:flex;gap:0;background:var(--bg-1);border:1px solid var(--border);margin-left:auto}
+.tab-btn{padding:4px 14px;font-size:var(--fs-sm);color:var(--text-2);background:transparent;border:none;cursor:pointer;font-family:var(--font-ui);transition:all .15s}
+.tab-btn:hover{color:var(--text-0)}
+.tab-btn.active{background:var(--cyan-bg);color:var(--cyan)}
+.tab-btn.has-update{position:relative}
+.tab-btn.has-update::after{content:'';position:absolute;top:2px;right:2px;width:6px;height:6px;background:#ffb300;border-radius:50%;box-shadow:0 0 4px #ffb300}
+.digest-dot{display:inline-block;width:6px;height:6px;background:#00ff88;border-radius:50%;margin-right:6px;box-shadow:0 0 4px #00ff88;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.top-bar__right{display:flex;align-items:center;gap:8px;margin-left:16px}
+.crawl-indicator{display:flex;align-items:center;gap:6px;font-size:var(--fs-xs);color:var(--text-2);font-family:var(--font-mono)}
+.mode-badge{font-family:var(--font-mono);font-size:var(--fs-xs);color:var(--cyan);background:var(--cyan-bg);padding:1px 6px;border:1px solid var(--cyan-border)}
+.crawl-dd{position:relative}
+.crawl-dd-menu{position:absolute;top:100%;right:0;background:var(--bg-2);border:1px solid var(--border);padding:4px;min-width:140px;z-index:20;display:none;margin-top:4px}
+.crawl-dd-menu.show{display:block}
+.crawl-dd-item{padding:5px 10px;font-size:var(--fs-sm);color:var(--text-1);cursor:pointer}
+.crawl-dd-item:hover{background:var(--bg-3);color:var(--text-0)}
+.crawl-dd-sep{height:1px;background:var(--border);margin:4px 6px}
+.crawl-date-panel{display:flex;align-items:center;gap:6px;font-size:var(--fs-xs);color:var(--text-2);font-family:var(--font-mono)}
+.crawl-date-input{background:var(--bg-4);border:1px solid var(--border);color:var(--text-0);font-size:var(--fs-xs);padding:1px 4px;width:110px;font-family:var(--font-mono);outline:none}
+.crawl-date-input:focus{border-color:var(--cyan)}
+.theme-btn{background:none;border:1px solid var(--border);color:var(--text-2);padding:2px 8px;cursor:pointer;font-size:var(--fs-xs);font-family:var(--font-mono)}
+
+/* ===== CRAWL BAR ===== */
+.crawl-bar{height:28px;background:var(--bg-1);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 16px;gap:8px;font-size:var(--fs-xs);color:var(--text-2);font-family:var(--font-mono);position:relative;flex-shrink:0}
+.crawl-bar__progress{position:absolute;bottom:0;left:0;height:3px;background:var(--cyan);transition:width .5s ease}
+.crawl-bar__progress.running{background:linear-gradient(90deg,var(--cyan),var(--cyan-dim),var(--cyan));background-size:200% 100%;animation:crawlStripe 1.5s linear infinite}
+@keyframes crawlStripe{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.crawl-bar__counts{color:var(--text-1)}
+.crawl-bar__meta{color:var(--text-3);margin-left:auto;white-space:nowrap}
+.crawl-stop-btn{background:none;border:1px solid rgba(255,61,113,.3);color:var(--red);font-size:var(--fs-xs);padding:1px 8px;cursor:pointer;font-family:var(--font-mono)}
+.crawl-stop-btn:hover{background:rgba(255,61,113,.1)}
+.crawl-bar__dot{width:7px;height:7px;border-radius:50%;background:var(--text-3);flex-shrink:0}
+.crawl-bar__dot.running{background:var(--amber);box-shadow:0 0 4px var(--amber);animation:pulse 1.5s infinite}
+.crawl-bar__dot.error{background:var(--red)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+.crawl-detail{background:var(--bg-1);border-bottom:1px solid var(--border);flex-shrink:0;font-family:var(--font-mono);font-size:var(--fs-xs)}
+.crawl-detail__header{display:flex;align-items:center;justify-content:space-between;padding:6px 16px;border-bottom:1px solid var(--border);color:var(--text-1);font-weight:500}
+.crawl-detail__close{background:none;border:none;color:var(--text-3);cursor:pointer;font-size:14px;padding:0 4px}
+.crawl-detail__close:hover{color:var(--text-0)}
+.crawl-detail__body{padding:8px 16px}
+.crawl-detail__row{display:flex;gap:12px;margin-bottom:8px}
+.crawl-detail__kpi{flex:1;text-align:center}
+.crawl-detail__kpi-val{font-size:var(--fs-md);color:var(--cyan);font-weight:600;line-height:1.2}
+.crawl-detail__kpi-lbl{font-size:10px;color:var(--text-3);margin-top:2px}
+.crawl-detail__progress-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.crawl-detail__progress-track{flex:1;height:8px;background:var(--bg-3);border-radius:4px;overflow:hidden}
+.crawl-detail__progress-fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--cyan-dim));border-radius:4px;transition:width .3s ease;width:0%}
+.crawl-detail__progress-pct{color:var(--text-1);min-width:36px;text-align:right}
+.crawl-detail__current{display:flex;align-items:center;gap:8px;color:var(--text-2)}
+.crawl-detail__current-counts{color:var(--text-3)}
+
+/* ===== CONTENT AREA ===== */
+.content-area{display:flex;flex:1;overflow:hidden}
+
+/* ===== LEFT PANEL ===== */
+.left-panel{width:var(--panel-w);background:var(--bg-1);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;flex-shrink:0;transition:width .2s}
+.left-panel.collapsed{width:0}
+.panel-header{padding:10px 12px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:var(--fs-xs);color:var(--text-2);text-transform:uppercase;letter-spacing:.06em}
+.panel-toggle{background:none;border:none;color:var(--text-3);cursor:pointer;font-size:var(--fs-lg);line-height:1;padding:2px 4px}
+.panel-toggle:hover{color:var(--text-0)}
+.chat-list{flex:1;overflow-y:auto;padding:4px 0}
+.chat-list::-webkit-scrollbar{width:3px}
+.chat-list::-webkit-scrollbar-thumb{background:var(--bg-3)}
+.chat-item{padding:6px 12px;cursor:pointer;display:flex;align-items:center;gap:8px;transition:background .1s;border-left:2px solid transparent}
+.chat-item:hover{background:var(--bg-2)}
+.chat-item.active{background:var(--cyan-bg);border-left-color:var(--cyan)}
+.chat-dot{width:5px;height:5px;border-radius:50%;background:var(--cyan);flex-shrink:0;opacity:.6}
+.chat-item.active .chat-dot{opacity:1}
+.chat-info{flex:1;min-width:0}
+.chat-name{font-size:var(--fs-sm);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chat-count{font-family:var(--font-mono);font-size:var(--fs-xs);color:var(--text-2)}
+.chat-remove{color:var(--text-3);font-size:14px;cursor:pointer;padding:2px;opacity:0;transition:opacity .15s}
+.chat-item:hover .chat-remove{opacity:1}
+.chat-remove:hover{color:var(--red)}
+.chat-all-item{color:var(--cyan);font-size:var(--fs-sm);padding:6px 12px;cursor:pointer;border-left:2px solid transparent}
+.chat-all-item:hover{background:var(--bg-2)}
+.chat-all-item.active{background:var(--cyan-bg);border-left-color:var(--cyan)}
+
+/* ===== MAIN CONTENT ===== */
+.main-content{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.view{display:none;flex:1;flex-direction:column;overflow:hidden}
+.view.active{display:flex}
+
+/* ===== FILTER BAR ===== */
+.filter-bar{height:36px;background:var(--bg-1);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 16px;gap:6px;flex-shrink:0}
+.filter-input{height:var(--ctrl-h);background:var(--bg-4);border:1px solid var(--border);color:var(--text-0);font-size:var(--fs-sm);padding:0 8px;outline:none;font-family:var(--font-ui)}
+.filter-input:focus{border-color:var(--cyan)}
+.filter-input::placeholder{color:var(--text-3)}
+.filter-input.wide{flex:1;min-width:140px}
+.filter-date{width:120px}
+.btn{border:1px solid var(--border);background:transparent;color:var(--text-1);padding:3px 10px;font-size:var(--fs-xs);cursor:pointer;font-family:var(--font-ui);transition:all .15s}
+.btn:hover{background:var(--bg-3);color:var(--text-0)}
+.btn-cyan{border-color:var(--cyan-border);color:var(--cyan);background:var(--cyan-bg)}
+.btn-cyan:hover{background:rgba(0,229,255,.15)}
+.btn-danger{border-color:rgba(255,61,113,.3);color:var(--red)}
+.btn-danger:hover{background:rgba(255,61,113,.1)}
+
+/* ===== DATA TABLE ===== */
+.table-wrap{flex:1;overflow-y:auto}
+.table-wrap::-webkit-scrollbar{width:6px}
+.table-wrap::-webkit-scrollbar-thumb{background:var(--bg-3)}
+.data-table{width:100%;border-collapse:collapse;font-size:var(--fs-sm)}
+.data-table th{background:var(--bg-2);color:var(--text-2);font-size:var(--fs-xs);font-weight:500;text-transform:uppercase;letter-spacing:.04em;padding:6px 10px;border-bottom:1px solid var(--border);text-align:left;position:sticky;top:0;z-index:1}
+.data-table td{padding:4px 10px;height:var(--row-h);border-bottom:1px solid var(--border);vertical-align:middle}
+.data-table tbody tr:nth-child(odd) td{background:var(--bg-1)}
+.data-table tbody tr:nth-child(even) td{background:var(--bg-2)}
+.data-table tbody tr:hover td{background:var(--bg-3)}
+.data-table tbody tr.expanded td{background:var(--cyan-bg)}
+.col-time{font-family:var(--font-mono);color:var(--text-2);white-space:nowrap;font-size:var(--fs-xs)}
+.col-sender{font-weight:600;white-space:nowrap}
+.col-chat{color:var(--text-1);font-size:var(--fs-xs);white-space:nowrap}
+.col-content{max-width:460px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.col-content-full{white-space:pre-wrap;max-width:none;word-break:break-word;line-height:1.5;padding:6px 0;color:var(--text-0);font-size:var(--fs-sm)}
+.col-media{font-size:var(--fs-xs);color:var(--amber)}
+.col-forward{color:var(--text-2);font-size:var(--fs-xs);font-style:italic}
+.col-reply{color:var(--cyan);font-size:var(--fs-xs);cursor:pointer}
+.col-chat-badge{display:inline-block;font-size:var(--fs-xs);color:var(--cyan);background:var(--cyan-bg);padding:1px 5px;border:1px solid var(--cyan-border);margin-right:4px;white-space:nowrap;vertical-align:middle}
+.col-num{font-family:var(--font-mono);text-align:right}
+
+/* ===== PAGINATION ===== */
+.pagination-bar{padding:8px 16px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);font-size:var(--fs-xs);color:var(--text-2);flex-shrink:0}
+.page-btns{display:flex;gap:2px}
+.page-btn{background:var(--bg-2);border:1px solid var(--border);color:var(--text-2);padding:2px 8px;cursor:pointer;font-size:var(--fs-xs);font-family:var(--font-mono)}
+.page-btn:hover{background:var(--bg-3);color:var(--text-0)}
+.page-btn.active{background:var(--cyan-bg);color:var(--cyan);border-color:var(--cyan-border)}
+
+/* ===== DASHBOARD VIEW ===== */
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:12px 16px}
+.kpi-card{background:var(--bg-1);border:1px solid var(--border);padding:12px 16px}
+.kpi-value{font-family:var(--font-mono);font-size:var(--fs-xl);color:var(--cyan);line-height:1}
+.kpi-label{font-size:var(--fs-xs);color:var(--text-2);margin-top:4px;text-transform:uppercase;letter-spacing:.04em}
+.kpi-trend{font-family:var(--font-mono);font-size:var(--fs-xs);margin-top:2px}
+.kpi-trend.up{color:var(--green)}.kpi-trend.down{color:var(--red)}
+.chart-section{background:var(--bg-1);border:1px solid var(--border);padding:12px 16px}
+.chart-section__title{font-size:var(--fs-sm);color:var(--text-1);margin-bottom:8px;font-weight:500}
+.chart-wrap{position:relative;height:180px}
+.charts-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dashboard-body{flex:1;overflow-y:auto;padding:0 16px 16px;display:flex;flex-direction:column;gap:8px}
+.dashboard-body::-webkit-scrollbar{width:6px}
+.dashboard-body::-webkit-scrollbar-thumb{background:var(--bg-3)}
+.trend-period{background:var(--bg-2);color:var(--text-1);border:1px solid var(--border);font-size:var(--fs-xs);padding:2px 8px;font-family:var(--font-mono);outline:none}
+.trend-period:focus{border-color:var(--cyan)}
+
+/* ===== GROUPS VIEW ===== */
+.groups-toolbar{padding:10px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;flex-shrink:0}
+.groups-toolbar h3{font-size:var(--fs-md);font-weight:500;color:var(--text-0)}
+.groups-body{flex:1;overflow-y:auto}
+.groups-body::-webkit-scrollbar{width:6px}
+.groups-body::-webkit-scrollbar-thumb{background:var(--bg-3)}
+
+/* ===== MODAL ===== */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:50;display:flex;align-items:center;justify-content:center}
+.modal-panel{background:var(--bg-2);border:1px solid var(--border);padding:20px;width:560px;max-width:90vw;max-height:80vh;display:flex;flex-direction:column}
+.modal-panel h2{font-size:var(--fs-lg);margin-bottom:4px}
+.modal-panel p{color:var(--text-1);font-size:var(--fs-sm);margin-bottom:12px}
+.modal-list{flex:1;overflow-y:auto;margin-bottom:12px}
+.modal-item{padding:8px 10px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:background .1s;border:1px solid transparent}
+.modal-item:hover{background:var(--bg-3)}
+.modal-item.selected{border-color:var(--cyan-border);background:var(--cyan-bg)}
+.modal-item-check{width:16px;height:16px;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;color:transparent}
+.modal-item.selected .modal-item-check{border-color:var(--cyan);background:var(--cyan);color:var(--bg-0)}
+.modal-item-info{flex:1}
+.modal-item-title{font-size:var(--fs-sm);font-weight:500}
+.modal-item-sub{font-size:var(--fs-xs);color:var(--text-2)}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end}
+
+/* ===== EXPORT MODAL ===== */
+.export-section{margin-bottom:14px}
+.export-section__label{font-size:var(--fs-xs);color:var(--text-2);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+.export-group-select{width:100%;background:var(--bg-4);border:1px solid var(--border);color:var(--text-0);font-size:var(--fs-sm);padding:6px 8px;outline:none;font-family:var(--font-ui)}
+.export-group-select:focus{border-color:var(--cyan)}
+.export-quick-dates{display:flex;flex-wrap:wrap;gap:4px}
+.export-quick-btn{background:var(--bg-4);border:1px solid var(--border);color:var(--text-1);padding:3px 10px;font-size:var(--fs-xs);cursor:pointer;font-family:var(--font-ui);transition:all .15s}
+.export-quick-btn:hover{background:var(--bg-3);color:var(--text-0)}
+.export-quick-btn.active{background:var(--cyan-bg);color:var(--cyan);border-color:var(--cyan-border)}
+.export-date-row{display:flex;align-items:center;gap:8px;margin-top:8px}
+.export-date-input{background:var(--bg-4);border:1px solid var(--border);color:var(--text-0);font-size:var(--fs-sm);padding:4px 6px;width:130px;font-family:var(--font-mono);outline:none}
+.export-date-input:focus{border-color:var(--cyan)}
+.export-date-sep{color:var(--text-3);font-size:var(--fs-xs)}
+.export-format-row{display:flex;gap:12px}
+.export-format-label{display:flex;align-items:center;gap:4px;font-size:var(--fs-sm);color:var(--text-1);cursor:pointer}
+.export-format-label input{accent-color:var(--cyan)}
+.export-preview{font-size:var(--fs-xs);color:var(--text-2);font-family:var(--font-mono);padding:6px 0;border-top:1px solid var(--border);margin-top:4px}
+
+/* ===== TOAST ===== */
+.toast{position:fixed;bottom:16px;right:16px;padding:10px 18px;font-size:var(--fs-sm);z-index:200;max-width:400px;word-break:break-word;border:1px solid var(--border)}
+.toast-error{background:#1a0a0a;color:#fca5a5;border-color:rgba(255,61,113,.3)}
+.toast-success{background:#0a1a0a;color:#86efac;border-color:rgba(0,255,136,.3)}
+.toast-info{background:#0a0f1a;color:#93c5fd;border-color:rgba(0,229,255,.3)}
+
+/* ===== TOGGLE SWITCH ===== */
+.toggle-switch{position:relative;display:inline-block;width:32px;height:18px;vertical-align:middle}
+.toggle-switch input{opacity:0;width:0;height:0}
+.toggle-slider{position:absolute;cursor:pointer;inset:0;background:var(--bg-4);border:1px solid var(--border);border-radius:9px;transition:.2s}
+.toggle-slider:before{content:"";position:absolute;height:12px;width:12px;left:2px;bottom:2px;background:var(--text-3);border-radius:50%;transition:.2s}
+.toggle-switch input:checked+.toggle-slider{background:var(--cyan-bg);border-color:var(--cyan-border)}
+.toggle-switch input:checked+.toggle-slider:before{transform:translateX(14px);background:var(--cyan)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){.left-panel{width:0}.tab-btn{padding:4px 8px;font-size:var(--fs-xs)}}
+@media(max-width:600px){.filter-bar{flex-wrap:wrap;height:auto;padding:8px}.filter-input.wide{width:100%}.kpi-row{grid-template-columns:1fr 1fr}.charts-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body onload="checkLogin()">
+
+<!-- LOGIN OVERLAY -->
+<div class="login-overlay" id="loginOverlay" style="display:flex">
+  <div class="login-panel">
+    <h1>TGWatcher <span>v2.0</span> <button class="login-theme-btn" onclick="toggleTheme()" id="themeBtn" title="切换主题">☀</button></h1>
+    <p>Telegram 群组消息监控面板</p>
+    <div class="login-step active" id="loginStep0">
+      <p style="margin-bottom:10px">输入服务器认证 Token</p>
+      <input class="login-input" id="authTokenInput" placeholder="认证 Token" autocomplete="off">
+      <button class="login-btn" onclick="setAuthToken()">连接</button>
+      <div class="login-error" id="loginError0"></div>
+      <div class="login-info">本机访问已自动登录；仅在远程浏览器或缓存被清空时需要手输 Token</div>
+      <div class="login-info">Token 在服务器首次启动时打印到控制台，保存在 <code>.tgwatcher_auth</code></div>
+      <button class="login-link-btn" onclick="showTokenHelp()">找不到 Token？</button>
+      <div class="login-help" id="tokenHelp" style="display:none">
+        <p>1. 查看服务器控制台输出中的 <code>Generated new auth token</code></p>
+        <p>2. 或打开项目目录下 <code>.tgwatcher_auth</code> 文件</p>
+      </div>
+    </div>
+    <div class="login-step" id="loginStep1">
+      <p style="margin-bottom:10px">点击发送验证码到 Telegram</p>
+      <button class="login-btn" id="btnSendCode" onclick="sendCode()">发送验证码</button>
+      <div class="login-error" id="loginError1"></div>
+    </div>
+    <div class="login-step" id="loginStep2">
+      <p style="margin-bottom:10px">输入收到的验证码</p>
+      <input class="login-input" id="loginCode" placeholder="验证码" autocomplete="off">
+      <button class="login-btn" id="btnVerify" onclick="verifyCode()">验证</button>
+      <div class="login-error" id="loginError2"></div>
+      <button class="login-link-btn" id="btnResendCode" onclick="resendCode()">重新发送</button>
+    </div>
+    <div class="login-step" id="loginStep3">
+      <p style="color:var(--green);font-size:var(--fs-md);margin-bottom:16px">登录成功</p>
+      <button class="login-btn" onclick="afterLogin()">进入</button>
+    </div>
+  </div>
+</div>
+
+<!-- GROUP PICKER MODAL -->
+<div class="modal-overlay" id="groupModal" style="display:none">
+  <div class="modal-panel">
+    <h2>选择监控群组</h2>
+    <p>勾选要爬取消息的群组或频道</p>
+    <div class="modal-list" id="groupList"></div>
+    <div class="modal-actions">
+      <button class="btn" onclick="closeGroupModal()">取消</button>
+      <button class="btn btn-cyan" onclick="saveGroups()">确认</button>
+    </div>
+  </div>
+</div>
+
+<!-- EXPORT MODAL -->
+<div class="modal-overlay" id="exportModal" style="display:none">
+  <div class="modal-panel" style="width:440px">
+    <h2>导出聊天记录</h2>
+    <div class="export-section">
+      <div class="export-section__label">群组</div>
+      <select class="export-group-select" id="exportGroupSelect" onchange="updateExportPreview()">
+        <option value="">全部群组</option>
+      </select>
+    </div>
+    <div class="export-section">
+      <div class="export-section__label">快捷日期</div>
+      <div class="export-quick-dates">
+        <button class="export-quick-btn" data-preset="today" onclick="setExportQuickDate('today')">今天</button>
+        <button class="export-quick-btn" data-preset="yesterday" onclick="setExportQuickDate('yesterday')">昨天</button>
+        <button class="export-quick-btn" data-preset="7d" onclick="setExportQuickDate('7d')">近7天</button>
+        <button class="export-quick-btn" data-preset="30d" onclick="setExportQuickDate('30d')">近30天</button>
+        <button class="export-quick-btn" data-preset="this_month" onclick="setExportQuickDate('this_month')">本月</button>
+        <button class="export-quick-btn" data-preset="last_month" onclick="setExportQuickDate('last_month')">上月</button>
+      </div>
+      <div class="export-date-row">
+        <input type="date" id="exportDateFrom" class="export-date-input" onchange="clearExportQuickDate();updateExportPreview()">
+        <span class="export-date-sep">至</span>
+        <input type="date" id="exportDateTo" class="export-date-input" onchange="clearExportQuickDate();updateExportPreview()">
+      </div>
+    </div>
+    <div class="export-section">
+      <div class="export-section__label">格式</div>
+      <div class="export-format-row">
+        <label class="export-format-label"><input type="radio" name="exportFormat" value="json" checked onchange="updateExportPreview()"> JSON</label>
+        <label class="export-format-label"><input type="radio" name="exportFormat" value="csv" onchange="updateExportPreview()"> CSV</label>
+        <label class="export-format-label"><input type="radio" name="exportFormat" value="markdown" onchange="updateExportPreview()"> Markdown</label>
+      </div>
+    </div>
+    <div class="export-preview" id="exportPreview">选择日期范围后显示消息数量</div>
+    <div class="modal-actions">
+      <button class="btn" onclick="closeExportModal()">取消</button>
+      <button class="btn btn-cyan" onclick="doExport()">导出</button>
+    </div>
+  </div>
+</div>
+
+<!-- SIGNAL EXPORT MODAL -->
+<div class="modal-overlay" id="signalExportModal" style="display:none">
+  <div class="modal-panel" style="width:440px">
+    <h2>导出信号分析</h2>
+    <div class="export-section">
+      <div class="export-section__label">群组</div>
+      <select class="export-group-select" id="signalExportGroupSelect" onchange="updateSignalExportPreview()">
+        <option value="">全部群组</option>
+      </select>
+    </div>
+    <div class="export-section">
+      <div class="export-section__label">快捷日期</div>
+      <div class="export-quick-dates">
+        <button class="export-quick-btn" data-preset="today" onclick="setSignalExportQuickDate('today')">今天</button>
+        <button class="export-quick-btn" data-preset="yesterday" onclick="setSignalExportQuickDate('yesterday')">昨天</button>
+        <button class="export-quick-btn" data-preset="7d" onclick="setSignalExportQuickDate('7d')">近7天</button>
+        <button class="export-quick-btn" data-preset="30d" onclick="setSignalExportQuickDate('30d')">近30天</button>
+        <button class="export-quick-btn" data-preset="this_month" onclick="setSignalExportQuickDate('this_month')">本月</button>
+        <button class="export-quick-btn" data-preset="last_month" onclick="setSignalExportQuickDate('last_month')">上月</button>
+      </div>
+      <div class="export-date-row">
+        <input type="date" id="signalExportDateFrom" class="export-date-input" onchange="clearSignalExportQuickDate();updateSignalExportPreview()">
+        <span class="export-date-sep">至</span>
+        <input type="date" id="signalExportDateTo" class="export-date-input" onchange="clearSignalExportQuickDate();updateSignalExportPreview()">
+      </div>
+    </div>
+    <div class="export-section">
+      <div class="export-section__label">分析来源</div>
+      <div class="export-format-row">
+        <label class="export-format-label"><input type="radio" name="signalExportSource" value="" checked onchange="updateSignalExportPreview()"> 全部</label>
+        <label class="export-format-label"><input type="radio" name="signalExportSource" value="claude" onchange="updateSignalExportPreview()"> Claude</label>
+        <label class="export-format-label"><input type="radio" name="signalExportSource" value="rule-engine" onchange="updateSignalExportPreview()"> 规则引擎</label>
+      </div>
+    </div>
+    <div class="export-section">
+      <div class="export-section__label">过滤</div>
+      <div class="export-format-row">
+        <label class="export-format-label"><input type="radio" name="signalExportFilter" value="" checked onchange="updateSignalExportPreview()"> 全部</label>
+        <label class="export-format-label"><input type="radio" name="signalExportFilter" value="signal" onchange="updateSignalExportPreview()"> 仅信号</label>
+        <label class="export-format-label"><input type="radio" name="signalExportFilter" value="noise" onchange="updateSignalExportPreview()"> 仅噪音</label>
+      </div>
+    </div>
+    <div class="export-section">
+      <div class="export-section__label">格式</div>
+      <div class="export-format-row">
+        <label class="export-format-label"><input type="radio" name="signalExportFormat" value="json" checked onchange="updateSignalExportPreview()"> JSON</label>
+        <label class="export-format-label"><input type="radio" name="signalExportFormat" value="csv" onchange="updateSignalExportPreview()"> CSV</label>
+        <label class="export-format-label"><input type="radio" name="signalExportFormat" value="markdown" onchange="updateSignalExportPreview()"> Markdown</label>
+        <label class="export-format-label"><input type="radio" name="signalExportFormat" value="sqlite" onchange="updateSignalExportPreview()"> SQLite</label>
+      </div>
+    </div>
+    <div class="export-section">
+
+    </div>
+    <div class="export-preview" id="signalExportPreview">选择日期范围后显示信号数量</div>
+    <div class="modal-actions">
+      <button class="btn" onclick="closeSignalExportModal()">取消</button>
+      <button class="btn btn-cyan" onclick="doSignalExport()">导出</button>
+    </div>
+  </div>
+</div>
+
+<!-- AUTO POLL MODAL -->
+<div class="modal-overlay" id="autoPollModal" style="display:none">
+  <div class="modal-panel" style="width:560px">
+    <h2>自动轮询设置</h2>
+    <p>每个群组单独设置间隔。轮询启动后，Web UI 持续每隔 N 秒自动增量爬取新消息。</p>
+    <div class="modal-list" id="autoPollList"></div>
+    <div class="modal-actions">
+      <button class="btn" onclick="closeAutoPollModal()">关闭</button>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="app" style="display:none;flex-direction:column;height:100vh">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar__logo">TGWatcher <span class="conn-dot" id="connDot"></span></div>
+    <div class="tab-switcher">
+      <button class="tab-btn active" data-tab="messages" onclick="switchTab('messages')">消息</button>
+      <button class="tab-btn" data-tab="dashboard" onclick="switchTab('dashboard')">仪表盘</button>
+      <button class="tab-btn" data-tab="groups" onclick="switchTab('groups')">群组</button>
+      <button class="tab-btn" data-tab="signal" onclick="switchTab('signal')">信号</button>
+      <button class="tab-btn" data-tab="digest" onclick="switchTab('digest')">摘要</button>
+    </div>
+    <div class="top-bar__right">
+      <div class="crawl-indicator">
+        <span class="conn-dot" id="crawlTopDot"></span>
+        <span id="crawlTopStatus">空闲</span>
+        <span class="mode-badge" id="crawlTopMode" style="display:none"></span>
+        <div class="crawl-dd">
+          <button class="btn btn-cyan" id="btnStart" onclick="toggleCrawlMenu()" style="font-size:var(--fs-xs);padding:2px 8px">爬取 ▾</button>
+          <div class="crawl-dd-menu" id="crawlMenu">
+            <div class="crawl-dd-item" onclick="startCrawl('incremental')">增量爬取</div>
+            <div class="crawl-dd-item" onclick="startCrawl('full')">全量爬取</div>
+            <div class="crawl-dd-sep"></div>
+            <div class="crawl-dd-item" onclick="startCrawl('catchup')">补爬 (自动补爬群组)</div>
+            <div class="crawl-dd-sep"></div>
+            <div class="crawl-dd-item" onclick="showDateRangePanel()">按日期范围</div>
+            <div class="crawl-dd-sep"></div>
+            <div class="crawl-dd-item" onclick="openAutoPollModal()">⚙ 自动轮询设置...</div>
+          </div>
+        </div>
+        <div class="crawl-date-panel" id="crawlDatePanel" style="display:none">
+          <label>从 <input type="date" id="crawlDateFrom" class="crawl-date-input"></label>
+          <label>到 <input type="date" id="crawlDateTo" class="crawl-date-input"></label>
+          <button class="btn btn-cyan" onclick="startCrawlDateRange()" style="font-size:var(--fs-xs);padding:2px 6px">开始</button>
+          <button class="btn" onclick="hideDateRangePanel()" style="font-size:var(--fs-xs);padding:2px 6px">取消</button>
+        </div>
+        <button class="crawl-stop-btn" id="btnStop" onclick="stopCrawl()" style="display:none">停止</button>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()" id="themeBtn2">☀</button>
+    </div>
+  </div>
+
+  <!-- CRAWL BAR -->
+  <div class="crawl-bar" id="crawlBar" onclick="toggleCrawlDetail()" style="cursor:pointer" title="点击查看详情">
+    <span class="crawl-bar__dot" id="crawlBarDot"></span>
+    <span id="crawlBarStatus">空闲</span>
+    <span class="mode-badge" id="crawlBarMode" style="display:none"></span>
+    <span id="crawlBarDetail">暂无爬取数据</span>
+    <span class="crawl-bar__counts" id="crawlBarCounts"></span>
+    <span class="crawl-bar__meta" id="crawlBarMeta"></span>
+    <span class="crawl-bar__meta" id="autoPollNext" style="color:var(--cyan);display:none"></span>
+    <span class="crawl-bar__meta" id="listenerBadge" style="color:var(--text-2);display:none"></span>
+    <span class="crawl-bar__meta" id="webhookBadge" style="color:var(--text-2);display:none"></span>
+    <span class="crawl-bar__meta" id="newSignalBadge" style="color:var(--green);display:none"></span>
+    <div class="crawl-bar__progress" id="crawlBarProgress" style="width:0%"></div>
+  </div>
+  <!-- CRAWL DETAIL PANEL -->
+  <div class="crawl-detail" id="crawlDetail" style="display:none">
+    <div class="crawl-detail__header">
+      <span>爬取详情</span>
+      <button class="crawl-detail__close" onclick="toggleCrawlDetail()">✕</button>
+    </div>
+    <div class="crawl-detail__body">
+      <div class="crawl-detail__row">
+        <div class="crawl-detail__kpi"><div class="crawl-detail__kpi-val" id="cdKpiMode">—</div><div class="crawl-detail__kpi-lbl">模式</div></div>
+        <div class="crawl-detail__kpi"><div class="crawl-detail__kpi-val" id="cdKpiGroup">—</div><div class="crawl-detail__kpi-lbl">群组进度</div></div>
+        <div class="crawl-detail__kpi"><div class="crawl-detail__kpi-val" id="cdKpiFetched">0</div><div class="crawl-detail__kpi-lbl">已拉取</div></div>
+        <div class="crawl-detail__kpi"><div class="crawl-detail__kpi-val" id="cdKpiSaved">0</div><div class="crawl-detail__kpi-lbl">已保存</div></div>
+        <div class="crawl-detail__kpi"><div class="crawl-detail__kpi-val" id="cdKpiSpeed">—</div><div class="crawl-detail__kpi-lbl">速度</div></div>
+        <div class="crawl-detail__kpi"><div class="crawl-detail__kpi-val" id="cdKpiElapsed">—</div><div class="crawl-detail__kpi-lbl">已用时间</div></div>
+        <div class="crawl-detail__kpi"><div class="crawl-detail__kpi-val" id="cdKpiEta">—</div><div class="crawl-detail__kpi-lbl">剩余时间</div></div>
+      </div>
+      <div class="crawl-detail__progress-row">
+        <div class="crawl-detail__progress-track"><div class="crawl-detail__progress-fill" id="cdProgressFill"></div></div>
+        <span class="crawl-detail__progress-pct" id="cdProgressPct">0%</span>
+      </div>
+      <div class="crawl-detail__current">
+        <span id="cdCurrentGroup">—</span>
+        <span class="crawl-detail__current-counts" id="cdCurrentCounts"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT AREA -->
+  <div class="content-area">
+
+    <!-- LEFT PANEL -->
+    <div class="left-panel" id="leftPanel">
+      <div class="panel-header">
+        <span>会话</span>
+        <button class="panel-toggle" onclick="togglePanel()" title="收起">‹</button>
+      </div>
+      <div class="chat-list" id="chatListWrap">
+        <div class="chat-all-item active" onclick="filterChat(null)">全部消息</div>
+        <div id="chatList"></div>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      <!-- MESSAGES VIEW -->
+      <div class="view active" id="viewMessages">
+        <div class="filter-bar">
+          <input class="filter-input wide" id="searchKeyword" placeholder="搜索消息..." oninput="debounceSearch()">
+          <select id="senderFilter" class="filter-input" style="width:130px" onchange="searchMessages()"><option value="">全部发送者</option></select>
+          <input class="filter-input filter-date" id="searchDateFrom" type="date" title="起始日期">
+          <input class="filter-input filter-date" id="searchDateTo" type="date" title="结束日期">
+          <button class="btn btn-cyan" onclick="searchMessages()">搜索</button>
+          <button class="btn" onclick="clearSearch()">清空</button>
+          <button class="btn btn-cyan" onclick="openExportModal()">导出</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr>
+              <th style="width:90px">时间</th>
+              <th style="width:110px">发送者</th>
+              <th>内容</th>
+              <th style="width:60px">媒体</th>
+            </tr></thead>
+            <tbody id="msgBody"></tbody>
+          </table>
+        </div>
+        <div class="pagination-bar" id="pagination">
+          <span id="pageInfo">-</span>
+          <div class="page-btns" id="pageBtns"></div>
+        </div>
+      </div>
+
+      <!-- DASHBOARD VIEW -->
+      <div class="view" id="viewDashboard">
+        <div style="padding:12px 16px 0;display:flex;align-items:center;gap:10px">
+          <h2 style="font-size:var(--fs-lg);font-weight:600">仪表盘</h2>
+          <select id="trendPeriod" onchange="loadTrendChart()" class="trend-period">
+            <option value="7">7天</option><option value="30" selected>30天</option><option value="90">90天</option>
+          </select>
+        </div>
+        <div class="dashboard-body">
+          <div class="kpi-row" id="kpiRow">
+            <div class="kpi-card"><div class="kpi-value" id="kpiTotal">-</div><div class="kpi-label">总消息数</div></div>
+            <div class="kpi-card"><div class="kpi-value" id="kpiChats">-</div><div class="kpi-label">监控群组</div></div>
+            <div class="kpi-card"><div class="kpi-value" id="kpiAvgDay">-</div><div class="kpi-label">日均消息</div></div>
+            <div class="kpi-card"><div class="kpi-value" id="kpiLastCrawl">-</div><div class="kpi-label">上次爬取</div></div>
+          </div>
+          <div class="chart-section">
+            <div class="chart-section__title">消息趋势</div>
+            <div class="chart-wrap"><canvas id="trendChart"></canvas></div>
+          </div>
+          <div class="charts-row">
+            <div class="chart-section"><div class="chart-section__title">活跃热力图</div><div class="chart-wrap"><canvas id="heatmapCanvas"></canvas></div></div>
+            <div class="chart-section"><div class="chart-section__title">群组对比</div><div class="chart-wrap"><canvas id="comparisonChart"></canvas></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIGNAL VIEW -->
+      <div class="view" id="viewSignal">
+        <div style="padding:12px 16px 0;display:flex;align-items:center;gap:10px">
+          <h2 style="font-size:var(--fs-lg);font-weight:600">信号分析</h2>
+          <span id="signalDaemonPill" style="padding:2px 8px;border:1px solid var(--border);border-radius:4px;font-size:var(--fs-xs);background:var(--bg-1);color:var(--text-2)">加载中...</span>
+          <button class="btn" onclick="toggleSignalProcessForm()" id="btnSignalProcessRange" style="font-size:var(--fs-xs);padding:2px 8px">处理范围</button>
+          <button class="btn" onclick="openSignalExportModal()" style="font-size:var(--fs-xs);padding:2px 8px">导出</button>
+          <span id="signalProgress" style="font-size:var(--fs-xs);color:var(--text-2);margin-left:auto"></span>
+        </div>
+        <div id="signalProcessForm" style="display:none;padding:8px 16px;border-bottom:1px solid var(--border);background:var(--bg-1);flex-wrap:wrap;gap:8px;align-items:center">
+          <label style="font-size:var(--fs-xs);color:var(--text-2)">群组</label>
+          <select id="signalProcessChat" style="font-size:var(--fs-xs);padding:2px 6px;background:var(--bg-2);border:1px solid var(--border);border-radius:4px;color:var(--text-1)">
+            <option value="">全部群组</option>
+          </select>
+          <label style="font-size:var(--fs-xs);color:var(--text-2)">从</label>
+          <input type="date" id="signalProcessDateFrom" style="font-size:var(--fs-xs);padding:2px 6px;background:var(--bg-2);border:1px solid var(--border);border-radius:4px;color:var(--text-1)">
+          <label style="font-size:var(--fs-xs);color:var(--text-2)">到</label>
+          <input type="date" id="signalProcessDateTo" style="font-size:var(--fs-xs);padding:2px 6px;background:var(--bg-2);border:1px solid var(--border);border-radius:4px;color:var(--text-1)">
+          <label style="font-size:var(--fs-xs);color:var(--text-2);display:flex;align-items:center;gap:4px">
+            <input type="checkbox" id="signalProcessOverwrite" style="margin:0"> 覆盖
+          </label>
+          <button class="btn btn-cyan" onclick="startSignalProcess()" style="font-size:var(--fs-xs);padding:2px 10px">开始处理</button>
+          <span id="signalProcessHint" style="font-size:var(--fs-xs);color:var(--text-2)"></span>
+        </div>
+        <div class="dashboard-body">
+          <div class="kpi-row" id="signalKpiRow">
+            <div class="kpi-card"><div class="kpi-value" id="signalKpiTotal">-</div><div class="kpi-label">已分析</div></div>
+            <div class="kpi-card"><div class="kpi-value" id="signalKpiBullish">-</div><div class="kpi-label">利多%</div></div>
+            <div class="kpi-card"><div class="kpi-value" id="signalKpiBearish">-</div><div class="kpi-label">利空%</div></div>
+            <div class="kpi-card"><div class="kpi-value" id="signalKpiUrgency">-</div><div class="kpi-label">平均幅度</div></div>
+          </div>
+          <div class="chart-section">
+            <div class="chart-section__title">情绪趋势</div>
+            <div class="chart-wrap"><canvas id="signalTrendChart"></canvas></div>
+          </div>
+          <div class="charts-row">
+            <div class="chart-section"><div class="chart-section__title">事件类型分布</div><div class="chart-wrap"><canvas id="signalEventChart"></canvas></div></div>
+            <div class="chart-section">
+              <div class="chart-section__title">因子列表</div>
+              <div style="overflow:auto;max-height:300px">
+                <table class="data-table">
+                  <thead><tr>
+                    <th>时间</th><th>方向</th><th>事件</th><th>幅度</th><th>紧急</th><th>置信</th><th>分数</th><th>半衰期</th><th>过期</th><th style="max-width:150px">内容</th>
+                  </tr></thead>
+                  <tbody id="signalTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIGEST VIEW -->
+      <div class="view" id="viewDigest">
+        <div style="padding:12px 16px 0;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+          <h2 style="font-size:var(--fs-lg);font-weight:600">市场摘要</h2>
+          <select id="digestLookback" style="font-size:var(--fs-xs);padding:2px 6px;background:var(--bg-1);border:1px solid var(--border);border-radius:4px;color:var(--text-1)">
+            <option value="0">增量（上次→现在）</option>
+            <option value="24">最近 24 小时</option>
+            <option value="168" selected>最近 7 天</option>
+            <option value="720">最近 30 天</option>
+          </select>
+          <button class="btn btn-cyan" id="btnDigestGenerate" onclick="generateDigest()" style="font-size:var(--fs-xs);padding:2px 8px;margin-left:8px">生成新摘要</button>
+          <button class="btn" id="btnDigestRefresh" onclick="loadDigestTab()" style="font-size:var(--fs-xs);padding:2px 8px;display:none">刷新</button>
+          <span id="digestStatus" style="font-size:var(--fs-xs);color:var(--text-2);margin-left:auto"></span>
+        </div>
+        <div class="dashboard-body">
+          <div id="digestLatest" style="padding:12px 16px;border:1px solid var(--border);border-radius:6px;background:var(--bg-1);white-space:pre-wrap;font-size:var(--fs-sm);line-height:1.6;min-height:120px">
+            <span style="color:var(--text-2)">点击"生成新摘要"开始...</span>
+          </div>
+          <div class="chart-section">
+            <div class="chart-section__title">历史摘要</div>
+            <div id="digestHistory" style="display:flex;flex-direction:column;gap:6px;max-height:400px;overflow:auto"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GROUPS VIEW -->
+      <div class="view" id="viewGroups">
+        <div class="groups-toolbar">
+          <h3>已监控群组</h3>
+          <button class="btn btn-danger" onclick="purgeAllData()" style="margin-left:auto">清空数据</button>
+          <button class="btn btn-cyan" onclick="openGroupModal()">+ 添加群组</button>
+        </div>
+        <div class="groups-body">
+          <table class="data-table">
+            <thead><tr>
+              <th>名称</th><th style="width:80px">类型</th><th style="width:70px">成员</th>
+              <th style="width:80px">消息数</th><th style="width:140px">最后活跃</th><th style="width:80px">自动补爬</th><th style="width:80px">实时监听</th><th style="width:70px">操作</th>
+            </tr></thead>
+            <tbody id="groupsBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="/static/app/state.js?v=16"></script>
+<script src="/static/app/utils.js?v=16"></script>
+<script src="/static/app/api-client.js?v=16"></script>
+<script src="/static/app/sse.js?v=16"></script>
+<script src="/static/app/render.js?v=16"></script>
+<script src="/static/app/login.js?v=16"></script>
+<script src="/static/app/groups.js?v=16"></script>
+<script src="/static/app/messages.js?v=16"></script>
+<script src="/static/app/export.js?v=16"></script>
+<script src="/static/app/signal-export.js?v=16"></script>
+<script src="/static/app/dashboard.js?v=16"></script>
+<script src="/static/app/crawl.js?v=16"></script>
+<script src="/static/app/poll-listen-webhook.js?v=16"></script>
+<script src="/static/app/signal.js?v=17"></script>
+<script src="/static/app/ui.js?v=16"></script>
+<script src="/static/app.js?v=16"></script>
+</body>
+</html>

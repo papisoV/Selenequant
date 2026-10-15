@@ -1,0 +1,193 @@
+{
+  "latency": {
+    "enums": {},
+    "models": {
+      "LatencyStats": [
+        "ack_to_fill_p50_ms",
+        "ack_to_fill_p95_ms",
+        "ack_to_fill_p99_ms",
+        "intent_to_submit_p50_ms",
+        "intent_to_submit_p95_ms",
+        "intent_to_submit_p99_ms",
+        "sample_count",
+        "submit_to_ack_p50_ms",
+        "submit_to_ack_p95_ms",
+        "submit_to_ack_p99_ms",
+        "window_seconds"
+      ]
+    }
+  },
+  "trading": {
+    "enums": {
+      "ExecutionMode": [
+        "confirm",
+        "full_auto",
+        "limited_auto",
+        "live",
+        "paper",
+        "shadow"
+      ],
+      "MarginMode": [
+        "cash",
+        "cross",
+        "isolated"
+      ],
+      "OrderSide": [
+        "buy",
+        "sell"
+      ],
+      "OrderStatus": [
+        "accepted",
+        "cancelled",
+        "created",
+        "expired",
+        "filled",
+        "partial",
+        "pending_cancel",
+        "rejected",
+        "triggered"
+      ],
+      "OrderType": [
+        "ioc",
+        "limit",
+        "market",
+        "stop_limit",
+        "stop_market"
+      ],
+      "PolymarketOrderEventType": [
+        "CANCELLATION",
+        "PLACEMENT",
+        "UPDATE"
+      ],
+      "PositionSide": [
+        "long",
+        "net",
+        "short"
+      ]
+    },
+    "models": {
+      "AccountSnapshot": [
+        "balances",
+        "exchange",
+        "timestamp"
+      ],
+      "BalanceUpdate": [
+        "asset",
+        "exchange",
+        "free",
+        "locked",
+        "timestamp"
+      ],
+      "ExchangeOrderUpdate": [
+        "avg_fill_price",
+        "client_order_id",
+        "commission",
+        "commission_asset",
+        "exchange",
+        "exchange_order_id",
+        "filled_quantity",
+        "last_fill_price",
+        "last_fill_quantity",
+        "order_type",
+        "quantity",
+        "raw",
+        "side",
+        "status",
+        "symbol",
+        "timestamp"
+      ],
+      "Fill": [
+        "client_order_id",
+        "exec_type",
+        "fee",
+        "fee_currency",
+        "fee_rate",
+        "id",
+        "leverage",
+        "order_id",
+        "pos_side",
+        "price",
+        "quantity",
+        "realized_pnl",
+        "reduce_only",
+        "side",
+        "symbol",
+        "timestamp"
+      ],
+      "Order": [
+        "avg_fill_price",
+        "created_at",
+        "filled_quantity",
+        "id",
+        "leverage",
+        "margin_mode",
+        "pos_side",
+        "price",
+        "quantity",
+        "reduce_only",
+        "side",
+        "status",
+        "stop_price",
+        "symbol",
+        "type",
+        "updated_at"
+      ],
+      "PnLRecord": [
+        "fees",
+        "realized_pnl",
+        "symbol",
+        "timestamp",
+        "total_pnl",
+        "unrealized_pnl"
+      ],
+      "PolymarketOrderUpdate": [
+        "asset_id",
+        "event_type",
+        "exchange",
+        "market",
+        "order_id",
+        "original_size",
+        "owner",
+        "price",
+        "raw",
+        "side",
+        "size_matched",
+        "timestamp"
+      ],
+      "PolymarketTradeUpdate": [
+        "asset_id",
+        "exchange",
+        "market",
+        "owner",
+        "price",
+        "raw",
+        "side",
+        "size",
+        "status",
+        "timestamp",
+        "trade_id"
+      ],
+      "Position": [
+        "accrued_funding",
+        "avg_entry_price",
+        "borrow_fee_accrued",
+        "current_price",
+        "last_funding_time",
+        "leverage",
+        "liquidation_price",
+        "margin",
+        "margin_mode",
+        "opened_at",
+        "pos_side",
+        "quantity",
+        "quantity_base",
+        "realized_pnl",
+        "side",
+        "symbol",
+        "unrealized_pnl",
+        "unrealized_pnl_pct",
+        "updated_at"
+      ]
+    }
+  }
+}

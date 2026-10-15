@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" width="360" height="96" role="img" aria-label="SeleneQuant">
+  <rect x="0.5" y="0.5" width="359" height="95" rx="16" fill="#04070b" stroke="#1b2430"/>
+  <!-- moon mark: crescent, warm peach -->
+  <circle cx="52" cy="48" r="19" fill="#f7a07d"/>
+  <circle cx="60" cy="42" r="16" fill="#04070b"/>
+  <circle cx="52" cy="48" r="19" fill="none" stroke="#f7a07d" stroke-opacity="0.35" stroke-width="1"/>
+  <!-- wordmark -->
+  <text x="88" y="52" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="30" font-weight="600" letter-spacing="-0.5" fill="#e6edf3">Selene<tspan fill="#f7a07d">Quant</tspan></text>
+  <text x="89" y="72" font-family="SFMono-Regular, Consolas, Menlo, monospace" font-size="12.5" letter-spacing="0.5" fill="#8a939e">AI QUANT RESEARCH WORKSPACE</text>
+</svg>

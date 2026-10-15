@@ -1,0 +1,32 @@
+{
+  "python.analysis.extraPaths": [
+    "packages/shared-types",
+    "packages/core",
+    "packages/cli",
+    "packages/strategy-engine",
+    "packages/backtest-engine",
+    "packages/market-data",
+    "packages/agent-runtime",
+    "packages/exchange-sdk",
+    "packages/llm-adapter",
+    "packages/paper-engine",
+    "packages/risk-engine",
+    "packages/security-gateway",
+    "packages/storage",
+    "packages/compat-layer",
+    "packages/alpha-core",
+    "packages/stock",
+    "packages/ashare",
+    "packages/pulse",
+    "packages/tg-ingest",
+    "packages/macrodata",
+    "packages/decision-workflow",
+    "packages/optimize",
+    "packages/agentstudio",
+    "packages/daily-cycle",
+    "packages/renintel",
+    "services/local-api"
+  ],
+  "python.analysis.typeCheckingMode": "basic",
+  "python.terminal.activateEnvironment": false
+}

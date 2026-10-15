@@ -1,0 +1,574 @@
+# 口径: 匹配行数 | 范围: apps/desktop/{components|lib|app} | 扩展名: .ts,.tsx,.css 排除 *.test.* 与 node_modules
+# 基线: L1=456 L2=22 L3=92 (Step1 后;原快照 L3=126)
+# 判据四级: 类型声明❌→标签映射❌→动态拼类名❌→赋值点✅;轴归属为启发式初判(待人工复核)
+loc	selector	form	carrier	axis	criterion	status	family
+apps/desktop/app/globals.css:1107	.rp-card-head.pos	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	pos
+apps/desktop/app/globals.css:1108	.rp-card-head.neg	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	neg
+apps/desktop/app/globals.css:1128	.info-val.pos	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	pos
+apps/desktop/app/globals.css:1129	.info-val.neg	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	neg
+apps/desktop/app/globals.css:1133	.info-pyramid-cell.pos	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	pos
+apps/desktop/app/globals.css:1134	.info-pyramid-cell.neg	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	neg
+apps/desktop/app/globals.css:1143	.tp-side.buy	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	buy
+apps/desktop/app/globals.css:1144	.tp-side.buy:hover	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	buy
+apps/desktop/app/globals.css:1145	.tp-side.sell	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	sell
+apps/desktop/app/globals.css:1146	.tp-side.sell:hover	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	sell
+apps/desktop/app/globals.css:1158	.ob-row.ask .px	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	px
+apps/desktop/app/globals.css:1159	.ob-row .bar	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	bar
+apps/desktop/app/globals.css:1160	.ob-row.bid .bar	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	bar
+apps/desktop/app/globals.css:1164	.ob-mid .px.pos	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	pos
+apps/desktop/app/globals.css:1165	.ob-mid .px.neg	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	neg
+apps/desktop/app/globals.css:1186	.wf-side.buy	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	buy
+apps/desktop/app/globals.css:1187	.wf-side.sell	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	sell
+apps/desktop/app/globals.css:1195	.wf-cvd-buy	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	wf-cvd-buy
+apps/desktop/app/globals.css:1196	.wf-cvd-sell	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	wf-cvd-sell
+apps/desktop/app/globals.css:1198	.wf-cvd-meta .pos	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	pos
+apps/desktop/app/globals.css:1199	.wf-cvd-meta .neg	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	neg
+apps/desktop/app/globals.css:1214	.fund-row .val.pos	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	pos
+apps/desktop/app/globals.css:1215	.fund-row .val.neg	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	neg
+apps/desktop/app/globals.css:1218	.fund-bar-fill.pos	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	pos
+apps/desktop/app/globals.css:1368	.dt-row .pos	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	pos
+apps/desktop/app/globals.css:1369	.dt-row .neg	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	neg
+apps/desktop/app/globals.css:1379	.mk-tag.mk-spot	渲染点(CSS 规则体)	CSS-var	死	行号表精确圈定	死(mk-tag)	mk-spot
+apps/desktop/app/globals.css:1380	.mk-tag.mk-stock_a	渲染点(CSS 规则体)	CSS-var	死	行号表精确圈定	死(mk-tag)	mk-stock_a
+apps/desktop/app/globals.css:1544	.rc-pos .rc-icon, .rc-pos .rc-name	渲染点(CSS 规则体)	CSS-var	死	行号表精确圈定	死(rc-*)	rc-name
+apps/desktop/app/globals.css:1610	.terminal-panel	渲染点(CSS 规则体)	CSS-var	装饰	启发式(待人工复核)	活	terminal-panel
+apps/desktop/app/globals.css:1612	.term-line	渲染点(CSS 规则体)	CSS-var	装饰	启发式(待人工复核)	活	term-line
+apps/desktop/app/globals.css:1616	.term-line .cursor	渲染点(CSS 规则体)	CSS-var	装饰	启发式(待人工复核)	活	cursor
+apps/desktop/app/globals.css:1637	.fab-badge	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	fab-badge
+apps/desktop/app/globals.css:1701	.feed-bar-label .pulse	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	pulse
+apps/desktop/app/globals.css:1767	.feed-item.liq	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	liq
+apps/desktop/app/globals.css:1768	.feed-item.up	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	up
+apps/desktop/app/globals.css:1769	.feed-item.down	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	down
+apps/desktop/app/globals.css:1817	.bt-run-btn:hover	渲染点(CSS 规则体)	CSS-var	死	行号表精确圈定	死(bt-run-btn)	bt-run-btn
+apps/desktop/app/globals.css:1827	.ot-submit:hover, .ot-apply-suggest:hover	渲染点(CSS 规则体)	CSS-var	死	行号表精确圈定	死(ot-submit)	ot-apply-suggest
+apps/desktop/app/globals.css:2471	.fold-table .ic.pos	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	pos
+apps/desktop/app/globals.css:2474	.fold-table .ic.neg	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	neg
+apps/desktop/app/globals.css:2549	.sv2.pos	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	pos
+apps/desktop/app/globals.css:2552	.sv2.neg	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	neg
+apps/desktop/app/globals.css:2592	.xbar i	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	xbar
+apps/desktop/app/globals.css:2600	.xbar i.dead	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	dead
+apps/desktop/app/globals.css:2611	.xv.neg	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	neg
+apps/desktop/app/globals.css:2628	.d-cell.pass	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	pass
+apps/desktop/app/globals.css:2653	.dv	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	dv
+apps/desktop/app/globals.css:2677	.dep-msg.ok	渲染点(CSS 规则体)	CSS-var	判定	启发式(待人工复核)	活	ok
+apps/desktop/app/globals.css:2680	.dep-msg.err	渲染点(CSS 规则体)	CSS-var	判定	启发式(待人工复核)	活	err
+apps/desktop/app/globals.css:2724	.sv.pos	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	pos
+apps/desktop/app/globals.css:2727	.sv.neg	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	neg
+apps/desktop/app/globals.css:2829	.wb-tab.tdone .tno	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	tno
+apps/desktop/app/globals.css:303	.vhero-trigger .trig-value.pos	渲染点(CSS 规则体)	CSS-var	死	行号表精确圈定	死(trig-value)	pos
+apps/desktop/app/globals.css:3036	.mon-err	渲染点(CSS 规则体)	CSS-var	判定	启发式(待人工复核)	活	mon-err
+apps/desktop/app/globals.css:304	.vhero-trigger .trig-value.neg	渲染点(CSS 规则体)	CSS-var	死	行号表精确圈定	死(trig-value)	neg
+apps/desktop/app/globals.css:3079	.verdict.valid	渲染点(CSS 规则体)	CSS-var	判定	启发式(待人工复核)	活	valid
+apps/desktop/app/globals.css:3080	.verdict.valid	渲染点(CSS 规则体)	CSS-var	判定	启发式(待人工复核)	活	valid
+apps/desktop/app/globals.css:3081	.verdict.valid	渲染点(CSS 规则体)	CSS-var	判定	启发式(待人工复核)	活	valid
+apps/desktop/app/globals.css:3089	.verdict.invalid	渲染点(CSS 规则体)	CSS-var	判定	启发式(待人工复核)	活	invalid
+apps/desktop/app/globals.css:3090	.verdict.invalid	渲染点(CSS 规则体)	CSS-var	判定	启发式(待人工复核)	活	invalid
+apps/desktop/app/globals.css:3091	.verdict.invalid	渲染点(CSS 规则体)	CSS-var	判定	启发式(待人工复核)	活	invalid
+apps/desktop/app/globals.css:3114	.dep-row.ok	渲染点(CSS 规则体)	CSS-var	判定	启发式(待人工复核)	活	ok
+apps/desktop/app/globals.css:3117	.dep-row.blocked	渲染点(CSS 规则体)	CSS-var	判定	启发式(待人工复核)	活	blocked
+apps/desktop/app/globals.css:312	50%	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	globals
+apps/desktop/app/globals.css:3136	.dep-status.ds2	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	ds2
+apps/desktop/app/globals.css:331	.conn-latency	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	conn-latency
+apps/desktop/app/globals.css:446	.dp-pnl-abs.pos	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	pos
+apps/desktop/app/globals.css:447	.dp-pnl-abs.neg	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	neg
+apps/desktop/app/globals.css:449	.dp-pnl-pct.pos	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	pos
+apps/desktop/app/globals.css:450	.dp-pnl-pct.neg	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	neg
+apps/desktop/app/globals.css:463	.dp-market-dot.us	渲染点(CSS 规则体)	CSS-var	死	行号表精确圈定	死(dp-market-dot)	us
+apps/desktop/app/globals.css:464	.dp-market-dot.cn	渲染点(CSS 规则体)	CSS-var	死	行号表精确圈定	死(dp-market-dot)	cn
+apps/desktop/app/globals.css:470	.dp-market-bar-fill.us	渲染点(CSS 规则体)	CSS-var	死	行号表精确圈定	死(dp-market-bar-fill)	us
+apps/desktop/app/globals.css:471	.dp-market-bar-fill.cn	渲染点(CSS 规则体)	CSS-var	死	行号表精确圈定	死(dp-market-bar-fill)	cn
+apps/desktop/app/globals.css:480	.dp-metric-val.pos	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	pos
+apps/desktop/app/globals.css:481	.dp-metric-val.neg	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	neg
+apps/desktop/app/globals.css:508	.risk-val.neg	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	neg
+apps/desktop/app/globals.css:632	.wl-chg.pos	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	pos
+apps/desktop/app/globals.css:633	.wl-chg.neg	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	neg
+apps/desktop/app/globals.css:635	.wl-signal.up	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	up
+apps/desktop/app/globals.css:636	.wl-signal.down	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	down
+apps/desktop/app/globals.css:697	.sb-metric-val.pos	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	pos
+apps/desktop/app/globals.css:698	.sb-metric-val.neg	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	neg
+apps/desktop/app/globals.css:739	.ctx-val.pos	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	pos
+apps/desktop/app/globals.css:740	.ctx-val.neg	渲染点(CSS 规则体)	CSS-var	?	启发式(待人工复核)	活	neg
+apps/desktop/app/globals.css:843	.kline-candle.up	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	up
+apps/desktop/app/globals.css:844	.kline-candle.down	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	down
+apps/desktop/app/globals.css:845	.kline-wick.up	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	up
+apps/desktop/app/globals.css:846	.kline-wick.down	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	down
+apps/desktop/app/globals.css:854	.kline-ohlc .up	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	up
+apps/desktop/app/globals.css:855	.kline-ohlc .down	渲染点(CSS 规则体)	CSS-var	方向	启发式(待人工复核)	活	down
+apps/desktop/app/research/questions/new/page.tsx:117	text-neg	赋值点	TSX-class	判定?	启发式(待人工复核)	活	page
+apps/desktop/components/agent/agent-chat-page.tsx:165	bg-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	agent-chat-page
+apps/desktop/components/agent/agent-trading-workspace-page.tsx:111	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	agent-trading-workspace-page
+apps/desktop/components/agent/agent-trading-workspace-page.tsx:128	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	agent-trading-workspace-page
+apps/desktop/components/agent/agent-trading-workspace-page.tsx:165	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	agent-trading-workspace-page
+apps/desktop/components/agent/agent-trading-workspace-page.tsx:185	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	agent-trading-workspace-page
+apps/desktop/components/agent/agent-trading-workspace-page.tsx:59	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	agent-trading-workspace-page
+apps/desktop/components/agent/agent-trading-workspace-page.tsx:60	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	agent-trading-workspace-page
+apps/desktop/components/alerts/alert-rule-card.tsx:44	bg-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	alert-rule-card
+apps/desktop/components/alerts/alert-rule-card.tsx:69	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	alert-rule-card
+apps/desktop/components/chart/kline-chart.tsx:190	var(--color-pos)	常量/注释?	TSX-var	方向?	启发式(待人工复核)	常量/注释?❓	kline-chart
+apps/desktop/components/chart/kline-chart.tsx:219	var(--color-pos)	常量/注释?	TSX-var	方向?	启发式(待人工复核)	常量/注释?❓	kline-chart
+apps/desktop/components/chart/market-gauge.tsx:11	var(--color-neg)	常量/注释?	TSX-var	?	启发式(待人工复核)	常量/注释?❓	market-gauge
+apps/desktop/components/chart/market-gauge.tsx:16	var(--color-pos)	常量/注释?	TSX-var	?	启发式(待人工复核)	常量/注释?❓	market-gauge
+apps/desktop/components/derivatives/footprint-page.tsx:145	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	footprint-page
+apps/desktop/components/derivatives/funding-rates-all-exchanges-page.tsx:125	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	funding-rates-all-exchanges-page
+apps/desktop/components/derivatives/funding-rates-all-exchanges-page.tsx:145	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	funding-rates-all-exchanges-page
+apps/desktop/components/derivatives/funding-rates-all-exchanges-page.tsx:146	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	funding-rates-all-exchanges-page
+apps/desktop/components/derivatives/funding-rates-page.tsx:107	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	funding-rates-page
+apps/desktop/components/derivatives/funding-rates-page.tsx:108	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	funding-rates-page
+apps/desktop/components/derivatives/funding-rates-page.tsx:91	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	funding-rates-page
+apps/desktop/components/derivatives/large-trades-page.tsx:124	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	large-trades-page
+apps/desktop/components/derivatives/large-trades-page.tsx:141	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	large-trades-page
+apps/desktop/components/derivatives/large-trades-page.tsx:142	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	large-trades-page
+apps/desktop/components/derivatives/large-trades-stats-page.tsx:85	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	large-trades-stats-page
+apps/desktop/components/derivatives/large-trades-stats-page.tsx:86	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	large-trades-stats-page
+apps/desktop/components/derivatives/large-trades-stats-page.tsx:91	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	large-trades-stats-page
+apps/desktop/components/derivatives/large-trades-stats-page.tsx:92	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	large-trades-stats-page
+apps/desktop/components/derivatives/liquidation-stats-all-page.tsx:91	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	liquidation-stats-all-page
+apps/desktop/components/derivatives/liquidation-stats-all-page.tsx:92	text-neg	赋值点	TSX-class	方向?	启发式(待人工复核)	活	liquidation-stats-all-page
+apps/desktop/components/derivatives/liquidation-stats-page.tsx:86	text-pos	常量/注释?	TSX-class	判定?	启发式(待人工复核)	常量/注释?❓	liquidation-stats-page
+apps/desktop/components/derivatives/liquidation-stats-page.tsx:87	text-neg	常量/注释?	TSX-class	判定?	启发式(待人工复核)	常量/注释?❓	liquidation-stats-page
+apps/desktop/components/derivatives/liquidation-stats-page.tsx:92	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	liquidation-stats-page
+apps/desktop/components/derivatives/liquidation-stats-page.tsx:93	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	liquidation-stats-page
+apps/desktop/components/derivatives/liquidations-recent-page.tsx:125	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	liquidations-recent-page
+apps/desktop/components/derivatives/liquidations-recent-page.tsx:142	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	liquidations-recent-page
+apps/desktop/components/derivatives/liquidations-recent-page.tsx:143	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	liquidations-recent-page
+apps/desktop/components/derivatives/merged-book-page.tsx:50	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	merged-book-page
+apps/desktop/components/derivatives/merged-book-page.tsx:80	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	merged-book-page
+apps/desktop/components/derivatives/merged-book-page.tsx:81	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	merged-book-page
+apps/desktop/components/derivatives/merged-book-page.tsx:88	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	merged-book-page
+apps/desktop/components/derivatives/merged-book-page.tsx:89	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	merged-book-page
+apps/desktop/components/derivatives/options-page.tsx:193	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	options-page
+apps/desktop/components/derivatives/options-page.tsx:194	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	options-page
+apps/desktop/components/derivatives/options-page.tsx:298	bg-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	options-page
+apps/desktop/components/derivatives/options-page.tsx:366	bg-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	options-page
+apps/desktop/components/derivatives/options-page.tsx:373	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	options-page
+apps/desktop/components/derivatives/options-page.tsx:435	text-pos	动态拼类名	TSX-class	方向?	启发式(待人工复核)	动态拼类名❓	options-page
+apps/desktop/components/derivatives/options-page.tsx:436	text-neg	动态拼类名	TSX-class	方向?	启发式(待人工复核)	动态拼类名❓	options-page
+apps/desktop/components/derivatives/parts/footprint-canvas.tsx:235	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	footprint-canvas
+apps/desktop/components/derivatives/parts/footprint-canvas.tsx:239	text-neg	赋值点	TSX-class	方向?	启发式(待人工复核)	活	footprint-canvas
+apps/desktop/components/derivatives/parts/footprint-canvas.tsx:244	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	footprint-canvas
+apps/desktop/components/derivatives/parts/liqmap-canvas.tsx:346	text-neg	赋值点	TSX-class	方向?	启发式(待人工复核)	活	liqmap-canvas
+apps/desktop/components/derivatives/parts/liqmap-canvas.tsx:356	text-neg	赋值点	TSX-class	方向?	启发式(待人工复核)	活	liqmap-canvas
+apps/desktop/components/derivatives/parts/liqmap-canvas.tsx:360	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	liqmap-canvas
+apps/desktop/components/derivatives/parts/liqmap-canvas.tsx:376	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	liqmap-canvas
+apps/desktop/components/derivatives/parts/orderbook-depth-heatmap.tsx:285	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	orderbook-depth-heatmap
+apps/desktop/components/derivatives/parts/vpvr-canvas.tsx:261	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	vpvr-canvas
+apps/desktop/components/derivatives/parts/vpvr-canvas.tsx:265	text-neg	赋值点	TSX-class	方向?	启发式(待人工复核)	活	vpvr-canvas
+apps/desktop/components/derivatives/vpvr-page.tsx:111	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	vpvr-page
+apps/desktop/components/derivatives/vpvr-page.tsx:112	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	vpvr-page
+apps/desktop/components/derivatives/vpvr-page.tsx:118	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	vpvr-page
+apps/desktop/components/derivatives/vpvr-page.tsx:119	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	vpvr-page
+apps/desktop/components/layout/bottom-drawer.tsx:982	bg-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	bottom-drawer
+apps/desktop/components/layout/bottom-drawer.tsx:984	bg-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	bottom-drawer
+apps/desktop/components/research/analysis-panel.tsx:156	var(--color-pos)	常量/注释?	TSX-var	?	启发式(待人工复核)	常量/注释?❓	analysis-panel
+apps/desktop/components/research/analysis-panel.tsx:158	var(--color-neg)	常量/注释?	TSX-var	?	启发式(待人工复核)	常量/注释?❓	analysis-panel
+apps/desktop/components/research/analysis-panel.tsx:163	var(--color-pos)	动态拼类名	TSX-var	方向?	启发式(待人工复核)	动态拼类名❓	analysis-panel
+apps/desktop/components/research/analysis-panel.tsx:173	var(--color-pos)	动态拼类名	TSX-var	?	启发式(待人工复核)	动态拼类名❓	analysis-panel
+apps/desktop/components/research/analysis-panel.tsx:176	var(--color-pos)	常量/注释?	TSX-var	?	启发式(待人工复核)	常量/注释?❓	analysis-panel
+apps/desktop/components/research/analysis-panel.tsx:212	var(--color-pos)	常量/注释?	TSX-var	方向?	启发式(待人工复核)	常量/注释?❓	analysis-panel
+apps/desktop/components/research/backtest-result-panel.tsx:36	text-pos	动态拼类名	TSX-class	方向?	启发式(待人工复核)	动态拼类名❓	backtest-result-panel
+apps/desktop/components/research/backtest-result-panel.tsx:37	text-pos	动态拼类名	TSX-class	方向?	启发式(待人工复核)	动态拼类名❓	backtest-result-panel
+apps/desktop/components/research/cards/alpha-strategy-card.tsx:55	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	alpha-strategy-card
+apps/desktop/components/research/cards/alpha-strategy-card.tsx:64	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	alpha-strategy-card
+apps/desktop/components/research/cards/factory-template-card.tsx:32	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	factory-template-card
+apps/desktop/components/research/cards/factory-template-card.tsx:59	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	factory-template-card
+apps/desktop/components/research/cards/factory-template-card.tsx:66	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	factory-template-card
+apps/desktop/components/research/cards/qd-strategy-card.tsx:148	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	qd-strategy-card
+apps/desktop/components/research/cards/qd-strategy-card.tsx:88	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	qd-strategy-card
+apps/desktop/components/research/cards/tuning-result-card.tsx:13	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	tuning-result-card
+apps/desktop/components/research/cards/tuning-result-card.tsx:27	bg-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	tuning-result-card
+apps/desktop/components/research/desk-page.tsx:244	text-neg	赋值点	TSX-class	判定?	启发式(待人工复核)	活	desk-page
+apps/desktop/components/research/desk-page.tsx:261	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	desk-page
+apps/desktop/components/research/episode-drawer.tsx:25	border-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	episode-drawer
+apps/desktop/components/research/episode-drawer.tsx:31	border-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	episode-drawer
+apps/desktop/components/research/episode-drawer.tsx:54	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	episode-drawer
+apps/desktop/components/research/episode-drawer.tsx:55	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	episode-drawer
+apps/desktop/components/research/evidence-report-page.tsx:203	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	evidence-report-page
+apps/desktop/components/research/forecast-eval-card.tsx:97	var(--color-pos)	赋值点	TSX-var	?	启发式(待人工复核)	活	forecast-eval-card
+apps/desktop/components/research/forecast-eval-card.tsx:99	var(--color-neg)	赋值点	TSX-var	?	启发式(待人工复核)	活	forecast-eval-card
+apps/desktop/components/research/memory-surface-page.tsx:111	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	memory-surface-page
+apps/desktop/components/research/memory-surface-page.tsx:198	border-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	memory-surface-page
+apps/desktop/components/research/memory-surface-page.tsx:199	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	memory-surface-page
+apps/desktop/components/research/memory-surface-page.tsx:331	bg-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	memory-surface-page
+apps/desktop/components/research/memory-surface-page.tsx:98	bg-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	memory-surface-page
+apps/desktop/components/research/missions-detail-view.tsx:234	border-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	missions-detail-view
+apps/desktop/components/research/missions-detail-view.tsx:234	var(--color-pos)	赋值点	TSX-var	?	启发式(待人工复核)	活	missions-detail-view
+apps/desktop/components/research/missions-list-view.tsx:102	border-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	missions-list-view
+apps/desktop/components/research/missions-parts.tsx:251	text-neg	赋值点	TSX-class	判定?	启发式(待人工复核)	活	missions-parts
+apps/desktop/components/research/missions-parts.tsx:300	border-pos	常量/注释?	TSX-class	判定?	启发式(待人工复核)	常量/注释?❓	missions-parts
+apps/desktop/components/research/missions-parts.tsx:303	text-pos	赋值点	TSX-class	判定?	启发式(待人工复核)	活	missions-parts
+apps/desktop/components/research/missions-parts.tsx:90	text-pos	常量/注释?	TSX-class	判定?	启发式(待人工复核)	常量/注释?❓	missions-parts
+apps/desktop/components/research/pa-panel.tsx:475	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	pa-panel
+apps/desktop/components/research/pa-panel.tsx:537	border-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	pa-panel
+apps/desktop/components/research/pa-panel.tsx:538	border-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	pa-panel
+apps/desktop/components/research/pa-panel.tsx:544	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	pa-panel
+apps/desktop/components/research/qevolve-page.tsx:26	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	qevolve-page
+apps/desktop/components/research/question-surface.tsx:591	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	question-surface
+apps/desktop/components/research/question-surface.tsx:737	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	question-surface
+apps/desktop/components/research/return-report-card.tsx:119	var(--color-pos)	赋值点	TSX-var	?	启发式(待人工复核)	活	return-report-card
+apps/desktop/components/research/rsch-page.tsx:111	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	rsch-page
+apps/desktop/components/research/rsch-page.tsx:136	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	rsch-page
+apps/desktop/components/research/rsch-page.tsx:145	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	rsch-page
+apps/desktop/components/research/rsch-page.tsx:153	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	rsch-page
+apps/desktop/components/research/rsch-page.tsx:85	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	rsch-page
+apps/desktop/components/research/rsch-page.tsx:86	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	rsch-page
+apps/desktop/components/research/strategy-detail-view.tsx:82	border-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	strategy-detail-view
+apps/desktop/components/research/strategy-entry-view.tsx:28	border-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	strategy-entry-view
+apps/desktop/components/research/strategy-parts.tsx:33	border-pos	标签映射	TSX-class	?	启发式(待人工复核)	标签映射❓	strategy-parts
+apps/desktop/components/research/strategy-parts.tsx:75	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	strategy-parts
+apps/desktop/components/research/strategy-replay-view.tsx:114	bg-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	strategy-replay-view
+apps/desktop/components/research/strategy-replay-view.tsx:140	border-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	strategy-replay-view
+apps/desktop/components/research/strategy-replay-view.tsx:252	text-neg	赋值点	TSX-class	方向?	启发式(待人工复核)	活	strategy-replay-view
+apps/desktop/components/research/strategy-replay-view.tsx:275	border-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	strategy-replay-view
+apps/desktop/components/research/strategy-replay-view.tsx:299	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	strategy-replay-view
+apps/desktop/components/research/strategy-replay-view.tsx:365	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	strategy-replay-view
+apps/desktop/components/research/strategy-replay-view.tsx:375	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	strategy-replay-view
+apps/desktop/components/research/strategy-replay-view.tsx:414	bg-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	strategy-replay-view
+apps/desktop/components/research/strategy-replay-view.tsx:418	bg-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	strategy-replay-view
+apps/desktop/components/research/strategy-workspace.tsx:142	border-neg-soft	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	strategy-workspace
+apps/desktop/components/research/strategy-workspace.tsx:148	bg-neg	赋值点	TSX-class	方向?	启发式(待人工复核)	活	strategy-workspace
+apps/desktop/components/research/strategy-workspace.tsx:149	bg-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	strategy-workspace
+apps/desktop/components/research/strategy-workspace.tsx:182	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	strategy-workspace
+apps/desktop/components/research/strategy-workspace.tsx:187	text-neg	赋值点	TSX-class	方向?	启发式(待人工复核)	活	strategy-workspace
+apps/desktop/components/research/strategy-workspace.tsx:227	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	strategy-workspace
+apps/desktop/components/research/strategy-workspace.tsx:236	text-neg	赋值点	TSX-class	判定?	启发式(待人工复核)	活	strategy-workspace
+apps/desktop/components/research/thesis-scorecard.tsx:16	text-pos-soft	标签映射	TSX-class	?	启发式(待人工复核)	标签映射❓	thesis-scorecard
+apps/desktop/components/research/thesis-scorecard.tsx:17	text-pos-soft	标签映射	TSX-class	?	启发式(待人工复核)	标签映射❓	thesis-scorecard
+apps/desktop/components/research/thesis-scorecard.tsx:20	text-neg	标签映射	TSX-class	?	启发式(待人工复核)	标签映射❓	thesis-scorecard
+apps/desktop/components/research/thesis-scorecard.tsx:21	text-neg	标签映射	TSX-class	?	启发式(待人工复核)	标签映射❓	thesis-scorecard
+apps/desktop/components/research/thesis-scorecard.tsx:26	text-pos-soft	标签映射	TSX-class	?	启发式(待人工复核)	标签映射❓	thesis-scorecard
+apps/desktop/components/research/thesis-scorecard.tsx:27	text-pos-soft	标签映射	TSX-class	?	启发式(待人工复核)	标签映射❓	thesis-scorecard
+apps/desktop/components/research/thesis-scorecard.tsx:28	text-pos-soft	标签映射	TSX-class	?	启发式(待人工复核)	标签映射❓	thesis-scorecard
+apps/desktop/components/research/thesis-scorecard.tsx:32	text-neg	标签映射	TSX-class	?	启发式(待人工复核)	标签映射❓	thesis-scorecard
+apps/desktop/components/research/thesis-scorecard.tsx:34	text-neg	标签映射	TSX-class	判定?	启发式(待人工复核)	标签映射❓	thesis-scorecard
+apps/desktop/components/shared/chat-panel-page.tsx:15	bg-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	chat-panel-page
+apps/desktop/components/shared/chat-panel-page.tsx:19	bg-pos	常量/注释?	TSX-class	判定?	启发式(待人工复核)	常量/注释?❓	chat-panel-page
+apps/desktop/components/shared/symbol-panel-page.tsx:49	bg-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	symbol-panel-page
+apps/desktop/components/shared/symbol-panel-page.tsx:53	bg-pos	常量/注释?	TSX-class	判定?	启发式(待人工复核)	常量/注释?❓	symbol-panel-page
+apps/desktop/components/shared/symbol-panel-page.tsx:61	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	symbol-panel-page
+apps/desktop/components/strategy/launch-panel.tsx:114	border-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	launch-panel
+apps/desktop/components/strategy/launch-panel.tsx:40	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	launch-panel
+apps/desktop/components/strategy/shared-charts.tsx:251	bg-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	shared-charts
+apps/desktop/components/strategy/shared-charts.tsx:352	bg-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	shared-charts
+apps/desktop/components/strategy/shared-charts.tsx:356	bg-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	shared-charts
+apps/desktop/components/strategy/shared-charts.tsx:365	var(--color-pos)	动态拼类名	TSX-var	?	启发式(待人工复核)	动态拼类名❓	shared-charts
+apps/desktop/components/strategy/shared-charts.tsx:366	var(--color-neg)	动态拼类名	TSX-var	?	启发式(待人工复核)	动态拼类名❓	shared-charts
+apps/desktop/components/strategy/shared-charts.tsx:418	var(--color-pos)	常量/注释?	TSX-var	?	启发式(待人工复核)	常量/注释?❓	shared-charts
+apps/desktop/components/strategy/shared-charts.tsx:69	var(--color-pos)	常量/注释?	TSX-var	?	启发式(待人工复核)	常量/注释?❓	shared-charts
+apps/desktop/components/strategy/shared-charts.tsx:70	var(--color-neg)	常量/注释?	TSX-var	?	启发式(待人工复核)	常量/注释?❓	shared-charts
+apps/desktop/components/system/account-panel.tsx:115	border-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	account-panel
+apps/desktop/components/system/account-panel.tsx:124	border-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	account-panel
+apps/desktop/components/system/account-panel.tsx:178	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	account-panel
+apps/desktop/components/system/account-panel.tsx:207	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	account-panel
+apps/desktop/components/system/account-panel.tsx:222	border-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	account-panel
+apps/desktop/components/system/account-panel.tsx:92	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	account-panel
+apps/desktop/components/system/chat-sessions-page.tsx:58	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	chat-sessions-page
+apps/desktop/components/system/dash-page.tsx:108	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	dash-page
+apps/desktop/components/system/dash-page.tsx:114	text-neg	常量/注释?	TSX-class	判定?	启发式(待人工复核)	常量/注释?❓	dash-page
+apps/desktop/components/system/dash-page.tsx:125	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	dash-page
+apps/desktop/components/system/dash-page.tsx:130	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	dash-page
+apps/desktop/components/system/dash-page.tsx:164	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	dash-page
+apps/desktop/components/system/dash-page.tsx:165	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	dash-page
+apps/desktop/components/system/dash-page.tsx:197	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	dash-page
+apps/desktop/components/system/dash-page.tsx:212	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	dash-page
+apps/desktop/components/system/healthcheck-panel.tsx:103	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	healthcheck-panel
+apps/desktop/components/system/intelligence-alerts-panel.tsx:26	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	intelligence-alerts-panel
+apps/desktop/components/system/kill-switch-panel.tsx:103	border-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	kill-switch-panel
+apps/desktop/components/system/kill-switch-panel.tsx:120	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	kill-switch-panel
+apps/desktop/components/system/kill-switch-panel.tsx:137	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	kill-switch-panel
+apps/desktop/components/system/kill-switch-panel.tsx:152	border-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	kill-switch-panel
+apps/desktop/components/system/kill-switch-panel.tsx:167	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	kill-switch-panel
+apps/desktop/components/system/kill-switch-panel.tsx:204	border-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	kill-switch-panel
+apps/desktop/components/system/kill-switch-panel.tsx:78	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	kill-switch-panel
+apps/desktop/components/system/kill-switch-panel.tsx:91	border-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	kill-switch-panel
+apps/desktop/components/system/live-engine-control-panel.tsx:121	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	live-engine-control-panel
+apps/desktop/components/system/live-engine-control-panel.tsx:169	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	live-engine-control-panel
+apps/desktop/components/system/live-engine-control-panel.tsx:184	border-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	live-engine-control-panel
+apps/desktop/components/system/live-engine-control-panel.tsx:200	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	live-engine-control-panel
+apps/desktop/components/system/live-engine-control-panel.tsx:295	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	live-engine-control-panel
+apps/desktop/components/system/live-engine-control-panel.tsx:310	border-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	live-engine-control-panel
+apps/desktop/components/system/live-engine-control-panel.tsx:86	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	live-engine-control-panel
+apps/desktop/components/system/live-engine-control-panel.tsx:92	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	live-engine-control-panel
+apps/desktop/components/system/live-trading-status-panel.tsx:100	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	live-trading-status-panel
+apps/desktop/components/system/live-trading-status-panel.tsx:110	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	live-trading-status-panel
+apps/desktop/components/system/live-trading-status-panel.tsx:158	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	live-trading-status-panel
+apps/desktop/components/system/live-trading-status-panel.tsx:39	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	live-trading-status-panel
+apps/desktop/components/system/live-trading-status-panel.tsx:41	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	live-trading-status-panel
+apps/desktop/components/system/live-trading-status-panel.tsx:45	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	live-trading-status-panel
+apps/desktop/components/system/live-trading-status-panel.tsx:47	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	live-trading-status-panel
+apps/desktop/components/system/live-trading-status-panel.tsx:51	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	live-trading-status-panel
+apps/desktop/components/system/marketplace-page.tsx:49	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	marketplace-page
+apps/desktop/components/system/marketplace-page.tsx:67	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	marketplace-page
+apps/desktop/components/system/marketplace-page.tsx:68	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	marketplace-page
+apps/desktop/components/system/mcp-page.tsx:49	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	mcp-page
+apps/desktop/components/system/mcp-page.tsx:51	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	mcp-page
+apps/desktop/components/system/mcp-page.tsx:73	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	mcp-page
+apps/desktop/components/system/mcp-tools-page.tsx:55	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	mcp-tools-page
+apps/desktop/components/system/memory-page.tsx:29	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	memory-page
+apps/desktop/components/system/memory-page.tsx:39	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	memory-page
+apps/desktop/components/system/notifications-page.tsx:168	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	notifications-page
+apps/desktop/components/system/notifications-page.tsx:189	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	notifications-page
+apps/desktop/components/system/notifications-page.tsx:314	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	notifications-page
+apps/desktop/components/system/public-key-panel.tsx:43	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	public-key-panel
+apps/desktop/components/system/runner-status-panel.tsx:23	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	runner-status-panel
+apps/desktop/components/system/runner-status-panel.tsx:44	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	runner-status-panel
+apps/desktop/components/tactical/kol-signal-feed.tsx:88	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	kol-signal-feed
+apps/desktop/components/tactical/whale-transfer-feed.tsx:119	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	whale-transfer-feed
+apps/desktop/components/tactical/whale-transfer-feed.tsx:123	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	whale-transfer-feed
+apps/desktop/components/tactical/whale-transfer-feed.tsx:169	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	whale-transfer-feed
+apps/desktop/components/tactical/whale-transfer-feed.tsx:177	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	whale-transfer-feed
+apps/desktop/components/tactical/whale-transfer-feed.tsx:184	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	whale-transfer-feed
+apps/desktop/components/tactical/whale-transfer-feed.tsx:186	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	whale-transfer-feed
+apps/desktop/components/trade/ai-grid-config.tsx:102	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	ai-grid-config
+apps/desktop/components/trade/ai-grid-config.tsx:80	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	ai-grid-config
+apps/desktop/components/trade/ai-grid-config.tsx:84	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	ai-grid-config
+apps/desktop/components/trade/arb-panel.tsx:112	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	arb-panel
+apps/desktop/components/trade/arb-panel.tsx:119	bg-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	arb-panel
+apps/desktop/components/trade/arb-panel.tsx:151	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	arb-panel
+apps/desktop/components/trade/backtests-page.tsx:518	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	backtests-page
+apps/desktop/components/trade/backtests-page.tsx:575	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	backtests-page
+apps/desktop/components/trade/backtests-page.tsx:577	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	backtests-page
+apps/desktop/components/trade/copy-trade-panel.tsx:50	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	copy-trade-panel
+apps/desktop/components/trade/dex-trading-page.tsx:101	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	dex-trading-page
+apps/desktop/components/trade/dex-trading-page.tsx:61	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	dex-trading-page
+apps/desktop/components/trade/draw-order-tool.tsx:71	var(--color-pos)	常量/注释?	TSX-var	判定?	启发式(待人工复核)	常量/注释?❓	draw-order-tool
+apps/desktop/components/trade/grid-control-panel.tsx:123	border-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	grid-control-panel
+apps/desktop/components/trade/grid-control-panel.tsx:139	text-neg	赋值点	TSX-class	判定?	启发式(待人工复核)	活	grid-control-panel
+apps/desktop/components/trade/grid-control-panel.tsx:149	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	grid-control-panel
+apps/desktop/components/trade/grid-page.tsx:130	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	grid-page
+apps/desktop/components/trade/grid-page.tsx:147	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	grid-page
+apps/desktop/components/trade/grid-page.tsx:153	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	grid-page
+apps/desktop/components/trade/grid-page.tsx:162	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	grid-page
+apps/desktop/components/trade/grid-page.tsx:89	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	grid-page
+apps/desktop/components/trade/optimizations-auto-panel.tsx:107	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	optimizations-auto-panel
+apps/desktop/components/trade/optimizations-auto-panel.tsx:135	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	optimizations-auto-panel
+apps/desktop/components/trade/optimizations-page.tsx:106	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	optimizations-page
+apps/desktop/components/trade/optimizations-page.tsx:94	text-pos	常量/注释?	TSX-class	判定?	启发式(待人工复核)	常量/注释?❓	optimizations-page
+apps/desktop/components/trade/paper-accounts-account-id-equity-history.tsx:104	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	paper-accounts-account-id-equity-history
+apps/desktop/components/trade/paper-accounts-account-id-equity-history.tsx:105	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	paper-accounts-account-id-equity-history
+apps/desktop/components/trade/paper-accounts-account-id.tsx:114	text-pos	动态拼类名	TSX-class	方向?	启发式(待人工复核)	动态拼类名❓	paper-accounts-account-id
+apps/desktop/components/trade/paper-accounts-account-id.tsx:115	text-pos	动态拼类名	TSX-class	方向?	启发式(待人工复核)	动态拼类名❓	paper-accounts-account-id
+apps/desktop/components/trade/paper-accounts-account-id.tsx:120	text-neg	动态拼类名	TSX-class	?	启发式(待人工复核)	动态拼类名❓	paper-accounts-account-id
+apps/desktop/components/trade/paper-accounts-account-id.tsx:98	border-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	paper-accounts-account-id
+apps/desktop/components/trade/paper-accounts.tsx:132	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	paper-accounts
+apps/desktop/components/trade/paper-accounts.tsx:133	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	paper-accounts
+apps/desktop/components/trade/paper-accounts.tsx:139	border-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	paper-accounts
+apps/desktop/components/trade/paper-accounts.tsx:78	text-pos	动态拼类名	TSX-class	方向?	启发式(待人工复核)	动态拼类名❓	paper-accounts
+apps/desktop/components/trade/paper-fills.tsx:62	text-pos	动态拼类名	TSX-class	方向?	启发式(待人工复核)	动态拼类名❓	paper-fills
+apps/desktop/components/trade/paper-fills.tsx:63	text-neg	动态拼类名	TSX-class	?	启发式(待人工复核)	动态拼类名❓	paper-fills
+apps/desktop/components/trade/paper-fills.tsx:87	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	paper-fills
+apps/desktop/components/trade/paper-fills.tsx:88	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	paper-fills
+apps/desktop/components/trade/paper-orders.tsx:148	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	paper-orders
+apps/desktop/components/trade/paper-orders.tsx:174	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	paper-orders
+apps/desktop/components/trade/paper-orders.tsx:175	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	paper-orders
+apps/desktop/components/trade/paper-orders.tsx:193	border-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	paper-orders
+apps/desktop/components/trade/paper-page.tsx:195	text-pos	动态拼类名	TSX-class	方向?	启发式(待人工复核)	动态拼类名❓	paper-page
+apps/desktop/components/trade/paper-page.tsx:196	text-pos	动态拼类名	TSX-class	方向?	启发式(待人工复核)	动态拼类名❓	paper-page
+apps/desktop/components/trade/paper-page.tsx:222	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	paper-page
+apps/desktop/components/trade/paper-page.tsx:223	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	paper-page
+apps/desktop/components/trade/paper-page.tsx:249	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	paper-page
+apps/desktop/components/trade/paper-page.tsx:250	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	paper-page
+apps/desktop/components/trade/paper-page.tsx:262	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	paper-page
+apps/desktop/components/trade/paper-pnl.tsx:20	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	paper-pnl
+apps/desktop/components/trade/paper-pnl.tsx:46	text-pos	动态拼类名	TSX-class	方向?	启发式(待人工复核)	动态拼类名❓	paper-pnl
+apps/desktop/components/trade/paper-pnl.tsx:68	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	paper-pnl
+apps/desktop/components/trade/paper-positions.tsx:33	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	paper-positions
+apps/desktop/components/trade/paper-positions.tsx:73	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	paper-positions
+apps/desktop/components/trade/paper-positions.tsx:74	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	paper-positions
+apps/desktop/components/trade/paper-positions.tsx:90	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	paper-positions
+apps/desktop/components/trade/paper-settings.tsx:133	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	paper-settings
+apps/desktop/components/trade/paper-settings.tsx:134	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	paper-settings
+apps/desktop/components/trade/pos-page.tsx:31	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	pos-page
+apps/desktop/components/trade/pos-page.tsx:36	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	pos-page
+apps/desktop/components/trade/pos-page.tsx:40	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	pos-page
+apps/desktop/components/trade/positions-table.tsx:33	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	positions-table
+apps/desktop/components/trade/positions-table.tsx:68	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	positions-table
+apps/desktop/components/trade/risk-page.tsx:107	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	risk-page
+apps/desktop/components/trade/risk-page.tsx:138	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	risk-page
+apps/desktop/components/trade/risk-page.tsx:143	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	risk-page
+apps/desktop/components/trade/risk-page.tsx:147	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	risk-page
+apps/desktop/components/trade/risk-page.tsx:67	text-neg	常量/注释?	TSX-class	判定?	启发式(待人工复核)	常量/注释?❓	risk-page
+apps/desktop/components/trade/risk-page.tsx:69	text-pos	动态拼类名	TSX-class	?	启发式(待人工复核)	动态拼类名❓	risk-page
+apps/desktop/components/trade/risk-page.tsx:70	text-pos	动态拼类名	TSX-class	方向?	启发式(待人工复核)	动态拼类名❓	risk-page
+apps/desktop/components/trade/risk-page.tsx:71	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	risk-page
+apps/desktop/components/trade/tof-page.tsx:53	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	tof-page
+apps/desktop/components/trade/tof-page.tsx:61	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	tof-page
+apps/desktop/components/trade/trd-page.tsx:173	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	trd-page
+apps/desktop/components/trade/trd-page.tsx:193	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	trd-page
+apps/desktop/components/trade/trd-page.tsx:445	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	trd-page
+apps/desktop/components/trade/trd-page.tsx:448	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	trd-page
+apps/desktop/components/trade/trd-page.tsx:470	bg-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	trd-page
+apps/desktop/components/trade/trd-page.tsx:476	bg-neg	赋值点	TSX-class	方向?	启发式(待人工复核)	活	trd-page
+apps/desktop/components/trade/trd-page.tsx:565	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	trd-page
+apps/desktop/components/trade/trd-page.tsx:627	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	trd-page
+apps/desktop/components/trade/trd-page.tsx:639	text-neg	赋值点	TSX-class	方向?	启发式(待人工复核)	活	trd-page
+apps/desktop/components/trade/trd-page.tsx:653	bg-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	trd-page
+apps/desktop/components/trade/trd-page.tsx:674	bg-pos	赋值点	TSX-class	装饰?	启发式(待人工复核)	活	trd-page
+apps/desktop/components/trade/trd-page.tsx:699	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	trd-page
+apps/desktop/components/trade/trd-page.tsx:705	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	trd-page
+apps/desktop/components/trade/trd-page.tsx:707	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	trd-page
+apps/desktop/components/trade/trd-page.tsx:733	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	trd-page
+apps/desktop/components/trade/trd-page.tsx:769	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	trd-page
+apps/desktop/components/trade/trd-page.tsx:770	text-neg	动态拼类名	TSX-class	?	启发式(待人工复核)	动态拼类名❓	trd-page
+apps/desktop/components/trading/position-table-embedded.tsx:110	text-pos	动态拼类名	TSX-class	方向?	启发式(待人工复核)	动态拼类名❓	position-table-embedded
+apps/desktop/components/trading/position-table-embedded.tsx:138	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	position-table-embedded
+apps/desktop/components/ui/badge.tsx:15	bg-pos	标签映射	TSX-class	?	启发式(待人工复核)	标签映射❓	badge
+apps/desktop/components/watch/agg-page.tsx:78	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	agg-page
+apps/desktop/components/watch/agg-page.tsx:88	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	agg-page
+apps/desktop/components/watch/agg-page.tsx:98	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	agg-page
+apps/desktop/components/watch/agg-page.tsx:99	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	agg-page
+apps/desktop/components/watch/cvd-page.tsx:33	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	cvd-page
+apps/desktop/components/watch/cvd-page.tsx:34	text-pos	动态拼类名	TSX-class	?	启发式(待人工复核)	动态拼类名❓	cvd-page
+apps/desktop/components/watch/cvd-page.tsx:35	text-pos	动态拼类名	TSX-class	?	启发式(待人工复核)	动态拼类名❓	cvd-page
+apps/desktop/components/watch/cvd-page.tsx:36	text-pos	动态拼类名	TSX-class	?	启发式(待人工复核)	动态拼类名❓	cvd-page
+apps/desktop/components/watch/favorites-page.tsx:53	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	favorites-page
+apps/desktop/components/watch/gex-page.tsx:96	text-pos	动态拼类名	TSX-class	?	启发式(待人工复核)	动态拼类名❓	gex-page
+apps/desktop/components/watch/gex-page.tsx:97	text-neg	动态拼类名	TSX-class	?	启发式(待人工复核)	动态拼类名❓	gex-page
+apps/desktop/components/watch/hyperliquid-address-details-page.tsx:147	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	hyperliquid-address-details-page
+apps/desktop/components/watch/hyperliquid-address-details-page.tsx:156	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	hyperliquid-address-details-page
+apps/desktop/components/watch/hyperliquid-address-details-page.tsx:181	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	hyperliquid-address-details-page
+apps/desktop/components/watch/hyperliquid-address-details-page.tsx:204	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	hyperliquid-address-details-page
+apps/desktop/components/watch/hyperliquid-addresses-screen-page.tsx:163	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	hyperliquid-addresses-screen-page
+apps/desktop/components/watch/hyperliquid-addresses-screen-page.tsx:174	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	hyperliquid-addresses-screen-page
+apps/desktop/components/watch/hyperliquid-addresses-screen-page.tsx:175	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	hyperliquid-addresses-screen-page
+apps/desktop/components/watch/hyperliquid-page.tsx:86	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	hyperliquid-page
+apps/desktop/components/watch/hyperliquid-page.tsx:97	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	hyperliquid-page
+apps/desktop/components/watch/intelligence-market-pulse-history-page.tsx:30	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	intelligence-market-pulse-history-page
+apps/desktop/components/watch/intelligence-market-pulse-history-page.tsx:55	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	intelligence-market-pulse-history-page
+apps/desktop/components/watch/intelligence-market-pulse-history-page.tsx:56	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	intelligence-market-pulse-history-page
+apps/desktop/components/watch/intelligence-news-summary-page.tsx:26	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	intelligence-news-summary-page
+apps/desktop/components/watch/intelligence-news-summary-page.tsx:27	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	intelligence-news-summary-page
+apps/desktop/components/watch/intelligence-news-summary-page.tsx:78	text-pos	动态拼类名	TSX-class	?	启发式(待人工复核)	动态拼类名❓	intelligence-news-summary-page
+apps/desktop/components/watch/intelligence-news-summary-page.tsx:79	text-neg	动态拼类名	TSX-class	?	启发式(待人工复核)	动态拼类名❓	intelligence-news-summary-page
+apps/desktop/components/watch/intelligence-news-token-signals-page.tsx:102	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	intelligence-news-token-signals-page
+apps/desktop/components/watch/intelligence-news-token-signals-page.tsx:27	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	intelligence-news-token-signals-page
+apps/desktop/components/watch/intelligence-news-token-signals-page.tsx:28	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	intelligence-news-token-signals-page
+apps/desktop/components/watch/intelligence-news-token-signals-page.tsx:34	bg-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	intelligence-news-token-signals-page
+apps/desktop/components/watch/intelligence-news-token-signals-page.tsx:35	bg-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	intelligence-news-token-signals-page
+apps/desktop/components/watch/intelligence-social-confirmation-page.tsx:29	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	intelligence-social-confirmation-page
+apps/desktop/components/watch/intelligence-social-confirmation-page.tsx:30	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	intelligence-social-confirmation-page
+apps/desktop/components/watch/intelligence-social-confirmation-page.tsx:35	bg-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	intelligence-social-confirmation-page
+apps/desktop/components/watch/intelligence-social-confirmation-page.tsx:36	bg-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	intelligence-social-confirmation-page
+apps/desktop/components/watch/intelligence-social-confirmation-page.tsx:42	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	intelligence-social-confirmation-page
+apps/desktop/components/watch/intelligence-social-confirmation-page.tsx:85	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	intelligence-social-confirmation-page
+apps/desktop/components/watch/intelligence-social-confirmation-page.tsx:87	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	intelligence-social-confirmation-page
+apps/desktop/components/watch/intelligence-social-sentiment-page.tsx:19	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	intelligence-social-sentiment-page
+apps/desktop/components/watch/intelligence-social-sentiment-page.tsx:20	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	intelligence-social-sentiment-page
+apps/desktop/components/watch/intelligence-social-sentiment-page.tsx:26	bg-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	intelligence-social-sentiment-page
+apps/desktop/components/watch/intelligence-social-sentiment-page.tsx:27	bg-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	intelligence-social-sentiment-page
+apps/desktop/components/watch/intelligence-social-trending-page.tsx:31	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	intelligence-social-trending-page
+apps/desktop/components/watch/kfi-page.tsx:62	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	kfi-page
+apps/desktop/components/watch/kfi-page.tsx:63	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	kfi-page
+apps/desktop/components/watch/kfi-page.tsx:64	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	kfi-page
+apps/desktop/components/watch/kfi-page.tsx:74	text-pos	动态拼类名	TSX-class	?	启发式(待人工复核)	动态拼类名❓	kfi-page
+apps/desktop/components/watch/liqmap-page.tsx:101	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	liqmap-page
+apps/desktop/components/watch/liqratio-page.tsx:54	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	liqratio-page
+apps/desktop/components/watch/liqratio-page.tsx:56	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	liqratio-page
+apps/desktop/components/watch/liqratio-page.tsx:62	bg-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	liqratio-page
+apps/desktop/components/watch/liqratio-page.tsx:63	bg-neg	赋值点	TSX-class	方向?	启发式(待人工复核)	活	liqratio-page
+apps/desktop/components/watch/liquidations-page.tsx:89	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	liquidations-page
+apps/desktop/components/watch/liquidations-page.tsx:90	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	liquidations-page
+apps/desktop/components/watch/mk-page.tsx:121	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	mk-page
+apps/desktop/components/watch/mk-page.tsx:122	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	mk-page
+apps/desktop/components/watch/mk-page.tsx:124	text-pos	动态拼类名	TSX-class	方向?	启发式(待人工复核)	动态拼类名❓	mk-page
+apps/desktop/components/watch/mk-page.tsx:96	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	mk-page
+apps/desktop/components/watch/onchain-metric-page.tsx:29	text-pos	标签映射	TSX-class	?	启发式(待人工复核)	标签映射❓	onchain-metric-page
+apps/desktop/components/watch/onchain-metrics-page.tsx:109	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	onchain-metrics-page
+apps/desktop/components/watch/onchain-metrics-page.tsx:114	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	onchain-metrics-page
+apps/desktop/components/watch/onchain-metrics-page.tsx:93	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	onchain-metrics-page
+apps/desktop/components/watch/onchain-page.tsx:103	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	onchain-page
+apps/desktop/components/watch/onchain-page.tsx:119	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	onchain-page
+apps/desktop/components/watch/onchain-page.tsx:124	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	onchain-page
+apps/desktop/components/watch/parts/heatmap-bar.tsx:46	text-neg	赋值点	TSX-class	方向?	启发式(待人工复核)	活	heatmap-bar
+apps/desktop/components/watch/parts/heatmap-bar.tsx:47	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	heatmap-bar
+apps/desktop/components/watch/parts/heatmap-bar.tsx:52	bg-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	heatmap-bar
+apps/desktop/components/watch/parts/heatmap-bar.tsx:56	bg-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	heatmap-bar
+apps/desktop/components/watch/parts/metric-block.tsx:46	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	metric-block
+apps/desktop/components/watch/parts/pair-card.tsx:55	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	pair-card
+apps/desktop/components/watch/poly-page.tsx:141	bg-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	poly-page
+apps/desktop/components/watch/poly-page.tsx:142	bg-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	poly-page
+apps/desktop/components/watch/poly-page.tsx:145	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	poly-page
+apps/desktop/components/watch/poly-page.tsx:146	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	poly-page
+apps/desktop/components/watch/polymarket-pages.tsx:346	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	polymarket-pages
+apps/desktop/components/watch/polymarket-pages.tsx:392	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	polymarket-pages
+apps/desktop/components/watch/polymarket-pages.tsx:399	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	polymarket-pages
+apps/desktop/components/watch/polymarket-pages.tsx:43	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	polymarket-pages
+apps/desktop/components/watch/polymarket-pages.tsx:435	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	polymarket-pages
+apps/desktop/components/watch/polymarket-pages.tsx:440	bg-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	polymarket-pages
+apps/desktop/components/watch/polymarket-pages.tsx:486	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	polymarket-pages
+apps/desktop/components/watch/polymarket-pages.tsx:490	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	polymarket-pages
+apps/desktop/components/watch/polymarket-pages.tsx:552	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	polymarket-pages
+apps/desktop/components/watch/polymarket-pages.tsx:651	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	polymarket-pages
+apps/desktop/components/watch/polymarket-pages.tsx:689	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	polymarket-pages
+apps/desktop/components/watch/polymarket-pages.tsx:737	text-pos	动态拼类名	TSX-class	?	启发式(待人工复核)	动态拼类名❓	polymarket-pages
+apps/desktop/components/watch/polymarket-pages.tsx:738	text-pos	动态拼类名	TSX-class	?	启发式(待人工复核)	动态拼类名❓	polymarket-pages
+apps/desktop/components/watch/polymarket-pages.tsx:806	bg-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	polymarket-pages
+apps/desktop/components/watch/polymarket-pages.tsx:868	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	polymarket-pages
+apps/desktop/components/watch/polymarket-pages.tsx:902	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	polymarket-pages
+apps/desktop/components/watch/polymarket-pages.tsx:912	bg-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	polymarket-pages
+apps/desktop/components/watch/polymarket-pages.tsx:981	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	polymarket-pages
+apps/desktop/components/watch/regime-page.tsx:27	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	regime-page
+apps/desktop/components/watch/regime-page.tsx:44	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	regime-page
+apps/desktop/components/watch/smart_money-page.tsx:108	bg-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	smart_money-page
+apps/desktop/components/watch/smart_money-page.tsx:61	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	smart_money-page
+apps/desktop/components/watch/smart_money-page.tsx:66	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	smart_money-page
+apps/desktop/components/watch/smart_money-page.tsx:71	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	smart_money-page
+apps/desktop/components/watch/smart_money-page.tsx:79	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	smart_money-page
+apps/desktop/components/watch/smart_money-page.tsx:80	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	smart_money-page
+apps/desktop/components/watch/smart_money-page.tsx:99	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	smart_money-page
+apps/desktop/components/watch/tac-page.tsx:47	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	tac-page
+apps/desktop/components/watch/tac-page.tsx:49	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	tac-page
+apps/desktop/components/watch/tac-page.tsx:72	text-neg	动态拼类名	TSX-class	?	启发式(待人工复核)	动态拼类名❓	tac-page
+apps/desktop/components/watch/tac-page.tsx:73	text-pos	动态拼类名	TSX-class	?	启发式(待人工复核)	动态拼类名❓	tac-page
+apps/desktop/components/watch/us-radar-agents-node.tsx:13	bg-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	us-radar-agents-node
+apps/desktop/components/watch/us-radar-event-signals-page.tsx:131	bg-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-event-signals-page
+apps/desktop/components/watch/us-radar-event-signals-page.tsx:49	bg-pos	标签映射	TSX-class	?	启发式(待人工复核)	标签映射❓	us-radar-event-signals-page
+apps/desktop/components/watch/us-radar-market-overview-page.tsx:116	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-market-overview-page
+apps/desktop/components/watch/us-radar-market-overview-page.tsx:137	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-market-overview-page
+apps/desktop/components/watch/us-radar-market-overview-page.tsx:149	text-pos	赋值点	TSX-class	方向?	启发式(待人工复核)	活	us-radar-market-overview-page
+apps/desktop/components/watch/us-radar-market-overview-page.tsx:152	text-neg	赋值点	TSX-class	方向?	启发式(待人工复核)	活	us-radar-market-overview-page
+apps/desktop/components/watch/us-radar-market-overview-page.tsx:69	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-market-overview-page
+apps/desktop/components/watch/us-radar-market-overview-page.tsx:98	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	us-radar-market-overview-page
+apps/desktop/components/watch/us-radar-market-overview-page.tsx:99	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	us-radar-market-overview-page
+apps/desktop/components/watch/us-radar-page.tsx:131	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-page
+apps/desktop/components/watch/us-radar-page.tsx:42	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	us-radar-page
+apps/desktop/components/watch/us-radar-page.tsx:43	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	us-radar-page
+apps/desktop/components/watch/us-radar-providers-capabilities-page.tsx:126	bg-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	us-radar-providers-capabilities-page
+apps/desktop/components/watch/us-radar-providers-capabilities-page.tsx:128	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	us-radar-providers-capabilities-page
+apps/desktop/components/watch/us-radar-providers-capabilities-page.tsx:141	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-providers-capabilities-page
+apps/desktop/components/watch/us-radar-providers-capabilities-page.tsx:37	text-pos	标签映射	TSX-class	?	启发式(待人工复核)	标签映射❓	us-radar-providers-capabilities-page
+apps/desktop/components/watch/us-radar-providers-capabilities-page.tsx:38	text-pos	标签映射	TSX-class	?	启发式(待人工复核)	标签映射❓	us-radar-providers-capabilities-page
+apps/desktop/components/watch/us-radar-providers-capabilities-page.tsx:39	text-pos	标签映射	TSX-class	?	启发式(待人工复核)	标签映射❓	us-radar-providers-capabilities-page
+apps/desktop/components/watch/us-radar-providers-capabilities-page.tsx:42	text-neg	标签映射	TSX-class	?	启发式(待人工复核)	标签映射❓	us-radar-providers-capabilities-page
+apps/desktop/components/watch/us-radar-providers-readiness-page.tsx:27	text-pos	标签映射	TSX-class	?	启发式(待人工复核)	标签映射❓	us-radar-providers-readiness-page
+apps/desktop/components/watch/us-radar-providers-readiness-page.tsx:72	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	us-radar-providers-readiness-page
+apps/desktop/components/watch/us-radar-providers-readiness-page.tsx:86	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-providers-readiness-page
+apps/desktop/components/watch/us-radar-research-agents-readiness-page.tsx:109	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-research-agents-readiness-page
+apps/desktop/components/watch/us-radar-research-agents-readiness-page.tsx:122	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-research-agents-readiness-page
+apps/desktop/components/watch/us-radar-research-agents-readiness-page.tsx:33	bg-pos	标签映射	TSX-class	?	启发式(待人工复核)	标签映射❓	us-radar-research-agents-readiness-page
+apps/desktop/components/watch/us-radar-research-agents-readiness-page.tsx:78	text-pos	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	us-radar-research-agents-readiness-page
+apps/desktop/components/watch/us-radar-research-agents-readiness-page.tsx:80	text-neg	常量/注释?	TSX-class	?	启发式(待人工复核)	常量/注释?❓	us-radar-research-agents-readiness-page
+apps/desktop/components/watch/us-radar-scores-symbol-breakdown-page.tsx:118	bg-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-scores-symbol-breakdown-page
+apps/desktop/components/watch/us-radar-scores-symbol-breakdown-page.tsx:123	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-scores-symbol-breakdown-page
+apps/desktop/components/watch/us-radar-scores-symbol-breakdown-page.tsx:47	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	us-radar-scores-symbol-breakdown-page
+apps/desktop/components/watch/us-radar-scores-symbol-breakdown-page.tsx:48	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	us-radar-scores-symbol-breakdown-page
+apps/desktop/components/watch/us-radar-snapshot-page.tsx:117	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-snapshot-page
+apps/desktop/components/watch/us-radar-snapshot-page.tsx:36	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	us-radar-snapshot-page
+apps/desktop/components/watch/us-radar-snapshot-page.tsx:37	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	us-radar-snapshot-page
+apps/desktop/components/watch/us-radar-symbols-symbol-ai-console-page.tsx:178	text-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-symbols-symbol-ai-console-page
+apps/desktop/components/watch/us-radar-symbols-symbol-ai-console-page.tsx:199	bg-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-symbols-symbol-ai-console-page
+apps/desktop/components/watch/us-radar-symbols-symbol-ai-console-page.tsx:201	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-symbols-symbol-ai-console-page
+apps/desktop/components/watch/us-radar-symbols-symbol-ai-console-page.tsx:240	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-symbols-symbol-ai-console-page
+apps/desktop/components/watch/us-radar-symbols-symbol-ai-console-page.tsx:244	bg-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-symbols-symbol-ai-console-page
+apps/desktop/components/watch/us-radar-symbols-symbol-ai-console-page.tsx:69	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	us-radar-symbols-symbol-ai-console-page
+apps/desktop/components/watch/us-radar-symbols-symbol-ai-console-page.tsx:70	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	us-radar-symbols-symbol-ai-console-page
+apps/desktop/components/watch/us-radar-symbols-symbol-page.tsx:137	bg-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-symbols-symbol-page
+apps/desktop/components/watch/us-radar-symbols-symbol-page.tsx:139	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-symbols-symbol-page
+apps/desktop/components/watch/us-radar-symbols-symbol-page.tsx:152	bg-neg	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-symbols-symbol-page
+apps/desktop/components/watch/us-radar-symbols-symbol-page.tsx:49	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	us-radar-symbols-symbol-page
+apps/desktop/components/watch/us-radar-symbols-symbol-page.tsx:50	text-neg	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	us-radar-symbols-symbol-page
+apps/desktop/components/watch/us-radar-universe-page.tsx:88	text-pos	赋值点	TSX-class	?	启发式(待人工复核)	活	us-radar-universe-page
+apps/desktop/components/watch/vchart-page.tsx:109	text-pos	动态拼类名	TSX-class	?	启发式(待人工复核)	动态拼类名❓	vchart-page
+apps/desktop/lib/format.ts:47	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	format
+apps/desktop/lib/format.ts:48	text-pos	常量/注释?	TSX-class	方向?	启发式(待人工复核)	常量/注释?❓	format
+apps/desktop/lib/hooks/use-kt-tracks.ts:96	var(--color-pos)	标签映射	TSX-var	方向?	启发式(待人工复核)	标签映射❓	use-kt-tracks
+apps/desktop/lib/hooks/use-kt-tracks.ts:98	var(--color-neg)	标签映射	TSX-var	方向?	启发式(待人工复核)	标签映射❓	use-kt-tracks

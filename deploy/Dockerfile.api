@@ -1,0 +1,29 @@
+# SeleneQuant local-api — 云单机部署镜像
+# 构建: docker build -f deploy/Dockerfile.api -t selene-api .
+# 运行: 见 deploy/docker-compose.yml
+
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# 依赖层(独立拷贝利用构建缓存)
+COPY requirements.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 源码(packages + services)
+COPY packages/ /app/packages/
+COPY services/local-api/ /app/services/local-api/
+COPY scripts/ /app/scripts/
+
+# PYTHONPATH 等价 activate.bat 的包清单(Docker 固定树,无副本漂移问题)
+ENV PYTHONPATH="/app:/app/packages/shared-types:/app/packages/core:/app/packages/cli:/app/packages/strategy-engine:/app/packages/backtest-engine:/app/packages/market-data:/app/packages/agent-runtime:/app/packages/exchange-sdk:/app/packages/llm-adapter:/app/packages/paper-engine:/app/packages/risk-engine:/app/packages/security-gateway:/app/packages/storage:/app/packages/compat-layer:/app/packages/alpha-core:/app/packages/stock:/app/packages/ashare:/app/packages/pulse:/app/packages/tg-ingest:/app/packages/macrodata:/app/packages/decision-workflow:/app/packages/optimize:/app/packages/agentstudio:/app/packages/daily-cycle:/app/packages/renintel:/app/packages/market-analysis:/app/packages/factor-research:/app/packages/grid-engine:/app/services/local-api"
+
+# 数据目录(挂卷持久化: klines/derivatives/selenespace 主库都在这)
+RUN mkdir -p /app/services/local-api/data /root/.selenespace/data
+VOLUME ["/app/services/local-api/data", "/root/.selenespace/data"]
+
+WORKDIR /app/services/local-api
+EXPOSE 8088
+
+# billing 模式由 compose 注入 SELENE_BILLING_MODE/SELENE_JWT_SECRET;默认关闭 = 本地信任模型
+CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8088"]

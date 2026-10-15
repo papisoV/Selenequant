@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-label="SeleneQuant research session: a persistent question, numbered conclusions that cite prior ones and their evidence, and a stored conclusion recalled into the next call">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#05080d"/>
+      <stop offset="0.55" stop-color="#070c13"/>
+      <stop offset="1" stop-color="#0a1018"/>
+    </linearGradient>
+    <linearGradient id="topglow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#309cfb" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#309cfb" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#f7a07d" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#309cfb" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#309cfb" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#309cfb"/>
+    </marker>
+    <marker id="arrowwarm" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#f7a07d"/>
+    </marker>
+    <style>
+      .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+      .sans { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+      .lab  { font-family: "SFMono-Regular", Consolas, Menlo, monospace; font-size: 11.5px; letter-spacing: 1.6px; fill: #5b6673; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="560" fill="url(#bg)"/>
+  <g stroke="#101923" stroke-width="1">
+    <path d="M0 140 H1200 M0 280 H1200 M0 420 H1200"/>
+    <path d="M240 0 V560 M480 0 V560 M720 0 V560 M960 0 V560"/>
+  </g>
+  <ellipse cx="600" cy="210" rx="470" ry="185" fill="url(#halo)"/>
+  <rect x="0" y="0" width="1200" height="1.5" fill="url(#topglow)"/>
+
+  <!-- ================= window chrome ================= -->
+  <g>
+    <rect x="48" y="40" width="1104" height="480" rx="14" fill="#080d14" stroke="#18222e"/>
+    <rect x="48" y="40" width="1104" height="42" rx="14" fill="#0b111a"/>
+    <rect x="48" y="68" width="1104" height="14" fill="#0b111a"/>
+    <line x1="48" y1="82" x2="1152" y2="82" stroke="#18222e"/>
+    <circle cx="74" cy="61" r="5" fill="#2a3441"/>
+    <circle cx="92" cy="61" r="5" fill="#2a3441"/>
+    <circle cx="110" cy="61" r="5" fill="#2a3441"/>
+    <text x="140" y="66" class="mono" font-size="12.5" fill="#7b8592">selene · research session</text>
+    <g>
+      <rect x="1016" y="50" width="120" height="22" rx="11" fill="#101a24" stroke="#1d2937"/>
+      <circle cx="1031" cy="61" r="3.4" fill="#f7a07d"/>
+      <text x="1042" y="65" class="mono" font-size="10.5" letter-spacing="1" fill="#e18e6c">LOCAL · SQLITE</text>
+    </g>
+  </g>
+
+  <!-- ================= column labels ================= -->
+  <g class="lab">
+    <text x="96" y="122">QUESTION</text>
+    <text x="452" y="122">CONCLUSIONS · VERSIONED</text>
+    <text x="900" y="122">MEMORY</text>
+  </g>
+
+  <!-- ================= Question card ================= -->
+  <g>
+    <rect x="96" y="150" width="286" height="150" rx="11" fill="#0b121b" stroke="#1d2937"/>
+    <rect x="96" y="150" width="3.5" height="150" rx="1.75" fill="#f7a07d"/>
+    <text x="118" y="184" class="sans" font-size="17" font-weight="600" fill="#e9eff6">Why did BTC bounce?</text>
+    <text x="118" y="208" class="sans" font-size="13.5" fill="#8b95a2">The Sep 17 hike should have</text>
+    <text x="118" y="226" class="sans" font-size="13.5" fill="#8b95a2">been bearish.</text>
+    <g class="mono" font-size="11.5">
+      <rect x="118" y="252" width="66" height="22" rx="6" fill="#0f1a24" stroke="#1d2937"/>
+      <text x="130" y="267" fill="#7f8b98">open</text>
+      <rect x="192" y="252" width="104" height="22" rx="6" fill="#0f1a24" stroke="#1d2937"/>
+      <text x="204" y="267" fill="#7f8b98">2 revisions</text>
+    </g>
+  </g>
+
+  <!-- question -> v1 connector -->
+  <path d="M382 225 C 412 225, 412 205, 452 205" fill="none" stroke="#243040" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- ================= Revision v1 ================= -->
+  <g>
+    <rect x="452" y="160" width="360" height="90" rx="11" fill="#0b121b" stroke="#1d2937"/>
+    <rect x="452" y="160" width="3.5" height="90" rx="1.75" fill="#5b6673"/>
+    <text x="474" y="188" class="mono" font-size="11.5" fill="#7f8b98">v1 · 2026-09-18 07:25 · selene</text>
+    <text x="474" y="214" class="sans" font-size="14" fill="#c3ccd6">"The hike was already priced in.</text>
+    <text x="474" y="234" class="sans" font-size="14" fill="#c3ccd6">The landing cleared uncertainty."</text>
+  </g>
+
+  <!-- v1 -> v2 citation connector -->
+  <path d="M632 250 L632 288" fill="none" stroke="#f7a07d" stroke-width="1.8" marker-end="url(#arrowwarm)"/>
+  <g>
+    <rect x="646" y="260" width="96" height="22" rx="11" fill="#150d0a" stroke="#f7a07d" stroke-opacity="0.5"/>
+    <text x="658" y="275" class="sans" font-size="12" font-weight="600" fill="#f7a07d">cites v1</text>
+  </g>
+
+  <!-- ================= Revision v2 ================= -->
+  <g>
+    <rect x="452" y="288" width="360" height="96" rx="11" fill="#0c131c" stroke="#f7a07d" stroke-opacity="0.65"/>
+    <rect x="452" y="288" width="3.5" height="96" rx="1.75" fill="#f7a07d"/>
+    <text x="474" y="316" class="mono" font-size="11.5" fill="#e18e6c">v2 · 2026-09-18 07:27 · selene</text>
+    <text x="474" y="342" class="sans" font-size="14" fill="#e9eff6">"Building on v1, the bounce's</text>
+    <text x="474" y="362" class="sans" font-size="14" fill="#e9eff6">quality is doubtful."</text>
+  </g>
+
+  <!-- ================= evidence chips into v2 ================= -->
+  <g class="mono" font-size="11">
+    <rect x="452" y="404" width="168" height="26" rx="7" fill="#0e1a16" stroke="#1d2937"/>
+    <text x="466" y="421" fill="#7f8b98">ev-aa12269ea516</text>
+    <rect x="632" y="404" width="180" height="26" rx="7" fill="#0e1a16" stroke="#1d2937"/>
+    <text x="646" y="421" fill="#7f8b98">ev-d6345a1ac57d</text>
+  </g>
+  <path d="M520 404 C 520 388, 560 384, 600 380" fill="none" stroke="#243040" stroke-width="1.4"/>
+  <path d="M700 404 C 700 388, 690 384, 672 380" fill="none" stroke="#243040" stroke-width="1.4"/>
+  <text x="470" y="450" class="sans" font-size="12" fill="#5b6673">cited by this conclusion</text>
+
+  <!-- ================= Memory panel ================= -->
+  <g>
+    <rect x="892" y="150" width="212" height="280" rx="11" fill="#0a1219" stroke="#309cfb" stroke-opacity="0.45"/>
+    <circle cx="916" cy="182" r="5" fill="#309cfb"/>
+    <text x="932" y="187" class="sans" font-size="14" font-weight="600" fill="#cfe3ff">stored</text>
+    <text x="914" y="214" class="sans" font-size="12.5" fill="#8593a3">conclusion kept as</text>
+    <text x="914" y="232" class="sans" font-size="12.5" fill="#8593a3">a retrievable entry</text>
+    <line x1="914" y1="252" x2="1082" y2="252" stroke="#18222e"/>
+    <text x="914" y="308" class="sans" font-size="46" font-weight="700" fill="#309cfb">1×</text>
+    <text x="914" y="334" class="sans" font-size="12.5" fill="#8593a3">recalled by a later call</text>
+    <rect x="914" y="360" width="170" height="40" rx="8" fill="#0d1a26" stroke="#1d2937"/>
+    <text x="928" y="385" class="mono" font-size="11" fill="#7f8b98">q-e31df43a5161</text>
+  </g>
+
+  <!-- v2 -> memory -->
+  <path d="M812 336 C 850 336, 856 300, 892 300" fill="none" stroke="#309cfb" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- memory recalled into next call (dashed return) -->
+  <path d="M1000 430 C 1000 500, 300 508, 210 300" fill="none" stroke="#309cfb" stroke-width="1.4" stroke-dasharray="6 6" marker-end="url(#arrow)" opacity="0.9"/>
+  <g>
+    <rect x="470" y="482" width="290" height="26" rx="13" fill="#0b1620" stroke="#1d3a52"/>
+    <text x="484" y="499" class="sans" font-size="12.5" fill="#5fb0f5">recalled automatically · changes the next call</text>
+  </g>
+</svg>

@@ -1,0 +1,42 @@
+# KDJ Momentum Strategy
+# Momentum-based using KDJ indicator.
+
+id: template-kdj-momentum
+name: KDJ Momentum
+type: kdj_momentum
+description: >
+  KDJ indicator momentum strategy.
+  Uses J-line crossovers for entry signals.
+symbols:
+  - BTC/USDT
+interval: 1h
+parameters:
+  kdj_n: 9
+  kdj_m1: 3
+  kdj_m2: 3
+
+entry_rules:
+  long:
+    - indicator: kdj
+      params:
+        n: 9
+        m1: 3
+        m2: 3
+      operator: less_than
+      comparator: 20
+
+exit_rules:
+  close_long:
+    - indicator: kdj
+      params:
+        n: 9
+        m1: 3
+        m2: 3
+      operator: greater_than
+      comparator: 80
+
+risk_params:
+  stop_loss_pct: 0.03
+  take_profit_pct: 0.06
+  max_position_pct: 0.1
+  max_open_positions: 1

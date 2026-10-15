@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "selene-space-stock"
+version = "0.1.0"
+description = "Stock market signal scoring, indicators, and daily report engine"
+requires-python = ">=3.11"
+dependencies = [
+    "selene-space-types",
+    "pandas>=2.2.0",
+    "numpy>=1.26.0",
+    "pydantic>=2.8.0",
+    "pydantic-settings>=2.4.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+stock = ["yfinance>=0.2.40"]
+cn = ["akshare>=1.14.0", "baostock>=0.8.9"]
+tushare = ["tushare>=1.4.0"]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["selene_space_stock"]

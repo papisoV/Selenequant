@@ -1,0 +1,61 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.0
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-added-large-files
+        args: [--maxkb=500]
+
+  - repo: local
+    hooks:
+      - id: mypy-hook
+        name: mypy（Windows mirrors-mypy 传参丢失的包装变通）
+        # Windows 下 pre-commit→mirrors-mypy 传参会丢文件列表（Missing target 错误），
+        # 改为本地包装：对 staged py 文件跑系统 mypy，未安装则跳过。
+        entry: python scripts/run_mypy_hook.py
+        language: system
+        pass_filenames: true
+        files: ^(packages|services|scripts)/.*\.py$
+
+      - id: no-oklch-in-charts
+        name: 禁止图表组件用 oklch() 颜色（图表库不支持，会渲染失败）
+        entry: python scripts/check_no_oklch.py
+        language: system
+        pass_filenames: false
+        always_run: true
+        files: ^apps/desktop/(components|lib)/.*\.(ts|tsx)$
+
+      - id: dead-field-contract
+        name: 前端响应字段 × 后端生产点 契约校验（防死字段复发）
+        # 前端渲染了某响应字段、后端却在任何构造点都没填充 → 页面静默显示 —/0。
+        # 静态 AST+SQL 扫描 + 基线棘轮（只拦新增漂移，存量见 scripts/dead_field_baseline.json）。
+        # 门控在前后端源码 + 检查器自身：漂移必然由改动其中一侧引入；
+        # 另外扫描 apps/desktop 下所有 ts/tsx（不止 components|lib），与 rendered 采集范围一致。
+        entry: python scripts/check_dead_fields.py
+        language: system
+        pass_filenames: false
+        files: ^(apps/desktop/.*\.(ts|tsx)|packages/.*\.py|services/.*\.py|scripts/(check_dead_fields\.py|dead_field_baseline\.json)|tests/test_check_dead_fields\.py)$
+
+      - id: brand-display-guard
+        name: 品牌显示名防回退（standalone SeleneSpace → SeleneQuant）
+        # 只拦"显示名"回退，不碰代码标识符：SeleneSpaceError / selene_space_* /
+        # selenespace CLI 等按设计豁免；散文里的改名记录（SeleneSpace→SeleneQuant）
+        # 与品牌守卫脚本（必须写出被禁字符串才能断言其缺失）按意图豁免。
+        # 判定与豁免清单见 scripts/check_brand_display.py；测试含反向验证
+        # （放宽豁免会让测试变红）见 tests/test_check_brand_display.py。
+        # always_run：显示名可在任意文件类型里回退，不限 py/ts，故全量扫 staged diff。
+        entry: python scripts/check_brand_display.py --staged
+        language: system
+        pass_filenames: false
+        always_run: true
+

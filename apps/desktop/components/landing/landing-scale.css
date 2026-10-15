@@ -1,0 +1,680 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Landing 尺度层
+
+   产品本体是 11px 终端密度(globals.css `html,body{font-size:11px}` + 9/10/11/13/16/22
+   六档字阶),只对"满屏真数据"成立。Landing 是 brand register:同一套视觉语言
+   (深底 / 冷色 / 等宽数字 / accent 只给当前与引用),但需要自己的尺度。
+
+   2026-10-03 重构:此前 landing 直接继承 11px 基准,导致
+   - 全部 rem 间距按 68.75% 缩放(p-4 = 11px 而非 16px);
+   - 文本停在终端尺度(正文 11.5–12px),读起来像没加载完的后台面板。
+   `html:has(.landing-root)` 把 rem 基准复位到 16px → 全部 Tailwind 间距工具
+   回到标准尺度;字阶由下面的语义类显式接管。
+   ───────────────────────────────────────────────────────────────────────── */
+
+html:has(.landing-root) {
+  font-size: 16px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SeleneQuant 身份层(仅 landing 作用域)
+
+   2026-10-07:品牌换证 SeleneSpace→SeleneQuant,身份色由「金 #e3b650」
+   迁到「暖桃」——取自新印记(Orbital Crescent)轨道渐变的暖端。
+
+   技术支点:Tailwind v4 的 @theme 颜色 utility 编译成 var(--color-*)
+   (已核产物 .text-primary{color:var(--color-primary)}),所以在 .landing-root
+   这一层重声明即整页换脸,**产品本体的金一行不动**(作用域隔离,非全局改 @theme)。
+
+   语义七色只动身份两位:landing 里 gold ≡ 身份(裁决框/版本链/记忆徽),
+   故 gold 随 primary 一并迁;Accent 蓝 / Research 青 / Memory 紫 /
+   Pos 绿 / Neg 红 全部保持现役语义。
+   对比度实测:暖桃 on #04070b = 9.83:1;作按钮底时暗字 #1c1008 = 8.91:1。
+   ───────────────────────────────────────────────────────────────────────── */
+.landing-root {
+  --color-primary: #f7a07d;
+  --color-primary-foreground: #1c1008;
+  --color-primary-950: #5c3a2a;
+  --color-gold: #f7a07d;
+  --color-gold-soft: #5c3a2a;
+}
+
+/* 锚点跳转平滑滚动(reduced-motion 下禁用) */
+@media (prefers-reduced-motion: no-preference) {
+  html:has(.landing-root) {
+    scroll-behavior: smooth;
+  }
+}
+
+.landing-root {
+  /* 流体字阶(桌面 → 移动连续,无需断点) */
+  --lp-display: clamp(2.5rem, 1.15rem + 4.6vw, 4.25rem); /* 40 → 68 */
+  --lp-h2: clamp(1.75rem, 1.05rem + 2.1vw, 2.75rem); /* 28 → 44 */
+  --lp-h3: clamp(1.125rem, 1rem + 0.45vw, 1.375rem); /* 18 → 22 */
+  --lp-lead: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem); /* 17 → 19 */
+  --lp-body: 1rem; /* 16 */
+  --lp-meta: 0.8125rem; /* 13 */
+
+  --lp-hair: rgba(255, 255, 255, 0.07);
+  --lp-hair-strong: rgba(255, 255, 255, 0.12);
+
+  /* 章节呼吸:两档,制造节奏而非通篇等距 */
+  --lp-pad: clamp(4.5rem, 2.5rem + 6vw, 8rem);
+  --lp-pad-tight: clamp(3.5rem, 2rem + 4vw, 5.5rem);
+
+  color: var(--color-ink);
+}
+
+/* 标题均衡换行 + 紧字距(display 下限 -0.04em 之内);正文减少孤行 */
+.landing-root h1,
+.landing-root h2,
+.landing-root h3 {
+  text-wrap: balance;
+  letter-spacing: -0.02em;
+}
+.landing-root p {
+  text-wrap: pretty;
+}
+
+/* ── 语义字阶类 ───────────────────────────────────────────────────────── */
+
+.lp-display {
+  font-size: var(--lp-display);
+  line-height: 1.08;
+  font-weight: 600;
+  letter-spacing: -0.028em;
+}
+.lp-h2 {
+  font-size: var(--lp-h2);
+  line-height: 1.14;
+  font-weight: 600;
+}
+.lp-h3 {
+  font-size: var(--lp-h3);
+  line-height: 1.3;
+  font-weight: 600;
+}
+.lp-lead {
+  font-size: var(--lp-lead);
+  line-height: 1.65; /* 深底浅字 +0.05~0.1 行高 */
+  color: var(--color-ink-2);
+}
+.lp-body {
+  font-size: var(--lp-body);
+  line-height: 1.65;
+  color: var(--color-ink-2);
+}
+.lp-meta {
+  font-size: var(--lp-meta);
+  line-height: 1.5;
+  color: var(--color-ink-3); /* ink-3 = 4.28–4.67:1,产品正文底线 */
+}
+
+/* 正文栏宽 65–75ch */
+.lp-measure {
+  max-width: 62ch;
+}
+.lp-measure-tight {
+  max-width: 46ch;
+}
+
+/* ── 容器 & 章节节奏 ──────────────────────────────────────────────────── */
+
+.lp-container {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 2.5rem);
+}
+
+.lp-section {
+  padding-block: var(--lp-pad);
+}
+.lp-section-tight {
+  padding-block: var(--lp-pad-tight);
+}
+
+/* ── 仪器感景深(非玻璃拟态:无 blur / 无浮层,只是光池 + 栅格) ───────── */
+
+.lp-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* 三色环境光池(2026-10-07 随身份色重调):桃(身份)主导 + 蓝(数据)右上 +
+     紫(记忆)左下。原为 cyan/blue/violet;cyan 退场,让身份桃在暗底上留温。
+     全部 ≤0.08 饱和度档,保持深色底色不变 */
+  background:
+    radial-gradient(110% 70% at 74% 2%, rgba(247, 160, 125, 0.075), transparent 56%),
+    radial-gradient(85% 60% at 8% -4%, rgba(48, 156, 251, 0.06), transparent 52%),
+    radial-gradient(70% 55% at 18% 104%, rgba(167, 139, 250, 0.05), transparent 55%);
+}
+/* 各 section 可用 --field-hue 换环境光主色(默认桃);
+   传法:style={{ '--field-hue': 'rgba(167,139,250,0.05)' }} */
+.lp-field--tinted {
+  background:
+    radial-gradient(110% 70% at 74% 2%, var(--field-hue, rgba(247, 160, 125, 0.075)), transparent 56%),
+    radial-gradient(85% 60% at 8% -4%, rgba(48, 156, 251, 0.05), transparent 52%),
+    radial-gradient(70% 55% at 18% 104%, rgba(167, 139, 250, 0.045), transparent 55%);
+}
+.lp-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.026) 1px, transparent 1px);
+  background-size: 60px 60px;
+  -webkit-mask-image: radial-gradient(115% 85% at 68% -4%, #000, transparent 68%);
+  mask-image: radial-gradient(115% 85% at 68% -4%, #000, transparent 68%);
+}
+
+/* ── 细线分隔(取代嵌套卡片边框) ─────────────────────────────────────── */
+
+.lp-hair-t {
+  border-top: 1px solid var(--lp-hair);
+}
+.lp-hair-b {
+  border-bottom: 1px solid var(--lp-hair);
+}
+
+/* ── 动效:默认可见,仅在允许动效时增强(同 Reveal 纪律) ──────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-cite-draw {
+    transition: none !important;
+  }
+}
+
+/* ── 跑马灯(真实刻度条用;内容宽度 = 2×原始列表,位移 -50% 无缝循环) ────── */
+@keyframes lp-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Round-5 仪器动效层 —— 规则:循环动画只写 transform/stroke-dashoffset/
+   box-shadow,绝不写内联 opacity(verify 脚本抓 [style*='opacity: 0']);
+   SSR 默认静态可见;prefers-reduced-motion 全部静止。
+
+   ── 动效语汇(P5 统一,2026-10-07)────────────────────────────────────────
+   缓动只许三档,含义固定(新增动画必须归入其一):
+     ease-out-entrance  cubic-bezier(0.16,1,0.3,1)  进场/落位(Reveal、版本链竖线)
+     ease-draw          cubic-bezier(0.22,1,0.36,1)  "画出来"(回测曲线 dashoffset)
+     ease-slide         cubic-bezier(0.5,0,0.2,1)    扫描线横扫(进出对称)
+   时长分档(同一语义跨组件必须一致):
+     0.5–0.6s  进场(Reveal/版本链)
+     1.7–1.9s  画线/横扫
+     2.4–3.4s  脉冲/粒子循环  ·  9–26s  轨道/扫描长循环
+   循环动画一律 transform / stroke-dashoffset / box-shadow / SMIL,
+   **绝不碰内联 opacity**(与 verify 脚本的铁律同源)。
+
+   ── SMIL 与 reduced-motion(CSS media query 覆盖不到 <animate> 家族)──────
+   粒子宿主统一挂 `.lp-smil-dot`:reduced-motion 时 display:none 等效停播;
+   母线(曲线/连线)保留,静态可读。
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── 章节发光分隔(glow 变体:渐隐横线 + 中央光晕,克制在 0.05-0.12) ──
+   --lp-div-glow 参数化光晕色:上一节 → 下一节的语义过渡
+   (默认=cyan/blue 混合;memory 前传 violet,audit 前传 pos 绿) */
+.lp-divider {
+  --lp-div-glow: rgba(148, 190, 255, 0.09);
+  position: relative;
+  height: 1px;
+  margin: 0 auto;
+  width: min(72rem, 100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--lp-hair) 18%,
+    var(--lp-hair) 82%,
+    transparent
+  );
+}
+.lp-divider::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 9rem;
+  height: 1px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(90deg, transparent, var(--lp-hair-strong), transparent);
+  opacity: 0.55;
+}
+.lp-divider--glow::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14rem;
+  height: 3.5rem;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    ellipse 50% 50% at 50% 50%,
+    var(--lp-div-glow),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.lp-divider--dot::before {
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+  background: var(--lp-hair-strong);
+  box-shadow: 0 0 10px 1px var(--lp-div-glow);
+}
+
+/* ── 轨道粒子(council-orbit / memory-flow 共用:沿 offset-path 公转) ──── */
+@keyframes lp-orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes lp-orbit-spin-rev {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes lp-flow-dash {
+  from {
+    stroke-dashoffset: 96;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes lp-pulse-ring {
+  0% {
+    transform: scale(0.6);
+    box-shadow: 0 0 0 0 rgba(148, 190, 255, 0.35);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(148, 190, 255, 0);
+  }
+  100% {
+    transform: scale(0.6);
+    box-shadow: 0 0 0 0 rgba(148, 190, 255, 0);
+  }
+}
+
+.lp-orbit-ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--lp-hair);
+  border-radius: 9999px;
+}
+/* 雷达扫描(旧 radar 词汇,收敛:仅外圈,锥形渐变随 arm 旋转) */
+.lp-sweep {
+  background: conic-gradient(
+    from 0deg,
+    rgba(148, 190, 255, 0.07),
+    transparent 22%,
+    transparent 100%
+  );
+  animation: lp-orbit-spin 26s linear infinite;
+}
+.lp-orbit-arm {
+  position: absolute;
+  inset: 0;
+  animation: lp-orbit-spin var(--orbit-t, 48s) linear infinite;
+  will-change: transform;
+}
+.lp-orbit-arm--rev {
+  animation-name: lp-orbit-spin-rev;
+}
+.lp-orbit-sat {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* 卫星本体反向自转,保持文字水平 */
+.lp-orbit-sat > * {
+  animation: lp-orbit-spin-rev var(--orbit-t, 48s) linear infinite;
+}
+
+/* ── 打字终端:光标闪烁 + 逐行浮现(逐字打字用 JS 分行渲染,CSS 只管光标) ── */
+.lp-term-cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.05em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--lp-hair-strong);
+  animation: lp-caret 1.06s steps(2, start) infinite;
+}
+@keyframes lp-caret {
+  0%,
+  49% {
+    transform: scaleY(1);
+  }
+  50%,
+  100% {
+    transform: scaleY(0.08);
+  }
+}
+
+/* ── 数字翻新闪烁(ticker 周期刷新;只闪 transform+color,不碰 opacity) ─── */
+@keyframes lp-flick {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-0.35em);
+    color: var(--lp-hair-strong);
+  }
+  60% {
+    transform: translateY(0.25em);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.lp-flick {
+  display: inline-block;
+  animation: lp-flick 0.5s ease-out 1;
+}
+
+/* ── Hero 3D 面板:反射带 + 光标追光(framer-motion 管倾斜,CSS 管静态层) ── */
+.lp-tilt-scene {
+  perspective: 1400px;
+}
+.lp-tilt-card {
+  position: relative;
+  transform-style: preserve-3d;
+}
+.lp-tilt-card > * {
+  transform: translateZ(0);
+}
+.lp-tilt-raise {
+  transform: translateZ(28px);
+}
+.lp-reflection {
+  position: absolute;
+  left: 3%;
+  right: 3%;
+  bottom: -4.75rem;
+  height: 4rem;
+  transform: scaleY(-1);
+  border-radius: inherit;
+  background: linear-gradient(
+    to bottom,
+    rgba(148, 190, 255, 0.05),
+    transparent 55%
+  );
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 70%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 70%);
+  pointer-events: none;
+}
+.lp-spotlight {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    340px circle at var(--mx, 50%) var(--my, 0%),
+    rgba(148, 190, 255, 0.08),
+    transparent 62%
+  );
+}
+
+/* ── 浮动指标徽章(Hero 面板周围;缓慢升降,幅度 ≤ 6px) ─────────────────── */
+@keyframes lp-float-y {
+  0%,
+  100% {
+    transform: translateY(0) translateZ(52px);
+  }
+  50% {
+    transform: translateY(-6px) translateZ(52px);
+  }
+}
+.lp-float-badge {
+  position: absolute;
+  z-index: 2;
+  animation: lp-float-y var(--float-t, 7s) ease-in-out infinite;
+  will-change: transform;
+}
+
+/* ── 证据连线流光(the-loop:SMIL animateMotion 为主,此为 hover 高亮) ──── */
+.lp-edge-line {
+  stroke-dasharray: 4 6;
+  animation: lp-flow-dash 2.6s linear infinite;
+}
+
+/* ── Research graph 环境层(hero 面板后):多色节点 + 连线,研究系统在跑的底图 ── */
+.lp-rgraph {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.lp-rgraph line {
+  stroke-width: 1;
+  stroke: rgba(148, 190, 255, 0.1);
+}
+.lp-rgraph .lg-flow {
+  stroke-dasharray: 3 7;
+  animation: lp-flow-dash 3.4s linear infinite;
+}
+.lp-rgraph .lg-node {
+  stroke-width: 1.2;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp-rgraph .lg-flow {
+    animation: none !important;
+  }
+}
+
+/* ── 脉冲端点颜色参数化(默认 blue 族;cyan/violet 场景传 --pulse-rgb) ── */
+@keyframes lp-pulse-rgb {
+  0% {
+    transform: scale(0.6);
+    box-shadow: 0 0 0 0 rgb(var(--pulse-rgb, 148, 190, 255) / 0.35);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgb(var(--pulse-rgb, 148, 190, 255) / 0);
+  }
+  100% {
+    transform: scale(0.6);
+    box-shadow: 0 0 0 0 rgb(var(--pulse-rgb, 148, 190, 255) / 0);
+  }
+}
+/* 中心脉冲点(council-orbit):命名类替代任意值 [animation:...],
+   使 reduced-motion 块能统一关停(任意值类选择器难覆盖)。 */
+.lp-pulse-dot {
+  animation: lp-pulse-rgb 2.8s ease-in-out infinite;
+}
+
+/* ── 脉冲端点(equity-curve 已有 pulse 圆;此为 crosshair 十字慢摆) ─────── */
+@keyframes lp-cross-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.18);
+  }
+}
+.lp-cross-breathe {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: lp-cross-breathe 2.4s ease-in-out infinite;
+}
+
+/* ── P3 Hero 研究闭环轨道(2026-10-07)───────────────────────────────────
+   从"细线 + 一颗光点"升级为**倾斜椭圆轨道**,呼应 SeleneQuant 印记的轨道语言
+   (斜环 + 流动光点 + 星芒)。轨道几何由 hero.tsx 计算并传给 SVG;此处只管
+   描边/光度/动效纪律。光点沿椭圆 path 用 SMIL animateMotion 前进(与
+   memory-flow 同一 idiom,零 JS 循环);reduced-motion 时粒子隐藏、轨道仍在。
+
+   ── 活体动效谱(v2,2026-10-07)─────────────────────────────────────────
+   v1 只修了节拍不均(见 hero.tsx ORBIT_KEY_*),仍"僵硬"——因为整个 hero 只有
+   一个运动主体(光点),环/星/节点全静止,结构上等于加载转圈。v2 补成**三层速度谱**:
+
+     11s  环境呼吸  核光 + 星芒 + 轨道晕    ── "仪器通着电"
+     16s  公转      双彗星沿轨道              ── "研究在闭环"
+     2.67s 过站应答  节点自身脉冲             ── "这一站被走到了"
+
+   三层互质(LCM(16,11)=176s),合成周期近三分钟,节拍器感消失。 */
+.lp-hero-orbit {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+/* 轨道主线:身份渐变描边(蓝→紫→暖桃,取自印记) */
+.lp-orbit-line {
+  fill: none;
+  stroke-linecap: round;
+}
+/* 外晕:同渐变,粗描低透明 —— 让轨道"发光"而非死线;随 11s 呼吸微明微暗。
+   外晕本是极低透明度的柔光,呼吸振幅必须跟着小(0.07→0.16),
+   不能套用核光那条 0.68→1 的曲线,否则粗描会直接烧成实线。 */
+.lp-orbit-halo {
+  fill: none;
+  /* 静态基准值 = 呼吸区间中点。reduced-motion 下 animation:none 会移除动画,
+     若此处不写基准,粗描会回落到 opacity:1 变成一条实心粗环 —— 这条兜底必须有。 */
+  opacity: 0.115;
+  animation: lp-orbit-halo-breathe 11s ease-in-out infinite;
+}
+@keyframes lp-orbit-halo-breathe {
+  0%,
+  100% {
+    opacity: 0.07;
+  }
+  50% {
+    opacity: 0.16;
+  }
+}
+/* 流动光点:白芯 + 柔晕 + 尾迹三层(在 SVG 里画),此处补最外圈色散光。
+   rotate="auto" 后光点朝切线,尾迹拖在身后 —— "珠子"变"彗星"。 */
+.lp-orbit-comet {
+  filter: drop-shadow(0 0 7px rgba(148, 190, 255, 0.55));
+}
+/* 核心光池 + 星芒:同一条 11s 呼吸,相位错开 2.2s(核先亮、星随上),
+   两次起落独立于公转,读出"设备活着"而非"动画在放"。 */
+.lp-orbit-breathe {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: lp-orbit-breathe 11s ease-in-out infinite;
+}
+.lp-orbit-breathe-star {
+  animation-delay: 2.2s;
+}
+@keyframes lp-orbit-breathe {
+  0%,
+  100% {
+    opacity: 0.68;
+    transform: scale(0.985);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.015);
+  }
+}
+/* 到站波纹:光点经过某站时该站亮一下。周期与光点同为 16s、六等分同拍;
+   正 delay = 第 i 站等到自己的拍点才闪,delay 之前由基础 opacity:0 兜住。 */
+.lp-orbit-ripple {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation: lp-orbit-ripple 16s linear infinite;
+  animation-delay: calc(var(--i, 0) * 2.6667s);
+}
+@keyframes lp-orbit-ripple {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  1.5% {
+    opacity: 0.85;
+  }
+  8% {
+    transform: scale(2.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.1);
+    opacity: 0;
+  }
+}
+/* 过站应答:节点本体在波纹亮起的同时微微放大又回坐 —— 波纹是"发出去的波",
+   本体缩放是"这一站被惊动了",两者同拍但读法不同,叠加才像环与站在互动。
+   只动 transform 不碰 opacity,节点颜色始终实心(SSR/无动效下照常可读)。 */
+@keyframes lp-orbit-node {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  5% {
+    transform: scale(1.16);
+  }
+  13% {
+    transform: scale(1);
+  }
+}
+/* 节点本体:与 ripple 同 16s、同 --i 相移 / 同 delay。transform-box 让
+   scale 以自身圆心为原点(SVG 元素默认以用户坐标系原点缩放,不设就会飞走)。 */
+.lp-orbit-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: lp-orbit-node 16s linear infinite;
+  animation-delay: calc(var(--i, 0) * 2.6667s);
+}
+/* 星芒:中心核(呼应印记四角星) */
+.lp-orbit-star {
+  filter: drop-shadow(0 0 8px rgba(234, 242, 255, 0.55));
+}
+/* 轨道节点标签:窄屏藏起(数据改由 SVG 下的事实条承载),避免 375px 糊成一团 */
+@media (max-width: 767px) {
+  .lp-orbit-label {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp-orbit-comet {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-orbit-arm,
+  .lp-orbit-sat > *,
+  .lp-orbit-ripple,
+  .lp-orbit-node,
+  .lp-orbit-breathe,
+  .lp-orbit-breathe-star,
+  .lp-orbit-halo,
+  .lp-term-cursor,
+  .lp-float-badge,
+  .lp-edge-line,
+  .lp-cross-breathe,
+  .lp-loop-dot,
+  .lp-sweep,
+  .lp-pulse-dot {
+    animation: none !important;
+  }
+  .lp-flick {
+    animation: none !important;
+  }
+  .lp-divider::before,
+  .lp-divider--glow::after {
+    animation: none !important;
+  }
+  /* SMIL 动画(CSS media query 覆盖不到 <animate>/<animateMotion>):
+     直接隐藏粒子宿主,等效停播;曲线/连线母体仍在,静态可读。 */
+  .lp-smil-dot {
+    display: none !important;
+  }
+}

@@ -1,0 +1,67 @@
+# backtest_v1 — frozen evaluation protocol for optuna v7 generation loop
+#
+# FORBIDDEN CHANGES: any post-experiment edit to this file = a new lineage
+# generation via a new protocol file (backtest_v2.yaml), never a rewrite.
+# Violations are recorded as validation_signal (not canonical) and are
+# excluded from frontier promotion. See scripts/research_artifacts.py Role.
+#
+# Parameter provenance (code-loaded contract, verified 2026-09-02):
+# - walk_forward values mirror the v6 LONG profile call site in
+#   scripts/optuna_formula_search_v6.py (_run_formula_search invocation):
+#   n_windows=3, train_ratio=0.60, gap_ratio=0.10, test_ratio=0.25.
+# - cost values mirror TradingCosts in scripts/optuna_formula_search_v4.py:
+#   maker_fee=0.0002, taker_fee=0.0005, slippage_bps=1.5, assume_taker=true.
+# The protocol loader (protocol_loader.py) is the ONLY sanctioned way to
+# consume these values; hardcoding them in experiment code is a violation.
+
+protocol_id: backtest_v1
+frozen_at: "2026-09-02"
+
+primary_metric: "sharpe_ratio"
+direction: "maximize"
+aggregation: "median_of_3_seeds"
+seeds: [42, 123, 256]
+
+walk_forward:
+  windows: 3          # v6 long profile: n_windows=3
+  train_pct: 0.60     # v6 long profile: train_ratio=0.60
+  gap_ratio: 0.10     # v6 long profile: gap_ratio=0.10
+  test_ratio: 0.25    # v6 long profile: test_ratio=0.25
+
+cost:
+  maker_fee: 0.0002
+  taker_fee: 0.0005
+  slippage_bps: 1.5
+  assume_taker: true
+
+# v6 formula pipeline has no min_trades enforcement; recorded here for the
+# gate verdict only. Gen-0 does NOT enforce this — the gate reports v6's
+# actual behavior. v7 may consume it if wired.
+min_trades: 20
+min_trades_enforced: false
+
+# v7 first run does not split regimes for evaluation; single-reproducibility first.
+regime_split: null
+
+universe:
+  pipeline: "formula_search_long"
+  symbols: ["BTC/USDT", "ETH/USDT"]
+  intervals: ["4h", "1d"]
+  exchange: "binance"
+  market_type: "futures"
+
+# Out-of-loop independent replication segment for the negative-finding gate.
+# BTC/ETH are in-loop and highly correlated — they cannot serve as an
+# independent segment. SOL is outside the tuning loop.
+independent_replication_segment:
+  symbol: "SOL/USDT"
+  interval: "4h"
+  exchange: "binance"
+  market_type: "futures"
+
+forbidden_changes_note: >-
+  Any experiment-side change to this protocol after a generation started is a
+  NEW lineage generation (new protocol file + new protocol_hash), never an
+  in-place rewrite. Evidence produced under a mutated protocol is marked
+  validation_signal (not canonical) and does not participate in frontier
+  promotion.

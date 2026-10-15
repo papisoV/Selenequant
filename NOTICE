@@ -1,0 +1,26 @@
+SeleneQuant Community Edition
+Copyright (c) 2026 papisoV
+
+SeleneQuant Community Edition is licensed under the GNU Affero General
+Public License v3.0 (AGPL-3.0-only). Third-party components are licensed
+under their own terms as listed below.
+
+This product includes software developed at:
+- HKUDS (https://github.com/HKUDS) — Vibe-Trading (MIT)
+  Absorbed by design study; the Vibe-Trading runtime is not bundled in this
+  repository. SeleneQuant implements its own equivalents.
+- shy3130 (https://github.com/shy3130) — tick-stock-panel / TSP (MIT)
+  Portions of the A-share sentiment-cycle model and the limit-up ladder are
+  ported from TSP (polars → pandas). See ATTRIBUTIONS.md for the full scope
+  and THIRD_PARTY_NOTICES.md for the license text.
+
+This product reimplements the following third-party factor definitions
+(mathematical formulas — factual content, not copyrightable):
+- Microsoft Qlib factor definitions (Apache 2.0)
+- Kakushadze (2015) "101 Formulaic Alphas" (arXiv:1601.00991)
+- Guotai Junan Securities (2014) "191 Short-period Trading Alpha Factors"
+- Fama-French five-factor model, Carhart momentum, Hou-Xue-Zhang q-factor
+
+Prose, tables, and figures from the source papers and reports are NOT
+reproduced in this repository. Only the mathematical formulas — which are
+factual content and not subject to copyright — are reimplemented here.

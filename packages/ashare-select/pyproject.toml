@@ -1,0 +1,15 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "selene-space-ashare-select"
+version = "0.1.0"
+description = "A-share whole-market daily-K sync engine + backtestable stock-selection strategy templates (absorbed from Sequoia-X V2)"
+requires-python = ">=3.11"
+dependencies = [
+  "pandas>=2.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["selene_space_ashare_select"]

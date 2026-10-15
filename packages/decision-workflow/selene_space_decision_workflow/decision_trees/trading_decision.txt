@@ -1,0 +1,60 @@
+# Trading Decision Tree — Price Action Bar-by-Bar Diagnosis
+# Cleanroom original: authored for SeleneQuant (AGPL-3.0-only) from Al Brooks public
+# publications only. No text derived from any third-party codebase.
+# Sources (method basis, no verbatim quotes):
+#   - Al Brooks, "Reading Price Charts Bar by Bar" (Wiley, 2009),
+#     Ch. 2-4 (bar basics: always-in, signal bar & follow-through),
+#     Ch. 10-12 (trend, magnetic pull, channels, breakouts).
+#   - Al Brooks, "Trading Price Action Trends" (Wiley, 2011),
+#     Ch. 3-5 (always-in direction, major trend patterns),
+#     Ch. 21-23 (channels, tight trading ranges, breakout mode).
+# Terminals: trade, wait, reject
+# State vocabulary for routing (Stage1 diagnosis_summary["state"]):
+#   trend_up, trend_down, range, breakout, unknown
+
+## 0. 全局原则
+
+本树用于 BTC 1h 价格行为两阶段诊断（Stage1=诊断+gate，Stage2=决策）。
+执行顺序：数据完整性 → 市场状态 → 入场质量 → 硬性否决。
+数据缺口或状态不明一律终止为 wait；多重矛盾信号视为区间，保守处理。
+
+## 1. 数据完整性闸门
+
+### 1.1 K线数据是否连续无缺口
+是：进入 §1.2
+否：终止 → wait
+
+### 1.2 是否有足够历史K线计算状态(>=50根)
+是：进入 §2.1
+否：终止 → wait
+
+## 2. 市场状态判断
+
+### 2.1 是否呈明确趋势结构
+是[多头：高点低点抬升且多头K线占优]：进入 §3.1
+是[空头：低点高点下降且空头K线占优]：进入 §3.1
+否：进入 §2.2
+
+### 2.2 价格是否在窄幅区间内震荡
+是：进入 §3.2
+否：终止 → wait
+
+## 3. 入场质量判断
+
+### 3.1 趋势中的回调质量
+是：进入 §3.3
+否：终止 → wait
+
+### 3.2 区间边界的反转质量
+是：进入 §3.3
+否：终止 → wait
+
+### 3.3 风险回报比是否达标
+是：进入 §4.1
+否：终止 → wait
+
+## 4. 硬性否决
+
+### 4.1 是否处于重大数据发布前后的禁止交易窗口
+是：终止 → reject
+否：终止 → trade

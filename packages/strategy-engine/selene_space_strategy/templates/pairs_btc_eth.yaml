@@ -1,0 +1,28 @@
+# Pairs Trading Strategy (BTC/ETH statistical arbitrage)
+# Multi-asset strategy: OLS hedge ratio + Z-score spread + Hurst validation.
+# Use create_pairs_strategy(config) to instantiate, then call set_secondary_data(eth_df)
+# before run_backtest(btc_events).
+
+id: template-pairs-btc-eth
+name: Pairs BTC/ETH
+type: custom
+description: >
+  Statistical arbitrage between BTC and ETH. OLS hedge ratio, Z-score spread
+  entry/exit, Hurst exponent mean-reversion validation. Long BTC when spread
+  z < -entry_z, short BTC when z > entry_z, close when |z| < exit_z.
+symbols:
+  - BTC/USDT
+  - ETH/USDT
+interval: 1h
+parameters:
+  strategy_class: pairs_trading
+  entry_z: 2.0
+  exit_z: 0.5
+  hurst_threshold: 0.5
+  lookback: 20
+
+risk_params:
+  stop_loss_pct: 0.05
+  take_profit_pct: 0.0
+  max_position_pct: 0.2
+  max_open_positions: 1

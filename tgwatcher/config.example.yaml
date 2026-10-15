@@ -1,0 +1,208 @@
+crawl:
+  interval_minutes: 30
+  limit: 100
+  max_delay: 3
+  min_delay: 1
+  mode: incremental
+groups:
+- id: 0
+  name: '[示例群组]'
+  username: example_channel
+  auto_catchup: false
+  auto_poll: false              # Web UI 启动后自动轮询
+  poll_interval_seconds: 15     # 轮询间隔（秒）。建议 ≥15；<15s 会频繁空跑 Telegram API，近实时需求建议改用 auto_listen
+  auto_listen: false             # 实时监听新消息（Telethon NewMessage 事件）
+proxy:
+  enabled: false
+  host: 127.0.0.1
+  port: 7890
+  protocol: socks5
+storage:
+  db_path: ./data/tgwatcher.db
+timezone:
+  utc_offset_hours: 8
+telegram:
+  api_hash: YOUR_API_HASH_HERE
+  api_id: YOUR_API_ID_HERE
+  phone: '+1234567890'
+  session_dir: ./sessions
+signal:
+  enabled: false
+  llm:
+    # Active provider — must match a key in `providers` below.
+    # Supported: deepseek | openai | anthropic | openrouter | moonshot | zhipu | ollama | astron
+    provider: openai
+    # Fallback order: if the active provider fails, try these in order.
+    # Providers not in this list are skipped on fallback. Empty list = no fallback.
+    fallback_order: [openai, anthropic, astron]
+    # All provider credentials. Only the active one (selected by `provider`)
+    # is used at runtime; others are ignored but kept here for easy switching.
+    providers:
+      deepseek:
+        api_key: ''
+        base_url: https://api.deepseek.com/v1
+        model: deepseek-chat
+        temperature: 0
+        max_tokens: 512
+      openai:
+        api_key: ''
+        base_url: https://maas-coding-api.cn-huabei-1.xf-yun.com/v2
+        model: gpt-4o-mini
+        temperature: 0
+        max_tokens: 512
+        max_tokens_batch: 4096  # 批处理专用 token 预算；0 或缺省 = max_tokens*2
+      anthropic:
+        # Official: https://api.anthropic.com
+        # Proxy example: https://maas-coding-api.cn-huabei-1.xf-yun.com/anthropic
+        api_key: ''
+        base_url: https://maas-coding-api.cn-huabei-1.xf-yun.com/anthropic
+        model: claude-sonnet-4-6
+        max_tokens: 1024
+        max_tokens_batch: 4096
+      openrouter:
+        api_key: ''
+        base_url: https://openrouter.ai/api/v1
+        model: anthropic/claude-sonnet-4.5
+        temperature: 0
+        max_tokens: 1024
+      astron:
+        # OpenAI-protocol proxy example (astron-code-latest)
+        # api_key format: "key_id:key_secret" (colon-separated)
+        api_key: ''
+        base_url: https://maas-coding-api.cn-huabei-1.xf-yun.com/v2
+        model: astron-code-latest
+        temperature: 0
+        max_tokens: 512
+        max_tokens_batch: 4096  # 批处理专用 token 预算；0 或缺省 = max_tokens*2
+    timeout_connect: 30
+    timeout_read: 60
+    timeout_write: 30
+    timeout_pool: 10
+    max_retries: 3
+    # Batch checkpoint/resume — crash-safe LLM batch processing.
+    # When max_batch_size is set, the batch loop saves a checkpoint JSON
+    # to checkpoint_dir every N successful LLM calls. On crash/restart,
+    # the batch resumes from the checkpoint instead of restarting from 0.
+    # max_batch_size: 50          # save checkpoint every N calls (omit = no checkpointing)
+    # checkpoint_dir: ./batch_checkpoints  # directory for checkpoint JSON files
+    # Env overrides (optional):
+    #   SIGNAL_LLM_API_KEY — overrides active provider's api_key (OpenAI-protocol)
+    #   ANTHROPIC_API_KEY  — overrides anthropic provider's api_key
+  # Dedup: same (symbols + direction_sign + event_type) within window_seconds
+  # only pushes downstream once. Prevents duplicate orders when the same news
+  # is forwarded across multiple groups. In-memory cache, lost on restart.
+  dedup:
+    enabled: true
+    window_seconds: 300  # 5 minutes
+  filter:
+    min_text_length: 10
+    pass_if_any_match: true
+  batch_size: 10
+  llm_batch_size: 15
+  llm_delay: 1.0
+  factor_version: 2
+  keywords:
+    bullish:
+    - "利好"
+    - "上涨"
+    - "突破"
+    - "新高"
+    - "反弹"
+    - "买入"
+    - "减半"
+    - "批准"
+    - "ETF通过"
+    - "通过ETF"
+    - "利好消息"
+    bearish:
+    - "利空"
+    - "下跌"
+    - "暴跌"
+    - "崩盘"
+    - "黑客"
+    - "被盗"
+    - "跑路"
+    - "禁令"
+    - "监管"
+    - "罚款"
+    - "起诉"
+    - "利空消息"
+    event_regulatory:
+    - SEC
+    - "监管"
+    - "合规"
+    - "禁令"
+    - "罚款"
+    - "牌照"
+    - "起诉"
+    - "审查"
+    event_macro:
+    - "美联储"
+    - "加息"
+    - "降息"
+    - CPI
+    - GDP
+    - "战争"
+    - "制裁"
+    - "通胀"
+    - "利率"
+    event_exploit:
+    - "黑客"
+    - "被盗"
+    - "漏洞"
+    - "攻击"
+    - "跑路"
+    - Rug
+    - "闪电贷"
+    event_listing:
+    - "上线"
+    - "挂牌"
+    - Binance
+    - Coinbase
+    - "上架"
+    - Launchpool
+    event_partnership:
+    - "合作"
+    - "集成"
+    - "战略"
+    - "投资"
+    - "收购"
+    - "生态"
+    event_whale:
+    - "鲸鱼"
+    - "巨鲸"
+    - "大额转账"
+    - "大额转移"
+    - "政府抛售"
+    - "国家抛售"
+    - "机构买入"
+    - "机构卖出"
+    - MicroStrategy
+    - "持仓"
+    - "增持"
+    - "冷钱包"
+    - "热钱包"
+    - "钱包异动"
+    urgency_high:
+    - "紧急"
+    - "暴跌"
+    - "崩盘"
+    - "黑客"
+    - "被盗"
+    - "SEC起诉"
+    - "被黑"
+catchup:
+  enabled: true
+  limit: 1000
+compliance:
+  data_retention_days: 365    # Auto-delete data older than N days (0 = disabled)
+  privacy_policy_path: ""     # Path to custom privacy policy markdown (empty = default)
+  tos_path: ""                # Path to custom terms of service markdown (empty = default)
+webhook:
+  enabled: false
+  timeout_seconds: 5
+  max_workers: 4
+  endpoints:
+    - url: http://localhost:9000/signal
+      secret: "your-hmac-secret-here"
+      enabled: false

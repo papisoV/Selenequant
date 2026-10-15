@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "selene-space-renintel"
+version = "0.1.0"
+description = "Renaissance-style hedge fund agent framework (clean-room reimplementation, no source code copied)"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+agent = ["agno"]  # optional agent orchestration framework
+dev = ["pytest>=7.0", "pytest-asyncio>=0.21", "ruff", "mypy"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["selene_space_renintel*"]

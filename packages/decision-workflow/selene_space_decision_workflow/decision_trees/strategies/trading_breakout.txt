@@ -1,0 +1,59 @@
+# Trading Strategy — Breakout (突破状态)
+# Cleanroom original: authored for SeleneQuant (AGPL-3.0-only) from Al Brooks public
+# publications only. No text derived from any third-party codebase.
+# Sources (method basis, no verbatim quotes):
+#   - Al Brooks, "Reading Price Charts Bar by Bar" (Wiley, 2009),
+#     Ch. 10-12 (breakouts, breakout bars, follow-through and failure).
+#   - Al Brooks, "Trading Price Action Trends" (Wiley, 2011),
+#     Ch. 21-23 (breakout mode, tight trading ranges, measured moves).
+# Applicable when Stage1 diagnosis_summary["state"] == "breakout".
+
+## 0. 状态再确认(引用诊断 trace)
+
+本策略文件仅在 Stage1 trace 已确认以下两点后适用;任一不成立即退出本文件,
+终止 → wait:
+
+1. 诊断 bar_range 内出现收盘价有效突破既有区间/结构边界
+   (有效定义:收盘价超出边界,且突破K线实体明显、量能高于近期均值);
+2. 突破方向明确(向上/向下二选一),非双向撕裂。
+
+## 1. 入场条件(全部满足才可 trade)
+
+两条路线按突破成熟度选择其一:
+
+### 1a. 突破即时跟随(强势突破)
+1. 突破K线本身或次根K线仍收盘在边界外;
+2. 次根K线(follow-through bar)未回进边界内(回进=弱势突破警示);
+3. 入场价:follow-through 收盘确认后市价入场。
+
+### 1b. 突破回测入场(弱势或晚到的突破)
+1. 价格回撤至被突破的边界附近(回测不深于突破K线 50% 实体);
+2. 回测处出现顺突破方向的信号K线;
+3. 入场价:该信号K线高点/低点被超越时入场。
+
+回测深于突破K线 50% 实体或收回边界内 → 终止 → wait(突破失败倾向)。
+
+## 2. 方向
+
+仅顺突破方向。逆势"抓顶/抓底"对抗新趋势 → 终止 → reject,
+这是突破状态最高频的死法。
+
+## 3. 止损参照(结构位,非固定点数)
+
+1. 首选:被突破的边界回撤侧一个 tick(收回区间=突破失败);
+2. 1a 路线:可缩至 follow-through K线低点/高点外侧;
+3. 止损一旦因收回边界被触发,本轮突破假设作废,不立即重试同方向。
+
+## 4. 止盈参照
+
+1. 首要目标:突破量度目标(区间高度投影)或最近主要摆动点;
+2. 突破后出现连续 2 根以上十字/反向K线 → 减仓或离场(动能衰竭);
+3. 达 1R 后移动止损至保本,此后按结构推进。
+
+## 5. 事件窗口否决
+
+以下任一成立 → 终止 → wait,禁止入场:
+1. 突破本身发生在重大数据发布后 <= 2 根K线内且方向与事件一致
+   (事件驱动的突刺常回吐,等待回测结构);
+2. 突破K线为巨影线(影线 > 2×实体)——影线突破不算有效突破;
+3. 前次决策止损失效信号尚未消化(见 continuity guard 结果)。
