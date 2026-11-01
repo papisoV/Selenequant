@@ -1,0 +1,80 @@
+# ICT Liquidity Sweep Strategy
+# Detects stop hunts and trades the reversal
+
+id: template-ict-sweep
+name: ICT Liquidity Sweep
+type: ict
+description: >
+  ICT Liquidity Sweep (Stop Hunt) strategy.
+  Entry when liquidity sweep is detected with volume spike.
+  Simple version using only registered indicators.
+symbols:
+  - BTC/USDT
+interval: 4h
+parameters:
+  volume_threshold: 1.5
+  reversal_bars: 3
+  swing_lookback: 20
+
+entry_rules:
+  long:
+    # Bullish sweep only (+1 = price swept low and reversed)
+    - indicator: liquidity_sweep
+      params:
+        period: 20
+        volume_threshold: 1.5
+        reversal_bars: 3
+      operator: greater_than
+      comparator: 0
+
+    # Market structure not bearish
+    - indicator: market_structure
+      params:
+        period: 10
+      operator: greater_than_or_equal
+      comparator: 0
+
+  short:
+    # Bearish sweep only (-1 = price swept high and reversed)
+    - indicator: liquidity_sweep
+      params:
+        period: 20
+        volume_threshold: 1.5
+        reversal_bars: 3
+      operator: less_than
+      comparator: 0
+
+    # Market structure not bullish
+    - indicator: market_structure
+      params:
+        period: 10
+      operator: less_than_or_equal
+      comparator: 0
+
+exit_rules:
+  close_long:
+    # RSI overbought exit
+    - indicator: rsi
+      params:
+        period: 14
+      operator: greater_than
+      comparator: 70
+
+  close_short:
+    # RSI oversold exit
+    - indicator: rsi
+      params:
+        period: 14
+      operator: less_than
+      comparator: 30
+
+risk_params:
+  stop_loss_pct: 0.015
+  take_profit_pct: 0.03
+  max_position_pct: 0.08
+  max_open_positions: 1
+
+tags:
+  - ict
+  - liquidity_sweep
+  - volume

@@ -1,0 +1,67 @@
+# SeleneQuant 云单机部署 — billing 模式
+# 用法: 先填 .env(SELENE_JWT_SECRET 必填),然后 docker compose -f deploy/docker-compose.yml up -d
+# 验收: curl http://127.0.0.1:8088/api/v1/health → 200
+#       可服务性看 /api/v1/health/ready → 组件全健康才 200,否则 503
+#       healthcheck 用后者: /health 是前端启动门,组件再坏也返 200,挂它等于没挂
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.api
+    container_name: selene-api
+    restart: unless-stopped
+    ports:
+      - "8088:8088"
+    environment:
+      # ── 计费门(Phase 1.3)──
+      SELENE_BILLING_MODE: "1"
+      SELENE_JWT_SECRET: ${SELENE_JWT_SECRET:?err:SELENE_JWT_SECRET required}
+      # 发码脚本默认写宿主 ~/.selenespace;容器内主库在挂载卷,这里指过去
+      SELENE_MAIN_DB: /root/.selenespace/data/selenespace.db
+      # ── LLM(可选,不填则 AI 功能不可用)──
+      # OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    volumes:
+      - api-data:/app/services/local-api/data
+      - selene-home:/root/.selenespace/data
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request;urllib.request.urlopen('http://127.0.0.1:8088/api/v1/health/ready',timeout=5)\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  web:
+    image: node:20-slim
+    container_name: selene-web
+    restart: unless-stopped
+    working_dir: /web
+    command: sh -c "npm install --no-audit --no-fund && npm run build && npm run start -- -p 3000 -H 0.0.0.0"
+    ports:
+      - "3000:3000"
+    environment:
+      LOCAL_API_BASE: http://api:8088
+    volumes:
+      - ../apps/desktop:/web
+      - web-node-modules:/web/node_modules
+    depends_on:
+      - api
+    healthcheck:
+      # 前端只要 API 进程在(启动门能过)就该起着;组件降级由页面自己显示,
+      # 这里挂 /health/ready 会让一次行情源抖动把 web 一起标成不健康。
+      test: ["CMD-SHELL", "node -e \"fetch('http://127.0.0.1:3000/api/v1/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 120s
+
+volumes:
+  api-data:
+  selene-home:
+  web-node-modules:
+
+# ── 生产加固清单(首单前完成)──
+# 1. 前置 nginx/Caddy 做 TLS + gzip,只暴露 80/443,不裸暴露 8088/3000
+# 2. SELENE_JWT_SECRET: python -c "import secrets;print(secrets.token_urlsafe(48))"
+# 3. 发码: docker compose exec api python /app/scripts/gen_redemption_codes.py --count 5 --plan monthly
+# 4. 数据备份: tar 卷 api-data + selene-home(selenespace.db 含 users/redemption_codes)

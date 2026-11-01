@@ -1,0 +1,52 @@
+# Ruff 配置（pyproject.toml 注明本文件为 single source of truth；
+# 2026-08-26 前实际缺失，ruff 一直以默认规则运行）。
+
+[lint]
+# —— 项目级 extend-ignore：遗留风格债（2026-10-06 用户拍板）——
+#
+# 背景：pre-commit 的 ruff 钩子只扫**暂存文件**，全树从未被 `ruff check .`
+# 扫过，故这些债在 2026-10 首次全树清扫（CI 引入）时才浮现。逐条机械修复
+# 会改动数百文件、与 20 个并行 worktree 大面积冲突；且部分规则**不能**机械
+# 修复（见 E712/F841 说明）。故选择配置化忽略，逐条留痕如下。
+#
+# E712 与 SQLAlchemy 冲突：`BotSubscription.enabled == True` 里的 `==` 是
+#   SQLAlchemy 查询表达式的一部分，改成 `is True` 会破坏语义（实测全仓 33
+#   处 E712 均为 `.filter()` 行）。ruff 的 unsafe fix 会做此改写，故此处
+#   ignore 而非 autofix —— 这不是"忽略问题"，是"规则与 ORM 语义不符"。
+# F841 未使用变量：其中确有疑似真 bug（如 monte_carlo 的 `rng` 赋值后未用），
+#   但也含大量测试夹具的 `result = call()` 惯例。ruff 的 fix 是**删除赋值**，
+#   会把"忘用"静默改成"没写"，反而掩盖线索，故保留在代码里由人工复核。
+# E741/E702/E701/E711/E731：纯风格（变量名 l/I/O、单行双语句、lambda 赋值）。
+extend-ignore = [
+    "E701",  # multiple-statements-on-one-line-colon
+    "E702",  # multiple-statements-on-one-line-semicolon
+    "E711",  # none-comparison（1 处，同 E712 属 ORM 语义）
+    "E712",  # true-false-comparison（SQLAlchemy .filter() 必须用 ==）
+    "E731",  # lambda-assignment
+    "E741",  # ambiguous-variable-name
+    "F841",  # unused-variable（fix 会掩盖"忘用"线索，留人工复核）
+]
+
+[lint.per-file-ignores]
+# 测试文件顶部的 sys.path 引导块（PROJECT_ROOT 推导后批量 insert）是全仓库
+# 测试的既定模式，import 必然位于其后 —— E402 在此为有意为之。
+"**/tests/**" = ["E402"]
+# scripts/ 同理：可执行脚本靠 PROJECT_ROOT 引导才能导入项目包。
+"scripts/**" = ["E402"]
+# examples/ 同理：demo 脚本先 `sys.path.insert(project_root)` 再 import 项目包。
+"examples/**" = ["E402"]
+# 包出口 __init__ 是 re-export hub：import 即导出（名字进 _GROUPS 拼装 __all__），
+# ruff 不解析元组解包进 __all__ 的模式，F401 在此为误报。
+"packages/strategy-engine/selene_space_strategy/__init__.py" = ["F401"]
+# 同上的 re-export hub 模式（子包 __init__ 把名字重导出给上层）：
+"packages/backtest-engine/selene_space_backtest/__init__.py" = ["F401"]
+"packages/exchange-sdk/selene_space_exchange/__init__.py" = ["F401"]
+"packages/strategy-engine/selene_space_strategy/indicators/__init__.py" = ["F401"]
+# E402 的另外两处同类模式（非 scripts/ 路径，故未被上面的 glob 覆盖）：
+#   - regime.py：先把 strategy-engine 加进 sys.path 才能 import 其 indicators。
+#   - address_analyzer.py：文件末尾的"模拟指标计算"分节，import 属该节局部。
+"packages/alpha-core/selene_space_alpha/regime.py" = ["E402"]
+"services/local-api/app/engines/address_analyzer.py" = ["E402"]
+# tgwatcher/storage/__init__.py：sqlite3 adapter 注册必须先于子模块 import
+# （子模块建连接时依赖已注册的 converter），顺序是有意为之。
+"tgwatcher/tgwatcher/storage/__init__.py" = ["E402"]

@@ -1,0 +1,15 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "selene-space-compat"
+version = "0.1.0"
+description = "Compatibility utilities for SeleneQuant"
+readme = {text = "Compatibility utilities for SeleneQuant. No new business logic should be added here.", content-type = "text/plain"}
+license = "AGPL-3.0-only"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.hatch.build.targets.wheel]
+packages = ["selene_space_compat"]

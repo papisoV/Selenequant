@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "selene-space-factor-research"
+version = "0.1.0"
+description = "Pandas factor research toolkit for SeleneQuant (preprocessing toolbox, weight-drift backtest, IC panel)"
+readme = {text = "Factor research toolkit ported from AlphaPurify.", content-type = "text/plain"}
+license = {text = "AGPL-3.0-only"}
+requires-python = ">=3.11"
+dependencies = [
+    "selene-space-core",
+    "pandas>=2.2.0",
+    "numpy>=1.26.0",
+    "scipy>=1.11.0",
+    "scikit-learn>=1.3",
+    "plotly>=5.0",
+    # mining/{genetic_search,parallel_runner}.py 顶层 import joblib（并行搜索）。
+    # 原先靠 scikit-learn 的传递依赖获得，属隐式依赖——显式声明避免上游
+    # 换掉 scikit-learn 的依赖叶时静默断裂。
+    "joblib>=1.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pyarrow>=14.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["selene_space_factor_research*"]

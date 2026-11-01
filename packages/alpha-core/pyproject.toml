@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "selene-space-alpha"
+version = "0.1.0"
+description = "Alpha factor mining and formula strategy engine for SeleneQuant"
+readme = {text = "Alpha mining engine for SeleneQuant.", content-type = "text/plain"}
+license = {text = "AGPL-3.0-only"}
+requires-python = ">=3.11"
+dependencies = [
+    "selene-space-core",
+    "pandas>=2.2.0",
+    "numpy>=1.26.0",
+    "scipy>=1.11.0",
+    # backtest_viz/chart.py 顶层 import matplotlib + networkx（出 PNG 图表）。
+    # 原先未声明，本地靠全局环境掩盖，CI 收集测试时即 ImportError。
+    "matplotlib>=3.8.0",
+    "networkx>=3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "optuna>=3.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["selene_space_alpha*"]

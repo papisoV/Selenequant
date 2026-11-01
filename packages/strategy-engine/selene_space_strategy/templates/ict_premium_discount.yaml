@@ -1,0 +1,78 @@
+# ICT Premium / Discount Zoning
+# Trades the third of the dealing range price sits in, not the direction of
+# the last candle. Longs only from the discount third, shorts only from the
+# premium third — the mirror of "buy low, sell high" inside one leg.
+
+id: template-ict-premium-discount
+name: ICT Premium / Discount
+type: ict
+description: >
+  ICT dealing-range positioning. The last confirmed swing high and low define
+  a range; its lower third is discount (+1, buy zone), the upper third is
+  premium (-1, sell zone), and the middle third is equilibrium (0, no trade).
+  Entries sit at the 50% equilibrium cross-out so a position is opened when
+  price leaves the middle rather than on every bar in the zone.
+symbols:
+  - BTC/USDT
+interval: 4h
+# The strategy defines both legs and both are reachable. The runtime's default
+# is long_only, so a template that wants its short leg has to say so.
+direction: neutral
+parameters:
+  period: 10
+  premium_threshold: 0.6667
+  discount_threshold: 0.3333
+
+entry_rules:
+  long:
+    # Discount third only.
+    - indicator: premium_discount
+      params:
+        period: 10
+        premium_threshold: 0.6667
+        discount_threshold: 0.3333
+      operator: greater_than
+      comparator: 0
+
+  short:
+    # Premium third only.
+    - indicator: premium_discount
+      params:
+        period: 10
+        premium_threshold: 0.6667
+        discount_threshold: 0.3333
+      operator: less_than
+      comparator: 0
+
+exit_rules:
+  close_long:
+    # Only a premium print ends the trade. Equilibrium (0) does not: price
+    # crossing back through the mean is where a discount leg keeps running,
+    # and exiting there turned every entry into a one-bar buy-and-sell.
+    - indicator: premium_discount
+      params:
+        period: 10
+        premium_threshold: 0.6667
+        discount_threshold: 0.3333
+      operator: less_than
+      comparator: 0
+
+  close_short:
+    - indicator: premium_discount
+      params:
+        period: 10
+        premium_threshold: 0.6667
+        discount_threshold: 0.3333
+      operator: greater_than
+      comparator: 0
+
+risk_params:
+  stop_loss_pct: 0.03
+  take_profit_pct: 0.06
+  max_position_pct: 0.1
+  max_open_positions: 1
+
+tags:
+  - ict
+  - premium_discount
+  - dealing_range

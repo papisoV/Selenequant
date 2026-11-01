@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "selene-space-ashare"
+version = "0.1.0"
+description = "A-share factor mining, IC/IR evaluation, regime detection, and backtesting"
+requires-python = ">=3.11"
+dependencies = [
+    "selene-space-types",
+    "selene-space-core",
+    "pandas>=2.2.0",
+    "numpy>=1.26.0",
+    "exchange-calendars>=4.5",
+]
+
+[project.optional-dependencies]
+cn = ["akshare>=1.14.0", "requests>=2.31.0", "baostock>=0.8.9"]  # verified 1.18.55 (stock_board_industry_name_em/cons_em; industry primary path uses EM ulist.np f100)
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["selene_space_ashare"]

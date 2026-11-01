@@ -1,0 +1,46 @@
+# Trading Overlay — Breakout Failure (突破失败叠加物料)
+# Cleanroom original: authored for SeleneQuant (AGPL-3.0-only) from Al Brooks public
+# publications only. No text derived from any third-party codebase.
+# Sources (method basis, no verbatim quotes):
+#   - Al Brooks, "Reading Price Charts Bar by Bar" (Wiley, 2009),
+#     Ch. 10-12 (breakout failure, follow-through absence, traps).
+#   - Al Brooks, "Trading Price Action Trends" (Wiley, 2011),
+#     Ch. 21-23 (breakout mode, failed breakouts flipping always-in).
+# Injected ONLY when the deterministic detector flags breakout_failure
+# on the signal window; otherwise this file is absent from the prompt.
+
+## 0. 触发条件(由确定性检测器给出)
+
+输入 overlay_patterns 含 pattern="breakout_failure" 时本文件才被
+注入。检测器给出:信号窗内曾有收盘越过前 20 根高/低点的K线,但
+最新K线收回该区间之内(direction 标注突破方向,含 prior_high /
+prior_low / last_close)。本文件不做二次判断。
+
+## 1. 突破失败的含义
+
+1. 突破K线出现后价格未跟进,收回区间内 = 买方(或卖方)在极端
+   位置的努力被回灌——经典的陷阱结构;
+2. 本仓实证基率(global_rules 基率行)已给出:多数突破不产生
+   可交易的延续,突破失败后的反向是可统计的事件——引用基率时
+   须按"无条件方法基率"使用,禁止直接当作本次的条件概率;
+3. 突破失败的方向意义:向上突破失败偏空、向下突破失败偏多,
+   但兑现须等反向确认,不可在收回区间的当根就追反向。
+
+## 2. 决策规则
+
+1. 状态策略给出与突破失败反向一致的 trade 候选(向上失败后做空/
+   向下失败后做多)→ 仅当信号窗出现反向确认K线(收盘越过失败
+   突破K线的对应极端)才放行;无确认 → wait;
+2. 状态策略给出与原突破同向的 trade 候选 → 降级:突破已被证伪,
+   同向入场须满足更严的 R:R(>= 1:2),否则 wait;
+3. 突破失败 + 楔形同时检出 → 收缩结构内的突破本就易失败,反向
+   逻辑增强,但仍须第 1 条的确认K线,不叠加豁免;
+4. 突破失败 + 连续性 guard 任一规则否决 → wait(guard 优先级
+   高于一切 overlay 放行)。
+
+## 3. 与四窗的合成
+
+1. 长程窗强趋势中的突破失败 → 按趋势内回调处理,反向目标=近期
+   窗波段端点,不预设趋势反转;
+2. 长程窗走平中的突破失败 → 区间回归逻辑,反向目标=区间对侧
+   (prior_high/prior_low 构成的边界),到位前不提前止盈。

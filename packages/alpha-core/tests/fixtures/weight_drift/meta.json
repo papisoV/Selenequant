@@ -1,0 +1,41 @@
+{
+  "ap_version": "1.0.2",
+  "seed": 42,
+  "polars_version": "1.43.2",
+  "epoch": 10,
+  "n_dates": 102,
+  "n_symbols": 50,
+  "columns": {
+    "trade_date_col": "trade_date",
+    "symbol_col": "symbol",
+    "factor_col": "factor",
+    "price_col": "price",
+    "ret_col": "fut_ret_1"
+  },
+  "research_cfg": {
+    "bins": 5,
+    "base_rate": 0.02,
+    "fee_rate": 0.0003,
+    "slippage_rate": 0.001,
+    "tax_rate": 0.001,
+    "tax_rate_direction": "sell"
+  },
+  "tolerance": {
+    "strict": 1e-08
+  },
+  "inputs": {
+    "factor_df": "factor_df.parquet",
+    "ret_df": "ret_df.parquet"
+  },
+  "expected": {
+    "df_result": "expected/df_result.parquet",
+    "df_agg": "expected/df_agg.parquet",
+    "stats_ls": "expected/stats_ls.json",
+    "stats_l": "expected/stats_l.json",
+    "stats_s": "expected/stats_s.json"
+  },
+  "mean_ret": -0.0005911348557697655,
+  "avg_turnover_ls": 1.586318600683424,
+  "df_result_n_rows": 101,
+  "df_agg_n_rows": 11
+}

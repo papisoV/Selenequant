@@ -1,0 +1,85 @@
+# ICT Killzone Discount
+# The two-gate ICT entry: only trade the discount third, and only during a
+# killzone. Time is the filter most hand-built crypto strategies skip — these
+# windows are when the liquidity that funds the move actually arrives.
+
+id: template-ict-killzone-discount
+name: ICT Killzone Discount Entry
+type: ict
+description: >
+  Killzone window AND dealing-range discount, both required. The killzone
+  gate supplies "when" (London or New York, expressed in New York local time
+  via tz_offset_hours), the premium/discount detector supplies "where" (lower
+  third of the last confirmed swing leg). A strategy needs both because a
+  discount print outside a killzone is usually just drift, and a killzone
+  print in premium is where the smart money sells to you, not where you buy.
+symbols:
+  - BTC/USDT
+interval: 1h
+# Both legs are defined; ``neutral`` is what lets the short leg trade. The
+# runtime's default is long_only, so the short leg needs this opt-in.
+direction: neutral
+parameters:
+  sessions: london,new_york
+  tz_offset_hours: -5
+
+entry_rules:
+  long:
+    - indicator: killzone
+      params:
+        period: 1
+        sessions: london,new_york
+        tz_offset_hours: -5
+      operator: greater_than
+      comparator: 0.5
+
+    - indicator: premium_discount
+      params:
+        period: 10
+      operator: greater_than
+      comparator: 0
+
+  short:
+    - indicator: killzone
+      params:
+        period: 1
+        sessions: london,new_york
+        tz_offset_hours: -5
+      operator: greater_than
+      comparator: 0.5
+
+    - indicator: premium_discount
+      params:
+        period: 10
+      operator: less_than
+      comparator: 0
+
+exit_rules:
+  close_long:
+    # Leave on a premium print, not at equilibrium: the session gate brought
+    # us in at a discount, and equilibrium is still inside the leg. Exiting at
+    # >= 0 closed the trade on the very next bar in most cases.
+    - indicator: premium_discount
+      params:
+        period: 10
+      operator: less_than
+      comparator: 0
+
+  close_short:
+    - indicator: premium_discount
+      params:
+        period: 10
+      operator: greater_than
+      comparator: 0
+
+risk_params:
+  stop_loss_pct: 0.02
+  take_profit_pct: 0.04
+  max_position_pct: 0.08
+  max_open_positions: 1
+
+tags:
+  - ict
+  - killzone
+  - premium_discount
+  - session

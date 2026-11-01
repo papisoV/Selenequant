@@ -1,0 +1,51 @@
+# Trading Strategy — Range (窄幅区间状态)
+# Cleanroom original: authored for SeleneQuant (AGPL-3.0-only) from Al Brooks public
+# publications only. No text derived from any third-party codebase.
+# Sources (method basis, no verbatim quotes):
+#   - Al Brooks, "Reading Price Charts Bar by Bar" (Wiley, 2009),
+#     Ch. 10-12 (magnetic pull, channels, breakouts, tight ranges).
+#   - Al Brooks, "Trading Price Action Trends" (Wiley, 2011),
+#     Ch. 21-23 (tight trading ranges, breakout mode, broad ranges).
+# Applicable when Stage1 diagnosis_summary["state"] == "range".
+
+## 0. 状态再确认(引用诊断 trace)
+
+本策略文件仅在 Stage1 trace 已确认以下两点后适用;任一不成立即退出本文件,
+终止 → wait:
+
+1. 诊断 bar_range 内价格多次触及区间上下边界且未能有效突破
+   (有效突破定义:收盘价超出边界 + follow-through 确认);
+2. 区间宽度 >= 2×ATR(过窄区间无交易价值,等待方向选择)。
+
+## 1. 入场条件(全部满足才可 trade)
+
+1. 边界触达:价格回调至区间下边界附近(做多)或上边界附近(做空);
+2. 反转信号:边界处出现反向信号K线(下边界多头信号/上边界空头信号),
+   收盘未有效收出边界外;
+3. 时间要素:距上次同边界触达 >= 3 根K线(避免连续在边界失败抢次)。
+
+## 2. 方向
+
+双向但互斥:同一次决策只能顺当前边界方向(下边界做多,上边界做空)。
+区间中枢出现信号 → 终止 → wait(区间中枢不交易,这是最常见的失败区)。
+
+## 3. 止损参照(结构位,非固定点数)
+
+1. 做多:下边界外侧一个 tick(结构破位即离场);
+2. 做空:上边界外侧一个 tick;
+3. 若边界被有效突破(收盘+follow-through),止损即被触发,不得移动止损
+   以"等回来"。
+
+## 4. 止盈参照
+
+1. 首要目标:区间对侧边界(区间交易的天然量度目标);
+2. 到达对侧边界前若出现反向信号K线,提前离场;
+3. 区间第 3 次以上测试同一边界时,突破概率上升,收紧管理或放弃该边界。
+
+## 5. 事件窗口否决
+
+以下任一成立 → 终止 → wait,禁止入场:
+1. 处于重大数据发布前后各 2 根K线窗口内(事件窗)——事件常把区间直接
+   打成趋势,区间假设失效;
+2. 区间内出现连续 2 根以上强同向K线(区间内不该有趋势K线序列);
+3. 前次决策止损失效信号尚未消化(见 continuity guard 结果)。

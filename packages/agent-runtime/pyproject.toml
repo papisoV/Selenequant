@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "selene-space-agent"
+version = "0.1.0"
+description = "Strategy drafting and explanation workflows"
+readme = {text = "Strategy drafting and explanation workflows", content-type = "text/plain"}
+license = "AGPL-3.0-only"
+requires-python = ">=3.11"
+dependencies = [
+    "selene-space-types",
+    "selene-space-core",
+    "selene-space-security",
+    "selene-space-market",
+    "selene-space-strategy",
+    "selene-space-backtest",
+    "selene-space-paper",
+    "selene-space-risk",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+mcp = [
+    "mcp>=1.0",
+]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+    "mcp>=1.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["selene_space_agent"]

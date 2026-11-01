@@ -1,0 +1,191 @@
+{
+  "ap_version": "1.0.2",
+  "seed": 42,
+  "sklearn_version": "1.7.0",
+  "tolerance": {
+    "strict": 1e-06,
+    "relaxed": 0.01
+  },
+  "input_file": "input.parquet",
+  "columns": {
+    "trade_date_col": "trade_date",
+    "symbol_col": "symbol",
+    "factor_col": "factor",
+    "neutralizer_cols": [
+      "neutralizers"
+    ],
+    "industry_col": "industry"
+  },
+  "n_dates": 5,
+  "n_per_date": 50,
+  "quadrants": [
+    {
+      "scale_X": true,
+      "dummy": "has",
+      "dummy_cols": [
+        "industry"
+      ]
+    },
+    {
+      "scale_X": true,
+      "dummy": "empty",
+      "dummy_cols": []
+    },
+    {
+      "scale_X": false,
+      "dummy": "has",
+      "dummy_cols": [
+        "industry"
+      ]
+    },
+    {
+      "scale_X": false,
+      "dummy": "empty",
+      "dummy_cols": []
+    }
+  ],
+  "methods": {
+    "neutralize_lasso": {
+      "function": "lasso_neutralize",
+      "params": {},
+      "quadrants": {
+        "scaleX_true_dummy_has": "neutralize_lasso__scaleX_true__dummy_has.parquet",
+        "scaleX_true_dummy_empty": "neutralize_lasso__scaleX_true__dummy_empty.parquet",
+        "scaleX_false_dummy_has": "neutralize_lasso__scaleX_false__dummy_has.parquet",
+        "scaleX_false_dummy_empty": "neutralize_lasso__scaleX_false__dummy_empty.parquet"
+      }
+    },
+    "neutralize_ridge": {
+      "function": "ridge_neutralize",
+      "params": {},
+      "quadrants": {
+        "scaleX_true_dummy_has": "neutralize_ridge__scaleX_true__dummy_has.parquet",
+        "scaleX_true_dummy_empty": "neutralize_ridge__scaleX_true__dummy_empty.parquet",
+        "scaleX_false_dummy_has": "neutralize_ridge__scaleX_false__dummy_has.parquet",
+        "scaleX_false_dummy_empty": "neutralize_ridge__scaleX_false__dummy_empty.parquet"
+      }
+    },
+    "neutralize_elasticnet": {
+      "function": "elasticnet_neutralize",
+      "params": {},
+      "quadrants": {
+        "scaleX_true_dummy_has": "neutralize_elasticnet__scaleX_true__dummy_has.parquet",
+        "scaleX_true_dummy_empty": "neutralize_elasticnet__scaleX_true__dummy_empty.parquet",
+        "scaleX_false_dummy_has": "neutralize_elasticnet__scaleX_false__dummy_has.parquet",
+        "scaleX_false_dummy_empty": "neutralize_elasticnet__scaleX_false__dummy_empty.parquet"
+      }
+    },
+    "neutralize_polynomial": {
+      "function": "polynomial_neutralize",
+      "params": {},
+      "quadrants": {
+        "scaleX_true_dummy_has": "neutralize_polynomial__scaleX_true__dummy_has.parquet",
+        "scaleX_true_dummy_empty": "neutralize_polynomial__scaleX_true__dummy_empty.parquet",
+        "scaleX_false_dummy_has": "neutralize_polynomial__scaleX_false__dummy_has.parquet",
+        "scaleX_false_dummy_empty": "neutralize_polynomial__scaleX_false__dummy_empty.parquet"
+      }
+    },
+    "neutralize_kernelridge": {
+      "function": "kernelridge_neutralize",
+      "params": {},
+      "quadrants": {
+        "scaleX_true_dummy_has": "neutralize_kernelridge__scaleX_true__dummy_has.parquet",
+        "scaleX_true_dummy_empty": "neutralize_kernelridge__scaleX_true__dummy_empty.parquet",
+        "scaleX_false_dummy_has": "neutralize_kernelridge__scaleX_false__dummy_has.parquet",
+        "scaleX_false_dummy_empty": "neutralize_kernelridge__scaleX_false__dummy_empty.parquet"
+      }
+    },
+    "neutralize_huber": {
+      "function": "huber_neutralize",
+      "params": {},
+      "quadrants": {
+        "scaleX_true_dummy_has": "neutralize_huber__scaleX_true__dummy_has.parquet",
+        "scaleX_true_dummy_empty": "neutralize_huber__scaleX_true__dummy_empty.parquet",
+        "scaleX_false_dummy_has": "neutralize_huber__scaleX_false__dummy_has.parquet",
+        "scaleX_false_dummy_empty": "neutralize_huber__scaleX_false__dummy_empty.parquet"
+      }
+    },
+    "neutralize_ransac": {
+      "function": "rank_neutralize",
+      "params": {
+        "random_state": 0
+      },
+      "quadrants": {
+        "scaleX_true_dummy_has": "neutralize_ransac__scaleX_true__dummy_has.parquet",
+        "scaleX_true_dummy_empty": "neutralize_ransac__scaleX_true__dummy_empty.parquet",
+        "scaleX_false_dummy_has": "neutralize_ransac__scaleX_false__dummy_has.parquet",
+        "scaleX_false_dummy_empty": "neutralize_ransac__scaleX_false__dummy_empty.parquet"
+      }
+    },
+    "neutralize_theilsen": {
+      "function": "theilsen_neutralize",
+      "params": {
+        "random_state": 0
+      },
+      "quadrants": {
+        "scaleX_true_dummy_has": "neutralize_theilsen__scaleX_true__dummy_has.parquet",
+        "scaleX_true_dummy_empty": "neutralize_theilsen__scaleX_true__dummy_empty.parquet",
+        "scaleX_false_dummy_has": "neutralize_theilsen__scaleX_false__dummy_has.parquet",
+        "scaleX_false_dummy_empty": "neutralize_theilsen__scaleX_false__dummy_empty.parquet"
+      }
+    },
+    "neutralize_random_forest": {
+      "function": "randomforest_neutralize",
+      "params": {
+        "random_state": 0
+      },
+      "quadrants": {
+        "scaleX_true_dummy_has": "neutralize_random_forest__scaleX_true__dummy_has.parquet",
+        "scaleX_true_dummy_empty": "neutralize_random_forest__scaleX_true__dummy_empty.parquet",
+        "scaleX_false_dummy_has": "neutralize_random_forest__scaleX_false__dummy_has.parquet",
+        "scaleX_false_dummy_empty": "neutralize_random_forest__scaleX_false__dummy_empty.parquet"
+      }
+    },
+    "neutralize_GBDT": {
+      "function": "GBDT_neutralize",
+      "params": {
+        "random_state": 0
+      },
+      "quadrants": {
+        "scaleX_true_dummy_has": "neutralize_GBDT__scaleX_true__dummy_has.parquet",
+        "scaleX_true_dummy_empty": "neutralize_GBDT__scaleX_true__dummy_empty.parquet",
+        "scaleX_false_dummy_has": "neutralize_GBDT__scaleX_false__dummy_has.parquet",
+        "scaleX_false_dummy_empty": "neutralize_GBDT__scaleX_false__dummy_empty.parquet"
+      }
+    },
+    "neutralize_PCA": {
+      "function": "PCA_neutralize",
+      "params": {
+        "random_state": 0
+      },
+      "quadrants": {
+        "scaleX_true_dummy_has": "neutralize_PCA__scaleX_true__dummy_has.parquet",
+        "scaleX_true_dummy_empty": "neutralize_PCA__scaleX_true__dummy_empty.parquet",
+        "scaleX_false_dummy_has": "neutralize_PCA__scaleX_false__dummy_has.parquet",
+        "scaleX_false_dummy_empty": "neutralize_PCA__scaleX_false__dummy_empty.parquet"
+      }
+    },
+    "neutralize_ICA": {
+      "function": "ICA_neutralize",
+      "params": {
+        "random_state": 0
+      },
+      "quadrants": {
+        "scaleX_true_dummy_has": "neutralize_ICA__scaleX_true__dummy_has.parquet",
+        "scaleX_true_dummy_empty": "neutralize_ICA__scaleX_true__dummy_empty.parquet",
+        "scaleX_false_dummy_has": "neutralize_ICA__scaleX_false__dummy_has.parquet",
+        "scaleX_false_dummy_empty": "neutralize_ICA__scaleX_false__dummy_empty.parquet"
+      }
+    },
+    "neutralize_bayesianridge": {
+      "function": "bayesianridge_neutralize",
+      "params": {},
+      "quadrants": {
+        "scaleX_true_dummy_has": "neutralize_bayesianridge__scaleX_true__dummy_has.parquet",
+        "scaleX_true_dummy_empty": "neutralize_bayesianridge__scaleX_true__dummy_empty.parquet",
+        "scaleX_false_dummy_has": "neutralize_bayesianridge__scaleX_false__dummy_has.parquet",
+        "scaleX_false_dummy_empty": "neutralize_bayesianridge__scaleX_false__dummy_empty.parquet"
+      }
+    }
+  }
+}

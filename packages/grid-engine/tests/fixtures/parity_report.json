@@ -1,0 +1,710 @@
+{
+ "fixture": {
+  "path": "packages\\grid-engine\\tests\\fixtures\\grid_fixture_btc_300.json",
+  "bars": 300,
+  "first_ts": 1786977000000,
+  "last_ts": 1787515200000
+ },
+ "source": {
+  "repo": "<local-path-redacted>",
+  "commit": "43eee46",
+  "module": "grid_sim.GridEngine"
+ },
+ "bounds": {
+  "lower": 76852.40000000001,
+  "upper": 77757.8,
+  "reference": 77305.1,
+  "derivation": "derive_bounds(rows, None) pure ATR path, both sides"
+ },
+ "config": {
+  "grid_count": 8,
+  "budget_quote": 100.0,
+  "initial_position_pct": 0.6,
+  "max_open_orders": 4,
+  "atr_mult": 1.5
+ },
+ "comparison": {
+  "fills_count": {
+   "original": 111,
+   "port": 111,
+   "equal": true
+  },
+  "prices_bit_equal": true,
+  "pnl": {
+   "original": 2.0570632907407216,
+   "port": 2.0570632907407216,
+   "exact": true,
+   "within_atol": true
+  },
+  "final_states_equal": true,
+  "verdict": true,
+  "details": [
+   {
+    "i": 0,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 1,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 2,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 3,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 4,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 5,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 6,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 7,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 8,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 9,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 10,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 11,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 12,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 13,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 14,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 15,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 16,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 17,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 18,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 19,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 20,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 21,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 22,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 23,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 24,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 25,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 26,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 27,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 28,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 29,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 30,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 31,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 32,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 33,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 34,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 35,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 36,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 37,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 38,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 39,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 40,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 41,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 42,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 43,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 44,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 45,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 46,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 47,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 48,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 49,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 50,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 51,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 52,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 53,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 54,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 55,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 56,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 57,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 58,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 59,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 60,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 61,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 62,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 63,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 64,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 65,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 66,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 67,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 68,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 69,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 70,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 71,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 72,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 73,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 74,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 75,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 76,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 77,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 78,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 79,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 80,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 81,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 82,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 83,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 84,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 85,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 86,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 87,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 88,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 89,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 90,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 91,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 92,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 93,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 94,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 95,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 96,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 97,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 98,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 99,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 100,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 101,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 102,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 103,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 104,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 105,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 106,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 107,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 108,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 109,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   },
+   {
+    "i": 110,
+    "exact": true,
+    "qty_exact": true,
+    "meta_ok": true
+   }
+  ]
+ }
+}

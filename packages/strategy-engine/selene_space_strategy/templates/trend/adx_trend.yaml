@@ -1,0 +1,61 @@
+# ADX Trend Strength Strategy
+# Enter trends when ADX shows strong directional movement
+
+id: template-adx-trend
+name: ADX Trend Strength
+type: adx_trend
+description: >
+  Trend-following strategy using ADX for trend strength and DI for direction.
+  Goes long when ADX > 25 (strong trend) and +DI > -DI (bullish direction),
+  and closes when ADX falls below 20 or +DI crosses below -DI.
+symbols:
+  - BTC/USDT
+interval: 1h
+parameters:
+  adx_period: 14
+  adx_entry_threshold: 25
+  adx_exit_threshold: 20
+
+entry_rules:
+  long:
+    - indicator: adx
+      params:
+        period: 14
+      field: adx
+      operator: greater_than
+      comparator: 25.0
+    - indicator: adx
+      params:
+        period: 14
+      field: plus_di
+      operator: greater_than
+      comparator:
+        indicator: adx
+        params:
+          period: 14
+        field: minus_di
+
+exit_rules:
+  close_long:
+    - indicator: adx
+      params:
+        period: 14
+      field: adx
+      operator: less_than
+      comparator: 20.0
+    - indicator: adx
+      params:
+        period: 14
+      field: plus_di
+      operator: crosses_below
+      comparator:
+        indicator: adx
+        params:
+          period: 14
+        field: minus_di
+
+risk_params:
+  stop_loss_pct: 0.04
+  take_profit_pct: 0.10
+  max_position_pct: 0.1
+  max_open_positions: 1

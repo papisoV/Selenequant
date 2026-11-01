@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "selene-space-news-ingest"
+version = "0.1.0"
+description = "RSS news ingestion pipeline (collect -> claim-safe LLM tag -> volume anomaly verification) for SeleneQuant"
+readme = {text = "RSS news pipeline absorbed from the author's own binance-quant project: PANews RSS collector, crash-safe claim queue, LLM tagger, volume anomaly detector.", content-type = "text/plain"}
+license = "AGPL-3.0-only"
+requires-python = ">=3.11"
+dependencies = [
+    "aiohttp",
+    "requests",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["selene_space_news_ingest"]

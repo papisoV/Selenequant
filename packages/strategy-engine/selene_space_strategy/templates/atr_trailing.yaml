@@ -1,0 +1,43 @@
+# ATR Trailing Stop Strategy
+# Uses ATR for dynamic trailing stop to capture trends.
+
+id: template-atr-trailing
+name: ATR Trailing Stop
+type: atr_trailing
+description: >
+  ATR-based trailing stop strategy.
+  Enters on SMA crossover, uses ATR for dynamic stop loss.
+symbols:
+  - BTC/USDT
+interval: 1h
+parameters:
+  atr_period: 14
+  atr_multiplier: 3.0
+
+entry_rules:
+  long:
+    - indicator: ema
+      params:
+        period: 9
+      operator: crosses_above
+      comparator:
+        indicator: ema
+        params:
+          period: 21
+
+exit_rules:
+  close_long:
+    - indicator: ema
+      params:
+        period: 9
+      operator: crosses_below
+      comparator:
+        indicator: ema
+        params:
+          period: 21
+
+risk_params:
+  stop_loss_pct: 0.03
+  take_profit_pct: 0.1
+  max_position_pct: 0.1
+  max_open_positions: 1

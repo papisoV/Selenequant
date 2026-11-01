@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "selene-space-ext-ollama"
+version = "0.1.0"
+description = "SeleneQuant extension: Ollama local LLM provider"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "selene-space-core",
+    "selene-space-llm",
+]
+
+[tool.setuptools]
+package-dir = {"selene_space_ext_ollama" = "."}
+packages = ["selene_space_ext_ollama"]
+
+[tool.setuptools.package-data]
+selene_space_ext_ollama = ["manifest.json"]

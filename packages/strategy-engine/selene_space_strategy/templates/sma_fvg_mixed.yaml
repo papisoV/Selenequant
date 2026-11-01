@@ -1,0 +1,95 @@
+# SMA + FVG Mixed Strategy (trend signal + ICT confirmation)
+# Trend signal: SMA(10) crosses above SMA(50) — bullish trend start
+# ICT confirmation: FVG exists (incremental signal — new FVG at this bar = displacement)
+#
+# Replaces rsi_ob_mixed.yaml (RSI<30 + OB) which was a counter-trend "bottom-picking"
+# strategy that failed in BTC 4h bear market (8 trades, -11.55%, win 12.5%).
+# SMA+FVG is a trend-following strategy: enter on trend confirmation + displacement.
+
+id: template-sma-fvg-mixed
+name: SMA + FVG Mixed
+type: custom
+description: >
+  Mixed approach: SMA(10) crosses above SMA(50) for trend confirmation,
+  FVG provides ICT displacement confirmation. Tests the hypothesis that
+  stacking a falsifiable trend indicator (SMA cross) with an ICT pattern
+  (FVG) produces a profitable hybrid trend-following strategy.
+symbols:
+  - BTC/USDT
+interval: 4h
+parameters:
+  sma_fast: 10
+  sma_slow: 50
+
+entry_rules:
+  long:
+    # SMA fast crosses above SMA slow (bullish trend start)
+    - indicator: sma
+      params:
+        period: 10
+      operator: crosses_above
+      comparator:
+        indicator: sma
+        params:
+          period: 50
+
+    # FVG exists (ICT displacement confirmation — incremental signal)
+    - indicator: fvg
+      params:
+        period: 3
+        min_gap_atr: 0.1
+      operator: exists
+      comparator: 0
+
+  short:
+    # SMA fast crosses below SMA slow (bearish trend start)
+    - indicator: sma
+      params:
+        period: 10
+      operator: crosses_below
+      comparator:
+        indicator: sma
+        params:
+          period: 50
+
+    # FVG exists (ICT displacement confirmation)
+    - indicator: fvg
+      params:
+        period: 3
+        min_gap_atr: 0.1
+      operator: exists
+      comparator: 0
+
+exit_rules:
+  close_long:
+    - indicator: sma
+      params:
+        period: 10
+      operator: crosses_below
+      comparator:
+        indicator: sma
+        params:
+          period: 50
+
+  close_short:
+    - indicator: sma
+      params:
+        period: 10
+      operator: crosses_above
+      comparator:
+        indicator: sma
+        params:
+          period: 50
+
+risk_params:
+  stop_loss_pct: 0.03
+  take_profit_pct: 0.06
+  max_position_pct: 0.1
+  max_open_positions: 1
+
+tags:
+  - ict
+  - mixed
+  - sma
+  - fvg
+  - trend_following

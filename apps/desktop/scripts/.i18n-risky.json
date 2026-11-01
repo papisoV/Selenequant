@@ -1,0 +1,6251 @@
+{
+  "scannedFiles": 715,
+  "logicValueLines": 22,
+  "logicValueUnique": 12,
+  "displaySiteLines": 300,
+  "displaySiteUnique": 254,
+  "exemptLines": [
+    {
+      "file": "apps/desktop/components/landing/sections/the-loop.tsx",
+      "line": 43,
+      "value": "翻案",
+      "kind": "equality"
+    },
+    {
+      "file": "apps/desktop/components/landing/sections/the-loop.tsx",
+      "line": 45,
+      "value": "veto 不成立",
+      "kind": "bracket-key"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "line": 422,
+      "value": "多",
+      "kind": "equality"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "line": 425,
+      "value": "空",
+      "kind": "equality"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "line": 470,
+      "value": "多",
+      "kind": "equality"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "line": 553,
+      "value": "信号",
+      "kind": "equality"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "line": 554,
+      "value": "告警",
+      "kind": "equality"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "line": 555,
+      "value": "爆仓",
+      "kind": "equality"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "line": 556,
+      "value": "新闻",
+      "kind": "equality"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "line": 911,
+      "value": "信号",
+      "kind": "equality"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "line": 912,
+      "value": "告警",
+      "kind": "equality"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "line": 913,
+      "value": "爆仓",
+      "kind": "equality"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "line": 914,
+      "value": "新闻",
+      "kind": "equality"
+    },
+    {
+      "file": "apps/desktop/components/research/pa-panel.tsx",
+      "line": 162,
+      "value": "多",
+      "kind": "string-method"
+    },
+    {
+      "file": "apps/desktop/components/research/serenity-panel.tsx",
+      "line": 367,
+      "value": "强",
+      "kind": "equality"
+    },
+    {
+      "file": "apps/desktop/components/trade/ai-grid-config.tsx",
+      "line": 105,
+      "value": "演示",
+      "kind": "string-method"
+    },
+    {
+      "file": "apps/desktop/components/trade/ai-grid-config.tsx",
+      "line": 107,
+      "value": "演示",
+      "kind": "string-method"
+    },
+    {
+      "file": "apps/desktop/components/trade/paper-page.tsx",
+      "line": 225,
+      "value": "多",
+      "kind": "equality"
+    },
+    {
+      "file": "apps/desktop/components/trade/paper-page.tsx",
+      "line": 252,
+      "value": "买",
+      "kind": "equality"
+    },
+    {
+      "file": "apps/desktop/components/trade/trd-page.tsx",
+      "line": 704,
+      "value": "买",
+      "kind": "equality"
+    },
+    {
+      "file": "apps/desktop/components/watch/ashare-board-page.tsx",
+      "line": 176,
+      "value": "当日成交净买额",
+      "kind": "bracket-key"
+    },
+    {
+      "file": "apps/desktop/components/watch/ashare-board-page.tsx",
+      "line": 251,
+      "value": "当日成交净买额",
+      "kind": "bracket-key"
+    }
+  ],
+  "logicValues": [
+    {
+      "value": "多",
+      "count": 4,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 422,
+          "kind": "equality"
+        },
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 470,
+          "kind": "equality"
+        },
+        {
+          "file": "apps/desktop/components/research/pa-panel.tsx",
+          "line": 162,
+          "kind": "string-method"
+        },
+        {
+          "file": "apps/desktop/components/trade/paper-page.tsx",
+          "line": 225,
+          "kind": "equality"
+        }
+      ]
+    },
+    {
+      "value": "信号",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 553,
+          "kind": "equality"
+        },
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 911,
+          "kind": "equality"
+        }
+      ]
+    },
+    {
+      "value": "告警",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 554,
+          "kind": "equality"
+        },
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 912,
+          "kind": "equality"
+        }
+      ]
+    },
+    {
+      "value": "爆仓",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 555,
+          "kind": "equality"
+        },
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 913,
+          "kind": "equality"
+        }
+      ]
+    },
+    {
+      "value": "新闻",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 556,
+          "kind": "equality"
+        },
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 914,
+          "kind": "equality"
+        }
+      ]
+    },
+    {
+      "value": "演示",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/trade/ai-grid-config.tsx",
+          "line": 105,
+          "kind": "string-method"
+        },
+        {
+          "file": "apps/desktop/components/trade/ai-grid-config.tsx",
+          "line": 107,
+          "kind": "string-method"
+        }
+      ]
+    },
+    {
+      "value": "买",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/trade/paper-page.tsx",
+          "line": 252,
+          "kind": "equality"
+        },
+        {
+          "file": "apps/desktop/components/trade/trd-page.tsx",
+          "line": 704,
+          "kind": "equality"
+        }
+      ]
+    },
+    {
+      "value": "当日成交净买额",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/watch/ashare-board-page.tsx",
+          "line": 176,
+          "kind": "bracket-key"
+        },
+        {
+          "file": "apps/desktop/components/watch/ashare-board-page.tsx",
+          "line": 251,
+          "kind": "bracket-key"
+        }
+      ]
+    },
+    {
+      "value": "翻案",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/landing/sections/the-loop.tsx",
+          "line": 43,
+          "kind": "equality"
+        }
+      ]
+    },
+    {
+      "value": "veto 不成立",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/landing/sections/the-loop.tsx",
+          "line": 45,
+          "kind": "bracket-key"
+        }
+      ]
+    },
+    {
+      "value": "空",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 425,
+          "kind": "equality"
+        }
+      ]
+    },
+    {
+      "value": "强",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/research/serenity-panel.tsx",
+          "line": 367,
+          "kind": "equality"
+        }
+      ]
+    }
+  ],
+  "displaySites": [
+    {
+      "value": "多",
+      "count": 11,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 89,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 119,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/trade/paper-page.tsx",
+          "line": 103,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/trade/trd-page.tsx",
+          "line": 448,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/trading/position-panel.tsx",
+          "line": 47,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/trading/position-table-embedded.tsx",
+          "line": 49,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/watch/us-radar-page.tsx",
+          "line": 49,
+          "kind": "return-literal"
+        },
+        {
+          "file": "apps/desktop/components/watch/us-radar-snapshot-page.tsx",
+          "line": 43,
+          "kind": "return-literal"
+        },
+        {
+          "file": "apps/desktop/lib/adapters/position.ts",
+          "line": 17,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/lib/adapters/position.ts",
+          "line": 48,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/lib/monitor-feed.ts",
+          "line": 123,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "买",
+      "count": 8,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 103,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/trade/live_log-page.tsx",
+          "line": 47,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/trade/paper-page.tsx",
+          "line": 118,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/trade/trd-page.tsx",
+          "line": 340,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/trading/position-table-embedded.tsx",
+          "line": 35,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/lib/adapters/position.ts",
+          "line": 32,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/lib/chart/trade-review.ts",
+          "line": 131,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/lib/monitor-feed.ts",
+          "line": 135,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "中性",
+      "count": 5,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+          "line": 37,
+          "kind": "return-literal"
+        },
+        {
+          "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+          "line": 44,
+          "kind": "return-literal"
+        },
+        {
+          "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+          "line": 51,
+          "kind": "return-literal"
+        },
+        {
+          "file": "apps/desktop/components/strategy/strategy-card.tsx",
+          "line": 45,
+          "kind": "return-literal"
+        },
+        {
+          "file": "apps/desktop/components/strategy/strategy-table.tsx",
+          "line": 25,
+          "kind": "return-literal"
+        }
+      ]
+    },
+    {
+      "value": "保存中...",
+      "count": 4,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/exchange-settings-panel.tsx",
+          "line": 237,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/system/llm-settings-panel.tsx",
+          "line": 216,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/system/network-settings-panel.tsx",
+          "line": 78,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/system/set-page.tsx",
+          "line": 168,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "平仓失败: ${msg}",
+      "count": 3,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 432,
+          "kind": "toast-call"
+        },
+        {
+          "file": "apps/desktop/lib/hooks/use-position-actions.ts",
+          "line": 84,
+          "kind": "toast-call"
+        },
+        {
+          "file": "apps/desktop/lib/hooks/use-position-actions.ts",
+          "line": 124,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "补充说明(可选)",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/app/research/questions/new/page.tsx",
+          "line": 69,
+          "kind": "aria-title"
+        },
+        {
+          "file": "apps/desktop/app/research/questions/new/page.tsx",
+          "line": 70,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "通知渠道",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+          "line": 270,
+          "kind": "aria-title"
+        },
+        {
+          "file": "apps/desktop/components/system/notifications-page.tsx",
+          "line": 151,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "统计",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/funding-rates-all-exchanges-page.tsx",
+          "line": 142,
+          "kind": "aria-title"
+        },
+        {
+          "file": "apps/desktop/components/system/mcp-page.tsx",
+          "line": 67,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "平仓请求已发送 (${side})",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 429,
+          "kind": "toast-call"
+        },
+        {
+          "file": "apps/desktop/lib/hooks/use-position-actions.ts",
+          "line": 79,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "撤单失败: ${msg}",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 442,
+          "kind": "toast-call"
+        },
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 453,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "做多",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/research/serenity-panel.tsx",
+          "line": 163,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/trading/candlestick-chart.tsx",
+          "line": 555,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "只做空",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/strategy-card.tsx",
+          "line": 44,
+          "kind": "return-literal"
+        },
+        {
+          "file": "apps/desktop/components/strategy/strategy-table.tsx",
+          "line": 24,
+          "kind": "return-literal"
+        }
+      ]
+    },
+    {
+      "value": "只做多",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/strategy-card.tsx",
+          "line": 46,
+          "kind": "return-literal"
+        },
+        {
+          "file": "apps/desktop/components/strategy/strategy-table.tsx",
+          "line": 26,
+          "kind": "return-literal"
+        }
+      ]
+    },
+    {
+      "value": "保存中…",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/strategy-workbench.tsx",
+          "line": 349,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/system/notify-preferences.tsx",
+          "line": 111,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "\\n… (截断)",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/account-panel.tsx",
+          "line": 164,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/system/shadow-profile-panel.tsx",
+          "line": 227,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "留空保持不变",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/exchange-settings-panel.tsx",
+          "line": 199,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/system/exchange-settings-panel.tsx",
+          "line": 224,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "从系统钥匙串清除已存 key",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/exchange-settings-panel.tsx",
+          "line": 210,
+          "kind": "aria-title"
+        },
+        {
+          "file": "apps/desktop/components/system/llm-settings-panel.tsx",
+          "line": 159,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "必须填 reason",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/kill-switch-panel.tsx",
+          "line": 32,
+          "kind": "toast-call"
+        },
+        {
+          "file": "apps/desktop/components/system/kill-switch-panel.tsx",
+          "line": 51,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "实盘可观测性 (Phase 5)",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/live-trading-status-panel.tsx",
+          "line": 71,
+          "kind": "aria-title"
+        },
+        {
+          "file": "apps/desktop/components/system/live-trading-status-panel.tsx",
+          "line": 85,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "启用",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/memory-page.tsx",
+          "line": 55,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/system/notifications-page.tsx",
+          "line": 171,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "已启用",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/notifications-page.tsx",
+          "line": 169,
+          "kind": "ternary-branch"
+        },
+        {
+          "file": "apps/desktop/components/system/skill-page.tsx",
+          "line": 53,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "空",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/watch/us-radar-page.tsx",
+          "line": 50,
+          "kind": "return-literal"
+        },
+        {
+          "file": "apps/desktop/components/watch/us-radar-snapshot-page.tsx",
+          "line": 44,
+          "kind": "return-literal"
+        }
+      ]
+    },
+    {
+      "value": "中",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/watch/us-radar-page.tsx",
+          "line": 51,
+          "kind": "return-literal"
+        },
+        {
+          "file": "apps/desktop/components/watch/us-radar-snapshot-page.tsx",
+          "line": 45,
+          "kind": "return-literal"
+        }
+      ]
+    },
+    {
+      "value": "新布局名称",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/workspace/workspace-layout-manager.tsx",
+          "line": 212,
+          "kind": "aria-title"
+        },
+        {
+          "file": "apps/desktop/components/workspace/workspace-layout-manager.tsx",
+          "line": 254,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "参数已过期请重新下单",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "apps/desktop/lib/hooks/use-risk-aware-submit.ts",
+          "line": 89,
+          "kind": "toast-call"
+        },
+        {
+          "file": "apps/desktop/lib/hooks/use-risk-aware-submit.ts",
+          "line": 95,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "问题标题",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/app/research/questions/new/page.tsx",
+          "line": 63,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "一个问题,例:BTC 突破是否有效",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/app/research/questions/new/page.tsx",
+          "line": 64,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "锚定 symbol",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/app/research/questions/new/page.tsx",
+          "line": 82,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "锚定周期",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/app/research/questions/new/page.tsx",
+          "line": 89,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "锚定策略(可选,逗号分隔)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/app/research/questions/new/page.tsx",
+          "line": 100,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "策略 ID,逗号分隔,例:V52",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/app/research/questions/new/page.tsx",
+          "line": 101,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "锚定 regime(可选,逗号分隔)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/app/research/questions/new/page.tsx",
+          "line": 107,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "Regime,逗号分隔,例:trend",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/app/research/questions/new/page.tsx",
+          "line": 108,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "创建中…",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/app/research/questions/new/page.tsx",
+          "line": 119,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "编辑规则",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/alerts/alert-rule-editor-dialog.tsx",
+          "line": 28,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "价格阈值",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+          "line": 136,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "阈值",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+          "line": 164,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "最小值",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+          "line": 192,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "最小名义金额(USD)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+          "line": 206,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "关键词",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+          "line": 219,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "如: 爆仓 / 巨额转账",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+          "line": 223,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "规则名称",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+          "line": 238,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "如: BTC 突破 10 万",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+          "line": 242,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "规则类型",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+          "line": 251,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "删除规则「${rule.name}」?",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/alerts/alert-rules-page.tsx",
+          "line": 36,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "暂无资产数据",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/assets/auth-gate.tsx",
+          "line": 13,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "极度贪婪",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/chart/market-gauge.tsx",
+          "line": 8,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "成交足迹 (历史)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/footprint-page.tsx",
+          "line": 85,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "bar 统计",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/footprint-page.tsx",
+          "line": 140,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "全交易所资金费率 (REST)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/funding-rates-all-exchanges-page.tsx",
+          "line": 71,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "资金费率 (WS)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/funding-rates-page.tsx",
+          "line": 58,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "${rows.length} symbols · 正${positive} / 负${negative}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/funding-rates-page.tsx",
+          "line": 71,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "费率分布",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/funding-rates-page.tsx",
+          "line": 104,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "大宗成交",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/large-trades-page.tsx",
+          "line": 69,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "成交分布",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/large-trades-page.tsx",
+          "line": 138,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "大宗成交统计",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/large-trades-stats-page.tsx",
+          "line": 51,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "窗口 ${(data.window_ms / 3_600_000).toFixed(data.window_ms % 3_600_000 === 0 ? 0 : 1)}h",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/large-trades-stats-page.tsx",
+          "line": 81,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "成交金额",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/large-trades-stats-page.tsx",
+          "line": 89,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "全市场爆仓统计",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/liquidation-stats-all-page.tsx",
+          "line": 53,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "${entries.length} 个时间窗口",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/liquidation-stats-all-page.tsx",
+          "line": 66,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "爆仓统计",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/liquidation-stats-page.tsx",
+          "line": 52,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "${data.symbol} · ${data.window} 窗口",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/liquidation-stats-page.tsx",
+          "line": 82,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "笔数",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/liquidation-stats-page.tsx",
+          "line": 90,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "近期爆仓",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/liquidations-recent-page.tsx",
+          "line": 70,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "爆仓分布",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/liquidations-recent-page.tsx",
+          "line": 139,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "合并盘口",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/merged-book-page.tsx",
+          "line": 55,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "加载中...",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/merged-book-page.tsx",
+          "line": 68,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "盘口统计",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/merged-book-page.tsx",
+          "line": 78,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "深度统计",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/merged-book-page.tsx",
+          "line": 86,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "未平仓量",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/open-interest-page.tsx",
+          "line": 56,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "${rows.length} symbols · 总计 ${formatUsd(totalOiUsd)}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/open-interest-page.tsx",
+          "line": 69,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "持仓统计",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/open-interest-page.tsx",
+          "line": 98,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "期权总览",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/options-page.tsx",
+          "line": 170,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "期权 Tickers (Greeks)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/options-page.tsx",
+          "line": 240,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "期权 Instruments",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/options-page.tsx",
+          "line": 334,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "期权 Ticker 详情",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/options-page.tsx",
+          "line": 405,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "成交量分布",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/vpvr-page.tsx",
+          "line": 68,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "关键价位",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/vpvr-page.tsx",
+          "line": 108,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "成交量统计",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/derivatives/vpvr-page.tsx",
+          "line": 115,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "切换到中文",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/i18n/locale-switcher.tsx",
+          "line": 35,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "中文",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/i18n/locale-switcher.tsx",
+          "line": 38,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "GitHub 仓库",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/landing/brand-bar.tsx",
+          "line": 76,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "四条实验证据汇入一条结论的连线图",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/landing/evidence-convergence.tsx",
+          "line": 37,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "记忆回流示意:两条知识被下游回答各取回 1 次,一条尚无引用",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/landing/memory-flow.tsx",
+          "line": 28,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "页面章节",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/landing/progress-rail.tsx",
+          "line": 48,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "发布门自检终端回放(ok=false,exit 1)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/landing/self-demo.tsx",
+          "line": 126,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "信号",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 299,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "主图切换为 ${sym}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 389,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "订单 ${orderId} 已撤",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 450,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "${mode === \"hedge\" ? tr(\"对冲\") : tr(\"反手\")}失败: ${msg}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 483,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "${ACTIONBAR.find((b) => b.id === id)?.label} · 3s 内再次点击确认",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 498,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "paper 账户 ${accountId} 已清零",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 533,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "清零失败: ${msg}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 536,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "已添加 ${ctxMenu.sym} 到多图",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 993,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "已移除 ${ctxMenu.sym}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+          "line": 994,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "搜索",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/cmdk-panel.tsx",
+          "line": 252,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "从自选移除 ${row.symbol}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/cmdk-panel.tsx",
+          "line": 589,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "${connectedCount} 账户已连接",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/vhero/vhero-avatar.tsx",
+          "line": 87,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "Kill Switch 触发失败: ${msg}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/vhero/vhero-kill.tsx",
+          "line": 64,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "重连",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/ws-status-banner.tsx",
+          "line": 40,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "行情流重连中",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/layout/ws-status-banner.tsx",
+          "line": 41,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "收起诊断 ▲",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/providers/backend-ready-provider.tsx",
+          "line": 110,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "探针",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/research/desk-page.tsx",
+          "line": 72,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "引证据",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/research/desk-page.tsx",
+          "line": 73,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "Outcome 结果",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/research/missions-detail-view.tsx",
+          "line": 262,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "实验裁决了什么",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/research/missions-detail-view.tsx",
+          "line": 265,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "Assessment 定稿",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/research/missions-detail-view.tsx",
+          "line": 268,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "最终结论",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/research/missions-detail-view.tsx",
+          "line": 271,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "暂无数据",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/shared/account-gate.tsx",
+          "line": 11,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "过滤…",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/shared/data-table-page.tsx",
+          "line": 222,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "VIP 专享",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/shared/feature-lock.tsx",
+          "line": 28,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "演示层级切换",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/shared/tier-demo-switcher.tsx",
+          "line": 14,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "收起",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/ai-sidebar.tsx",
+          "line": 286,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "新对话",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/ai-sidebar.tsx",
+          "line": 1034,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "历史记录",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/ai-sidebar.tsx",
+          "line": 1042,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "AI 助手",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/ai-sidebar.tsx",
+          "line": 1117,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "描述你想做的策略...",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/ai-sidebar.tsx",
+          "line": 1269,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "高级 · YAML 配置",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/ai-sidebar.tsx",
+          "line": 1288,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "参数面板",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/ai-sidebar.tsx",
+          "line": 1297,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "${template.name} 已部署 Paper",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/deploy-wizard-dialog.tsx",
+          "line": 157,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "${template.name} 已部署 Live",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/deploy-wizard-dialog.tsx",
+          "line": 170,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "部署失败: ${e instanceof Error ? e.message : String(e)}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/deploy-wizard-dialog.tsx",
+          "line": 176,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "均值回归倾向",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+          "line": 28,
+          "kind": "return-literal"
+        }
+      ]
+    },
+    {
+      "value": "趋势延续倾向",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+          "line": 29,
+          "kind": "return-literal"
+        }
+      ]
+    },
+    {
+      "value": "随机游走",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+          "line": 30,
+          "kind": "return-literal"
+        }
+      ]
+    },
+    {
+      "value": "买入信号",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+          "line": 35,
+          "kind": "return-literal"
+        }
+      ]
+    },
+    {
+      "value": "卖出信号",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+          "line": 36,
+          "kind": "return-literal"
+        }
+      ]
+    },
+    {
+      "value": "超买",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+          "line": 42,
+          "kind": "return-literal"
+        }
+      ]
+    },
+    {
+      "value": "超卖",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+          "line": 43,
+          "kind": "return-literal"
+        }
+      ]
+    },
+    {
+      "value": "买盘强势",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+          "line": 49,
+          "kind": "return-literal"
+        }
+      ]
+    },
+    {
+      "value": "卖盘强势",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+          "line": 50,
+          "kind": "return-literal"
+        }
+      ]
+    },
+    {
+      "value": "${metrics.half_life.toFixed(1)} bars回归",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+          "line": 76,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "回撤水下曲线",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/lightweight-area-chart.tsx",
+          "line": 179,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "入场规则",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/param-panel.tsx",
+          "line": 242,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "出场规则",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/param-panel.tsx",
+          "line": 249,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "月度收益热力图",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/shared-charts.tsx",
+          "line": 382,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "收益分布直方图",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/shared-charts.tsx",
+          "line": 423,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "频数",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/shared-charts.tsx",
+          "line": 441,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "运行中",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/strategy-card.tsx",
+          "line": 133,
+          "kind": "return-literal"
+        }
+      ]
+    },
+    {
+      "value": "已停止",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/strategy-card.tsx",
+          "line": 134,
+          "kind": "return-literal"
+        }
+      ]
+    },
+    {
+      "value": "已回测",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/strategy-card.tsx",
+          "line": 135,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "停止策略",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/strategy-card.tsx",
+          "line": 401,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "运行中...",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/strategy-config-panel.tsx",
+          "line": 508,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "搜索策略...",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/strategy-filters.tsx",
+          "line": 34,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "卡片视图",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/strategy-filters.tsx",
+          "line": 64,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "表格视图",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/strategy-filters.tsx",
+          "line": 72,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "打开 Studio",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/strategy-table.tsx",
+          "line": 92,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "请填写标的",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/strategy-workbench.tsx",
+          "line": 167,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "已保存(v${(updated.data as StrategyData).version ?? \"?\"})",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/strategy-workbench.tsx",
+          "line": 283,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "已回滚到该版本",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/strategy-workbench.tsx",
+          "line": 377,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "部署中...",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/strategy/studio-toolbar.tsx",
+          "line": 79,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "已导出 (策略 ${data.strategies_count} / 会话 ${data.chat_sessions_count})",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/account-panel.tsx",
+          "line": 48,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "已撤销删除请求",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/account-panel.tsx",
+          "line": 75,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "账户管理",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/account-panel.tsx",
+          "line": 87,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "会话概览",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/chat-sessions-page.tsx",
+          "line": 55,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "会话列表",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/chat-sessions-page.tsx",
+          "line": 61,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "会话详情",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/chat-sessions-page.tsx",
+          "line": 77,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": " | 策略: ${detailSession.strategy_id}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/chat-sessions-page.tsx",
+          "line": 96,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": " | 创建: ${detailSession.created_at.slice(0, 19).replace(\"T\", \" \")}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/chat-sessions-page.tsx",
+          "line": 98,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "系统总览",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/dash-page.tsx",
+          "line": 112,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "市场行情 (订阅实时数据)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/dash-page.tsx",
+          "line": 164,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "信号状态",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/dash-page.tsx",
+          "line": 201,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "后端聚合状态",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/dash-page.tsx",
+          "line": 216,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "(密钥已配对)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/exchange-settings-panel.tsx",
+          "line": 126,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "测试中...",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/exchange-settings-panel.tsx",
+          "line": 250,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": " · 测试网",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/exchange-settings-panel.tsx",
+          "line": 258,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "Healthchecks (健康检查)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/healthcheck-panel.tsx",
+          "line": 70,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "运行 healthcheck",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/healthcheck-panel.tsx",
+          "line": 118,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "Kill switch 已激活",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/kill-switch-panel.tsx",
+          "line": 38,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "Kill switch 已释放",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/kill-switch-panel.tsx",
+          "line": 57,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "Kill Switch (全局熔断)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/kill-switch-panel.tsx",
+          "line": 70,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "实盘首单已授权(本 session 有效)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+          "line": 43,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "授权失败: ${r.error || \"unknown\"}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+          "line": 48,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "授权失败: ${e instanceof Error ? e.message : String(e)}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+          "line": 51,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "symbol 和 quantity 必填",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+          "line": 59,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "限价单必须填 price",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+          "line": 63,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "下单成功: ${r.order_id ?? \"—\"}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+          "line": 69,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "下单失败: ${e instanceof Error ? e.message : String(e)}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+          "line": 72,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "实盘引擎控制 (Live Engine)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+          "line": 82,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "已授权",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+          "line": 113,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "手动下单直连 LiveExecutionEngine(绕过 paper mode)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+          "line": 123,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "链完整",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/live-trading-status-panel.tsx",
+          "line": 164,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "•••••••• 留空保持不变",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/llm-settings-panel.tsx",
+          "line": 147,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "按问题类型切换模型（strategy/analysis/quick）",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/llm-settings-panel.tsx",
+          "line": 176,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "模型名",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/llm-settings-panel.tsx",
+          "line": 201,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "市场概览",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/marketplace-page.tsx",
+          "line": 46,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "策略列表",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/marketplace-page.tsx",
+          "line": 53,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "MCP 服务器",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/mcp-page.tsx",
+          "line": 41,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "MCP 工具",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/mcp-tools-page.tsx",
+          "line": 40,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "刷新",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/mcp-tools-page.tsx",
+          "line": 46,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "工具列表",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/mcp-tools-page.tsx",
+          "line": 60,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "加载中…",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/mcp-tools-page.tsx",
+          "line": 63,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "市场记忆概览",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/memory-page.tsx",
+          "line": 36,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "模式列表",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/memory-page.tsx",
+          "line": 43,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "已保存，重启后生效",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/network-settings-panel.tsx",
+          "line": 40,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "http://127.0.0.1:7890 或 socks5://127.0.0.1:1080",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/network-settings-panel.tsx",
+          "line": 62,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "请填写渠道名称",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/notifications-page.tsx",
+          "line": 62,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "未知渠道类型",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/notifications-page.tsx",
+          "line": 67,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "请填写 ${f.label}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/notifications-page.tsx",
+          "line": 74,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "渠道已创建",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/notifications-page.tsx",
+          "line": 82,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "渠道已删除",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/notifications-page.tsx",
+          "line": 108,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "测试发送成功",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/notifications-page.tsx",
+          "line": 127,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "通知概览",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/notifications-page.tsx",
+          "line": 140,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "停用",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/notifications-page.tsx",
+          "line": 177,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "真发一条测试消息，验证 URL/密钥是否可用",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/notifications-page.tsx",
+          "line": 183,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "发送中…",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/notifications-page.tsx",
+          "line": 185,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "如 风控飞书群",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/notifications-page.tsx",
+          "line": 210,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "（可选）",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/notifications-page.tsx",
+          "line": 238,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "添加中…",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/notifications-page.tsx",
+          "line": 254,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "订阅已保存",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/notify-preferences.tsx",
+          "line": 82,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "事件订阅",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/notify-preferences.tsx",
+          "line": 94,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "加密公钥 (JWK)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/public-key-panel.tsx",
+          "line": 35,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "✓ 已复制",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/public-key-panel.tsx",
+          "line": 57,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "策略 Runner 状态",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/runner-status-panel.tsx",
+          "line": 15,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "显示 market/paper/live 三路 WebSocket 连接状态浮窗",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/set-page.tsx",
+          "line": 51,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "必须选择 CSV 文件",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/shadow-profile-panel.tsx",
+          "line": 35,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "已提取 shadow_id: ${r.shadow_id}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/shadow-profile-panel.tsx",
+          "line": 42,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "必须填 shadow_id",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/shadow-profile-panel.tsx",
+          "line": 52,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "shadow_id 和 window_start/end 必填",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/shadow-profile-panel.tsx",
+          "line": 68,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "回测完成",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/shadow-profile-panel.tsx",
+          "line": 78,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "Shadow Profile (影子画像)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/shadow-profile-panel.tsx",
+          "line": 87,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "技能市场",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/skill-page.tsx",
+          "line": 29,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "状态展示(只读)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/system/skill-page.tsx",
+          "line": 51,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "合约",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/tactical/large-trade-feed.tsx",
+          "line": 90,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "全部交易所",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/tactical/large-trade-feed.tsx",
+          "line": 188,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "全部",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/tactical/whale-transfer-feed.tsx",
+          "line": 140,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "${t.confirmations} 确认",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/tactical/whale-transfer-feed.tsx",
+          "line": 195,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "限价",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/trade/trd-page.tsx",
+          "line": 341,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "加载中",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/trading/market-regime-indicator.tsx",
+          "line": 66,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "买入",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/trading/order-form.tsx",
+          "line": 72,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "下单失败: ${err.message}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/trading/order-form.tsx",
+          "line": 77,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "数量(${baseCurrency})",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/trading/orderbook-panel.tsx",
+          "line": 166,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "我的持仓",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/trading/position-table-embedded.tsx",
+          "line": 94,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "挂单",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/trading/position-table-embedded.tsx",
+          "line": 103,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "该市场暂无挂单",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/trading/position-table-embedded.tsx",
+          "line": 134,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "已连接",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/trading/strategy-status.tsx",
+          "line": 77,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "行情延迟",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/watch/kf-chart.tsx",
+          "line": 1383,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "输入地址 / 符号…",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/watch/parts/dex-query.tsx",
+          "line": 54,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "拖动以重排面板",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/workspace/workspace-grid.tsx",
+          "line": 151,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "切换 panel 类型",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/workspace/workspace-grid.tsx",
+          "line": 163,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "布局名称",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/components/workspace/workspace-layout-manager.tsx",
+          "line": 191,
+          "kind": "aria-title"
+        }
+      ]
+    },
+    {
+      "value": "推理中…",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/lib/hooks/use-agent-chat.ts",
+          "line": 193,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "发生错误",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/lib/hooks/use-agent-chat.ts",
+          "line": 257,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "调用工具 ${d.tool}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/lib/hooks/use-agent-chat.ts",
+          "line": 320,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "无持仓可平",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/lib/hooks/use-position-actions.ts",
+          "line": 42,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "无持仓可操作",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/lib/hooks/use-position-actions.ts",
+          "line": 94,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "原持仓杠杆未知,使用当前输入框杠杆 ${leverage}x",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/lib/hooks/use-position-actions.ts",
+          "line": 104,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "反手请求已发送",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/lib/hooks/use-position-actions.ts",
+          "line": 139,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "持仓已平,反手开仓失败,请手动开仓: ${msg}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/lib/hooks/use-position-actions.ts",
+          "line": 145,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "对冲请求已发送",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/lib/hooks/use-position-actions.ts",
+          "line": 158,
+          "kind": "toast-call"
+        }
+      ]
+    },
+    {
+      "value": "${tr(\"{n} 次回测\", { n: e.count })}${sharpe}${date}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/lib/hooks/use-strategy-evidence.ts",
+          "line": 74,
+          "kind": "return-literal"
+        }
+      ]
+    },
+    {
+      "value": "是",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/lib/indicators.ts",
+          "line": 440,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "做空",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/lib/quant/arb.ts",
+          "line": 57,
+          "kind": "ternary-branch"
+        }
+      ]
+    },
+    {
+      "value": "${obj.name} (导入)",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "apps/desktop/lib/workspace/workspace-layouts.ts",
+          "line": 388,
+          "kind": "ternary-branch"
+        }
+      ]
+    }
+  ],
+  "hits": [
+    {
+      "file": "apps/desktop/app/research/questions/new/page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "问题标题",
+      "line": 63,
+      "text": "aria-label=\"问题标题\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/app/research/questions/new/page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "一个问题,例:BTC 突破是否有效",
+      "line": 64,
+      "text": "placeholder=\"一个问题,例:BTC 突破是否有效\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/app/research/questions/new/page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "补充说明(可选)",
+      "line": 69,
+      "text": "aria-label=\"补充说明(可选)\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/app/research/questions/new/page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "补充说明(可选)",
+      "line": 70,
+      "text": "placeholder=\"补充说明(可选)\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/app/research/questions/new/page.tsx",
+      "column": 13,
+      "kind": "aria-title",
+      "value": "锚定 symbol",
+      "line": 82,
+      "text": "aria-label=\"锚定 symbol\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/app/research/questions/new/page.tsx",
+      "column": 13,
+      "kind": "aria-title",
+      "value": "锚定周期",
+      "line": 89,
+      "text": "aria-label=\"锚定周期\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/app/research/questions/new/page.tsx",
+      "column": 11,
+      "kind": "aria-title",
+      "value": "锚定策略(可选,逗号分隔)",
+      "line": 100,
+      "text": "aria-label=\"锚定策略(可选,逗号分隔)\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/app/research/questions/new/page.tsx",
+      "column": 11,
+      "kind": "aria-title",
+      "value": "策略 ID,逗号分隔,例:V52",
+      "line": 101,
+      "text": "placeholder=\"策略 ID,逗号分隔,例:V52\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/app/research/questions/new/page.tsx",
+      "column": 11,
+      "kind": "aria-title",
+      "value": "锚定 regime(可选,逗号分隔)",
+      "line": 107,
+      "text": "aria-label=\"锚定 regime(可选,逗号分隔)\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/app/research/questions/new/page.tsx",
+      "column": 11,
+      "kind": "aria-title",
+      "value": "Regime,逗号分隔,例:trend",
+      "line": 108,
+      "text": "placeholder=\"Regime,逗号分隔,例:trend\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/app/research/questions/new/page.tsx",
+      "column": 21,
+      "kind": "ternary-branch",
+      "value": "创建中…",
+      "line": 119,
+      "text": "{submitting ? \"创建中…\" : \"立问\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/alerts/alert-rule-editor-dialog.tsx",
+      "column": 30,
+      "kind": "ternary-branch",
+      "value": "编辑规则",
+      "line": 28,
+      "text": "<DialogTitle>{rule ? \"编辑规则\" : \"新建规则\"}</DialogTitle>",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+      "column": 17,
+      "kind": "aria-title",
+      "value": "价格阈值",
+      "line": 136,
+      "text": "aria-label=\"价格阈值\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+      "column": 17,
+      "kind": "aria-title",
+      "value": "阈值",
+      "line": 164,
+      "text": "aria-label=\"阈值\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+      "column": 17,
+      "kind": "aria-title",
+      "value": "最小值",
+      "line": 192,
+      "text": "aria-label=\"最小值\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+      "column": 15,
+      "kind": "aria-title",
+      "value": "最小名义金额(USD)",
+      "line": 206,
+      "text": "aria-label=\"最小名义金额(USD)\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+      "column": 15,
+      "kind": "aria-title",
+      "value": "关键词",
+      "line": 219,
+      "text": "aria-label=\"关键词\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+      "column": 15,
+      "kind": "aria-title",
+      "value": "如: 爆仓 / 巨额转账",
+      "line": 223,
+      "text": "placeholder=\"如: 爆仓 / 巨额转账\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+      "column": 11,
+      "kind": "aria-title",
+      "value": "规则名称",
+      "line": 238,
+      "text": "aria-label=\"规则名称\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+      "column": 11,
+      "kind": "aria-title",
+      "value": "如: BTC 突破 10 万",
+      "line": 242,
+      "text": "placeholder=\"如: BTC 突破 10 万\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+      "column": 11,
+      "kind": "aria-title",
+      "value": "规则类型",
+      "line": 251,
+      "text": "aria-label=\"规则类型\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/alerts/alert-rule-form.tsx",
+      "column": 11,
+      "kind": "aria-title",
+      "value": "通知渠道",
+      "line": 270,
+      "text": "aria-label=\"通知渠道\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/alerts/alert-rules-page.tsx",
+      "column": 16,
+      "kind": "toast-call",
+      "value": "删除规则「${rule.name}」?",
+      "line": 36,
+      "text": "if (window.confirm(`删除规则「${rule.name}」?`)) {",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/assets/auth-gate.tsx",
+      "column": 7,
+      "kind": "aria-title",
+      "value": "暂无资产数据",
+      "line": 13,
+      "text": "title=\"暂无资产数据\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/chart/market-gauge.tsx",
+      "column": 29,
+      "kind": "ternary-branch",
+      "value": "极度贪婪",
+      "line": 8,
+      "text": "const label = value >= 75 ? \"极度贪婪\" : value >= 55 ? \"贪婪\" : value >= 45 ? \"中性\" : value >= 25 ? \"恐惧\" : \"极度恐惧\";",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/footprint-page.tsx",
+      "column": 24,
+      "kind": "ternary-branch",
+      "value": "成交足迹 (历史)",
+      "line": 85,
+      "text": "title={history ? \"成交足迹 (历史)\" : \"成交足迹\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/footprint-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "bar 统计",
+      "line": 140,
+      "text": "<V17Card title=\"bar 统计\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/funding-rates-all-exchanges-page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "全交易所资金费率 (REST)",
+      "line": 71,
+      "text": "title=\"全交易所资金费率 (REST)\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/funding-rates-all-exchanges-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "统计",
+      "line": 142,
+      "text": "<V17Card title=\"统计\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/funding-rates-page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "资金费率 (WS)",
+      "line": 58,
+      "text": "title=\"资金费率 (WS)\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/funding-rates-page.tsx",
+      "column": 28,
+      "kind": "ternary-branch",
+      "value": "${rows.length} symbols · 正${positive} / 负${negative}",
+      "line": 71,
+      "text": "{rows.length > 0 ? `${rows.length} symbols · 正${positive} / 负${negative}` : \"暂无数据\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/funding-rates-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "费率分布",
+      "line": 104,
+      "text": "<V17Card title=\"费率分布\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/large-trades-page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "大宗成交",
+      "line": 69,
+      "text": "title=\"大宗成交\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/large-trades-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "成交分布",
+      "line": 138,
+      "text": "<V17Card title=\"成交分布\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/large-trades-stats-page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "大宗成交统计",
+      "line": 51,
+      "text": "title=\"大宗成交统计\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/large-trades-stats-page.tsx",
+      "column": 17,
+      "kind": "ternary-branch",
+      "value": "窗口 ${(data.window_ms / 3_600_000).toFixed(data.window_ms % 3_600_000 === 0 ? 0 : 1)}h",
+      "line": 81,
+      "text": "{data ? `窗口 ${(data.window_ms / 3_600_000).toFixed(data.window_ms % 3_600_000 === 0 ? 0 : 1)}h` : \"暂无数据\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/large-trades-stats-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "成交金额",
+      "line": 89,
+      "text": "<V17Card title=\"成交金额\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/liquidation-stats-all-page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "全市场爆仓统计",
+      "line": 53,
+      "text": "title=\"全市场爆仓统计\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/liquidation-stats-all-page.tsx",
+      "column": 31,
+      "kind": "ternary-branch",
+      "value": "${entries.length} 个时间窗口",
+      "line": 66,
+      "text": "{entries.length > 0 ? `${entries.length} 个时间窗口` : \"暂无数据\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/liquidation-stats-page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "爆仓统计",
+      "line": 52,
+      "text": "title=\"爆仓统计\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/liquidation-stats-page.tsx",
+      "column": 17,
+      "kind": "ternary-branch",
+      "value": "${data.symbol} · ${data.window} 窗口",
+      "line": 82,
+      "text": "{data ? `${data.symbol} · ${data.window} 窗口` : \"暂无数据\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/liquidation-stats-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "笔数",
+      "line": 90,
+      "text": "<V17Card title=\"笔数\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/liquidations-recent-page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "近期爆仓",
+      "line": 70,
+      "text": "title=\"近期爆仓\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/liquidations-recent-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "爆仓分布",
+      "line": 139,
+      "text": "<V17Card title=\"爆仓分布\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/merged-book-page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "合并盘口",
+      "line": 55,
+      "text": "title=\"合并盘口\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/merged-book-page.tsx",
+      "column": 130,
+      "kind": "ternary-branch",
+      "value": "加载中...",
+      "line": 68,
+      "text": "{d ? `${d.symbol} · ${d.exchanges.join(\"/\")} · bid ${d.bids.length} levels · ask ${d.asks.length} levels` : (isLoading ? \"加载中...\" : \"暂无数据\")}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/merged-book-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "盘口统计",
+      "line": 78,
+      "text": "<V17Card title=\"盘口统计\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/merged-book-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "深度统计",
+      "line": 86,
+      "text": "<V17Card title=\"深度统计\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/open-interest-page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "未平仓量",
+      "line": 56,
+      "text": "title=\"未平仓量\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/open-interest-page.tsx",
+      "column": 28,
+      "kind": "ternary-branch",
+      "value": "${rows.length} symbols · 总计 ${formatUsd(totalOiUsd)}",
+      "line": 69,
+      "text": "{rows.length > 0 ? `${rows.length} symbols · 总计 ${formatUsd(totalOiUsd)}` : \"暂无数据\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/open-interest-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "持仓统计",
+      "line": 98,
+      "text": "<V17Card title=\"持仓统计\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/options-page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "期权总览",
+      "line": 170,
+      "text": "title=\"期权总览\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/options-page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "期权 Tickers (Greeks)",
+      "line": 240,
+      "text": "title=\"期权 Tickers (Greeks)\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/options-page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "期权 Instruments",
+      "line": 334,
+      "text": "title=\"期权 Instruments\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/options-page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "期权 Ticker 详情",
+      "line": 405,
+      "text": "title=\"期权 Ticker 详情\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/vpvr-page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "成交量分布",
+      "line": 68,
+      "text": "title=\"成交量分布\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/vpvr-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "关键价位",
+      "line": 108,
+      "text": "<V17Card title=\"关键价位\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/derivatives/vpvr-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "成交量统计",
+      "line": 115,
+      "text": "<V17Card title=\"成交量统计\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/i18n/locale-switcher.tsx",
+      "column": 30,
+      "kind": "ternary-branch",
+      "value": "切换到中文",
+      "line": 35,
+      "text": "title={locale === \"en\" ? \"切换到中文\" : \"Switch to English\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/i18n/locale-switcher.tsx",
+      "column": 30,
+      "kind": "ternary-branch",
+      "value": "中文",
+      "line": 38,
+      "text": "<span>{locale === \"en\" ? \"中文\" : \"EN\"}</span>",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/landing/brand-bar.tsx",
+      "column": 13,
+      "kind": "aria-title",
+      "value": "GitHub 仓库",
+      "line": 76,
+      "text": "aria-label=\"GitHub 仓库\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/landing/evidence-convergence.tsx",
+      "column": 7,
+      "kind": "aria-title",
+      "value": "四条实验证据汇入一条结论的连线图",
+      "line": 37,
+      "text": "aria-label=\"四条实验证据汇入一条结论的连线图\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/landing/memory-flow.tsx",
+      "column": 7,
+      "kind": "aria-title",
+      "value": "记忆回流示意:两条知识被下游回答各取回 1 次,一条尚无引用",
+      "line": 28,
+      "text": "aria-label=\"记忆回流示意:两条知识被下游回答各取回 1 次,一条尚无引用\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/landing/progress-rail.tsx",
+      "column": 7,
+      "kind": "aria-title",
+      "value": "页面章节",
+      "line": 48,
+      "text": "aria-label=\"页面章节\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/landing/sections/the-loop.tsx",
+      "column": 33,
+      "kind": "equality",
+      "value": "翻案",
+      "line": 43,
+      "text": "const isReversal = ev.verdict === \"翻案\";",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/landing/sections/the-loop.tsx",
+      "column": 47,
+      "kind": "bracket-key",
+      "value": "veto 不成立",
+      "line": 45,
+      "text": "VERDICT_STYLE[ev.verdict] ?? VERDICT_STYLE[\"veto 不成立\"];",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/landing/self-demo.tsx",
+      "column": 11,
+      "kind": "aria-title",
+      "value": "发布门自检终端回放(ok=false,exit 1)",
+      "line": 126,
+      "text": "aria-label=\"发布门自检终端回放(ok=false,exit 1)\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 28,
+      "kind": "ternary-branch",
+      "value": "多",
+      "line": 89,
+      "text": "side: p.side === \"buy\" ? \"多\" : \"空\",",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 28,
+      "kind": "ternary-branch",
+      "value": "买",
+      "line": 103,
+      "text": "side: o.side === \"buy\" ? \"买\" : \"卖\",",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 28,
+      "kind": "ternary-branch",
+      "value": "多",
+      "line": 119,
+      "text": "side: o.side === \"buy\" ? \"多\" : \"空\",",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 66,
+      "kind": "ternary-branch",
+      "value": "信号",
+      "line": 299,
+      "text": "const tgKindOf = (eventType: string) => (eventType === \"WHALE\" ? \"信号\" : \"告警\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 5,
+      "kind": "toast-call",
+      "value": "主图切换为 ${sym}",
+      "line": 389,
+      "text": "toastInfo(`主图切换为 ${sym}`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 52,
+      "kind": "equality",
+      "value": "多",
+      "line": 422,
+      "text": "const target = OPEN_POS.find((p) => p.side === \"多\");",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 52,
+      "kind": "equality",
+      "value": "空",
+      "line": 425,
+      "text": "const target = OPEN_POS.find((p) => p.side === \"空\");",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "平仓请求已发送 (${side})",
+      "line": 429,
+      "text": "toastSuccess(`平仓请求已发送 (${side})`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "平仓失败: ${msg}",
+      "line": 432,
+      "text": "toastError(`平仓失败: ${msg}`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "撤单失败: ${msg}",
+      "line": 442,
+      "text": "toastError(`撤单失败: ${msg}`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "订单 ${orderId} 已撤",
+      "line": 450,
+      "text": "toastSuccess(`订单 ${orderId} 已撤`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "撤单失败: ${msg}",
+      "line": 453,
+      "text": "toastError(`撤单失败: ${msg}`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 42,
+      "kind": "equality",
+      "value": "多",
+      "line": 470,
+      "text": "const oppositeSide = target.side === \"多\" ? \"sell\" : \"buy\";",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "${mode === \"hedge\" ? tr(\"对冲\") : tr(\"反手\")}失败: ${msg}",
+      "line": 483,
+      "text": "toastError(`${mode === \"hedge\" ? tr(\"对冲\") : tr(\"反手\")}失败: ${msg}`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 9,
+      "kind": "toast-call",
+      "value": "${ACTIONBAR.find((b) => b.id === id)?.label} · 3s 内再次点击确认",
+      "line": 498,
+      "text": "toastInfo(`${ACTIONBAR.find((b) => b.id === id)?.label} · 3s 内再次点击确认`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "paper 账户 ${accountId} 已清零",
+      "line": 533,
+      "text": "toastSuccess(`paper 账户 ${accountId} 已清零`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "清零失败: ${msg}",
+      "line": 536,
+      "text": "toastError(`清零失败: ${msg}`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 52,
+      "kind": "equality",
+      "value": "信号",
+      "line": 553,
+      "text": "if (eventSub === \"signal\") return e.kind === \"信号\";",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 51,
+      "kind": "equality",
+      "value": "告警",
+      "line": 554,
+      "text": "if (eventSub === \"alert\") return e.kind === \"告警\";",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 49,
+      "kind": "equality",
+      "value": "爆仓",
+      "line": 555,
+      "text": "if (eventSub === \"liq\") return e.kind === \"爆仓\";",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 50,
+      "kind": "equality",
+      "value": "新闻",
+      "line": 556,
+      "text": "if (eventSub === \"news\") return e.kind === \"新闻\";",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 60,
+      "kind": "equality",
+      "value": "信号",
+      "line": 911,
+      "text": "if (s.id === \"signal\") return e.kind === \"信号\";",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 59,
+      "kind": "equality",
+      "value": "告警",
+      "line": 912,
+      "text": "if (s.id === \"alert\") return e.kind === \"告警\";",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 57,
+      "kind": "equality",
+      "value": "爆仓",
+      "line": 913,
+      "text": "if (s.id === \"liq\") return e.kind === \"爆仓\";",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 58,
+      "kind": "equality",
+      "value": "新闻",
+      "line": 914,
+      "text": "if (s.id === \"news\") return e.kind === \"新闻\";",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 47,
+      "kind": "toast-call",
+      "value": "已添加 ${ctxMenu.sym} 到多图",
+      "line": 993,
+      "text": "{ label: \"添加到多图\", action: () => { toastInfo(`已添加 ${ctxMenu.sym} 到多图`); setCtxMenu(null); } },",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/bottom-drawer.tsx",
+      "column": 46,
+      "kind": "toast-call",
+      "value": "已移除 ${ctxMenu.sym}",
+      "line": 994,
+      "text": "{ label: \"移除多图\", action: () => { toastInfo(`已移除 ${ctxMenu.sym}`); setCtxMenu(null); } },",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/cmdk-panel.tsx",
+      "column": 41,
+      "kind": "ternary-branch",
+      "value": "搜索",
+      "line": 252,
+      "text": "groups.push({ label: query.trim() ? \"搜索\" : \"热门\", rows: searchItems });",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/cmdk-panel.tsx",
+      "column": 54,
+      "kind": "ternary-branch",
+      "value": "从自选移除 ${row.symbol}",
+      "line": 589,
+      "text": "aria-label={row.favorite ? `从自选移除 ${row.symbol}` : `加入自选 ${row.symbol}`}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/vhero/vhero-avatar.tsx",
+      "column": 28,
+      "kind": "ternary-branch",
+      "value": "${connectedCount} 账户已连接",
+      "line": 87,
+      "text": "{hasAccounts ? `${connectedCount} 账户已连接` : tr(\"未登录\")}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/vhero/vhero-kill.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "Kill Switch 触发失败: ${msg}",
+      "line": 64,
+      "text": "toastError(`Kill Switch 触发失败: ${msg}`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/ws-status-banner.tsx",
+      "column": 30,
+      "kind": "ternary-branch",
+      "value": "重连",
+      "line": 40,
+      "text": "const label = reconnecting ? \"重连\" : \"实时\";",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/layout/ws-status-banner.tsx",
+      "column": 28,
+      "kind": "ternary-branch",
+      "value": "行情流重连中",
+      "line": 41,
+      "text": "const tip = reconnecting ? \"行情流重连中\" : \"行情流实时\";",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/providers/backend-ready-provider.tsx",
+      "column": 17,
+      "kind": "ternary-branch",
+      "value": "收起诊断 ▲",
+      "line": 110,
+      "text": "{open ? \"收起诊断 ▲\" : \"诊断 ▼\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/research/desk-page.tsx",
+      "column": 49,
+      "kind": "ternary-branch",
+      "value": "探针",
+      "line": 72,
+      "text": "item.epistemic.evidence_mode === \"RECORDED\" ? \"探针\" : null,",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/research/desk-page.tsx",
+      "column": 35,
+      "kind": "ternary-branch",
+      "value": "引证据",
+      "line": 73,
+      "text": "item.epistemic.cites_evidence ? \"引证据\" : null,",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/research/missions-detail-view.tsx",
+      "column": 34,
+      "kind": "ternary-branch",
+      "value": "Outcome 结果",
+      "line": 262,
+      "text": "return tr(phase === \"resolved\" ? \"Outcome 结果\" : phase === \"validation\" ? \"Hypothesis 假设\" : \"Facts 事实\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/research/missions-detail-view.tsx",
+      "column": 34,
+      "kind": "ternary-branch",
+      "value": "实验裁决了什么",
+      "line": 265,
+      "text": "return tr(phase === \"resolved\" ? \"实验裁决了什么\" : phase === \"validation\" ? \"拿什么判\" : \"已知什么是真的\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/research/missions-detail-view.tsx",
+      "column": 34,
+      "kind": "ternary-branch",
+      "value": "Assessment 定稿",
+      "line": 268,
+      "text": "return tr(phase === \"resolved\" ? \"Assessment 定稿\" : phase === \"validation\" ? \"Experiment 实验\" : \"Assessment 判断\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/research/missions-detail-view.tsx",
+      "column": 34,
+      "kind": "ternary-branch",
+      "value": "最终结论",
+      "line": 271,
+      "text": "return tr(phase === \"resolved\" ? \"最终结论\" : phase === \"validation\" ? \"怎么裁决\" : \"怎么解读事实\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/research/pa-panel.tsx",
+      "column": 60,
+      "kind": "string-method",
+      "value": "多",
+      "line": 162,
+      "text": "const dir = orderDirection(diag2?.order) ?? (decisionWord.includes(\"多\") ? \"long\" : decisionWord.includes(\"空\") ? \"short\" : undefined);",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/research/serenity-panel.tsx",
+      "column": 54,
+      "kind": "ternary-branch",
+      "value": "做多",
+      "line": 163,
+      "text": "const signalLabel = report?.signal_direction === 1 ? \"做多\" : report?.signal_direction === -1 ? \"做空\" : \"中性\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/research/serenity-panel.tsx",
+      "column": 79,
+      "kind": "equality",
+      "value": "强",
+      "line": 367,
+      "text": "<TableCell className={`text-xs ${c.evidence_label === \"强\" ? \"text-emerald-500\" : c.evidence_label === \"中\" ? \"text-amber-500\" : \"text-zinc-400\"}`}>{tl(c.evidence_label)}</TableCell>",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/shared/account-gate.tsx",
+      "column": 3,
+      "kind": "aria-title",
+      "value": "暂无数据",
+      "line": 11,
+      "text": "title = \"暂无数据\",",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/shared/data-table-page.tsx",
+      "column": 15,
+      "kind": "aria-title",
+      "value": "过滤…",
+      "line": 222,
+      "text": "placeholder=\"过滤…\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/shared/feature-lock.tsx",
+      "column": 36,
+      "kind": "ternary-branch",
+      "value": "VIP 专享",
+      "line": 28,
+      "text": "const label = required === \"vip\" ? \"VIP 专享\" : \"PRO 专享\";",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/shared/tier-demo-switcher.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "演示层级切换",
+      "line": 14,
+      "text": "aria-label=\"演示层级切换\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/ai-sidebar.tsx",
+      "column": 69,
+      "kind": "ternary-branch",
+      "value": "收起",
+      "line": 286,
+      "text": "<span className=\"text-xs text-muted-foreground\">{isOpen ? \"收起\" : \"展开\"}</span>",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/ai-sidebar.tsx",
+      "column": 15,
+      "kind": "aria-title",
+      "value": "新对话",
+      "line": 1034,
+      "text": "title=\"新对话\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/ai-sidebar.tsx",
+      "column": 15,
+      "kind": "aria-title",
+      "value": "历史记录",
+      "line": 1042,
+      "text": "title=\"历史记录\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/ai-sidebar.tsx",
+      "column": 17,
+      "kind": "aria-title",
+      "value": "AI 助手",
+      "line": 1117,
+      "text": "title=\"AI 助手\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/ai-sidebar.tsx",
+      "column": 15,
+      "kind": "aria-title",
+      "value": "描述你想做的策略...",
+      "line": 1269,
+      "text": "placeholder=\"描述你想做的策略...\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/ai-sidebar.tsx",
+      "column": 11,
+      "kind": "aria-title",
+      "value": "高级 · YAML 配置",
+      "line": 1288,
+      "text": "title=\"高级 · YAML 配置\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/ai-sidebar.tsx",
+      "column": 11,
+      "kind": "aria-title",
+      "value": "参数面板",
+      "line": 1297,
+      "text": "title=\"参数面板\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/deploy-wizard-dialog.tsx",
+      "column": 9,
+      "kind": "toast-call",
+      "value": "${template.name} 已部署 Paper",
+      "line": 157,
+      "text": "toastSuccess(`${template.name} 已部署 Paper`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/deploy-wizard-dialog.tsx",
+      "column": 9,
+      "kind": "toast-call",
+      "value": "${template.name} 已部署 Live",
+      "line": 170,
+      "text": "toastSuccess(`${template.name} 已部署 Live`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/deploy-wizard-dialog.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "部署失败: ${e instanceof Error ? e.message : String(e)}",
+      "line": 176,
+      "text": "toastError(`部署失败: ${e instanceof Error ? e.message : String(e)}`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+      "column": 20,
+      "kind": "return-literal",
+      "value": "均值回归倾向",
+      "line": 28,
+      "text": "if (hurst < 0.5) return \"均值回归倾向\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+      "column": 20,
+      "kind": "return-literal",
+      "value": "趋势延续倾向",
+      "line": 29,
+      "text": "if (hurst > 0.5) return \"趋势延续倾向\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+      "column": 3,
+      "kind": "return-literal",
+      "value": "随机游走",
+      "line": 30,
+      "text": "return \"随机游走\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+      "column": 20,
+      "kind": "return-literal",
+      "value": "买入信号",
+      "line": 35,
+      "text": "if (zscore < -2) return \"买入信号\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+      "column": 19,
+      "kind": "return-literal",
+      "value": "卖出信号",
+      "line": 36,
+      "text": "if (zscore > 2) return \"卖出信号\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+      "column": 3,
+      "kind": "return-literal",
+      "value": "中性",
+      "line": 37,
+      "text": "return \"中性\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+      "column": 17,
+      "kind": "return-literal",
+      "value": "超买",
+      "line": 42,
+      "text": "if (mfi > 80) return \"超买\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+      "column": 17,
+      "kind": "return-literal",
+      "value": "超卖",
+      "line": 43,
+      "text": "if (mfi < 20) return \"超卖\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+      "column": 3,
+      "kind": "return-literal",
+      "value": "中性",
+      "line": 44,
+      "text": "return \"中性\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+      "column": 19,
+      "kind": "return-literal",
+      "value": "买盘强势",
+      "line": 49,
+      "text": "if (cmf > 0.25) return \"买盘强势\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+      "column": 20,
+      "kind": "return-literal",
+      "value": "卖盘强势",
+      "line": 50,
+      "text": "if (cmf < -0.25) return \"卖盘强势\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+      "column": 3,
+      "kind": "return-literal",
+      "value": "中性",
+      "line": 51,
+      "text": "return \"中性\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/indicator-metrics-panel.tsx",
+      "column": 86,
+      "kind": "ternary-branch",
+      "value": "${metrics.half_life.toFixed(1)} bars回归",
+      "line": 76,
+      "text": "{ name: \"Half-life\", value: metrics.half_life, interpretation: metrics.half_life ? `${metrics.half_life.toFixed(1)} bars回归` : \"\" },",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/lightweight-area-chart.tsx",
+      "column": 58,
+      "kind": "ternary-branch",
+      "value": "回撤水下曲线",
+      "line": 179,
+      "text": "const resolvedAria = ariaLabel ?? (mode === \"drawdown\" ? \"回撤水下曲线\" : \"策略权益曲线\")",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/param-panel.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "入场规则",
+      "line": 242,
+      "text": "title=\"入场规则\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/param-panel.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "出场规则",
+      "line": 249,
+      "text": "title=\"出场规则\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/shared-charts.tsx",
+      "column": 21,
+      "kind": "aria-title",
+      "value": "月度收益热力图",
+      "line": 382,
+      "text": "<div role=\"img\" aria-label=\"月度收益热力图\" className=\"space-y-4\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/shared-charts.tsx",
+      "column": 40,
+      "kind": "aria-title",
+      "value": "收益分布直方图",
+      "line": 423,
+      "text": "<div className=\"w-full\" role=\"img\" aria-label=\"收益分布直方图\" style={{ height }}>",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/shared-charts.tsx",
+      "column": 66,
+      "kind": "ternary-branch",
+      "value": "频数",
+      "line": 441,
+      "text": "formatter={(value, name) => [value, name === \"count\" ? \"频数\" : name]}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-card.tsx",
+      "column": 35,
+      "kind": "return-literal",
+      "value": "只做空",
+      "line": 44,
+      "text": "if (direction === \"short_only\") return \"只做空\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-card.tsx",
+      "column": 32,
+      "kind": "return-literal",
+      "value": "中性",
+      "line": 45,
+      "text": "if (direction === \"neutral\") return \"中性\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-card.tsx",
+      "column": 3,
+      "kind": "return-literal",
+      "value": "只做多",
+      "line": 46,
+      "text": "return \"只做多\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-card.tsx",
+      "column": 18,
+      "kind": "return-literal",
+      "value": "运行中",
+      "line": 133,
+      "text": "if (isRunning) return \"运行中\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-card.tsx",
+      "column": 18,
+      "kind": "return-literal",
+      "value": "已停止",
+      "line": 134,
+      "text": "if (isStopped) return \"已停止\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-card.tsx",
+      "column": 22,
+      "kind": "ternary-branch",
+      "value": "已回测",
+      "line": 135,
+      "text": "return hasBacktest ? \"已回测\" : \"草稿\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-card.tsx",
+      "column": 21,
+      "kind": "aria-title",
+      "value": "停止策略",
+      "line": 401,
+      "text": "title=\"停止策略\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-config-panel.tsx",
+      "column": 20,
+      "kind": "ternary-branch",
+      "value": "运行中...",
+      "line": 508,
+      "text": "{loading ? \"运行中...\" : \"开始回测\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-filters.tsx",
+      "column": 11,
+      "kind": "aria-title",
+      "value": "搜索策略...",
+      "line": 34,
+      "text": "placeholder=\"搜索策略...\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-filters.tsx",
+      "column": 11,
+      "kind": "aria-title",
+      "value": "卡片视图",
+      "line": 64,
+      "text": "aria-label=\"卡片视图\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-filters.tsx",
+      "column": 11,
+      "kind": "aria-title",
+      "value": "表格视图",
+      "line": 72,
+      "text": "aria-label=\"表格视图\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-table.tsx",
+      "column": 27,
+      "kind": "return-literal",
+      "value": "只做空",
+      "line": 24,
+      "text": "if (d === \"short_only\") return \"只做空\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-table.tsx",
+      "column": 24,
+      "kind": "return-literal",
+      "value": "中性",
+      "line": 25,
+      "text": "if (d === \"neutral\") return \"中性\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-table.tsx",
+      "column": 3,
+      "kind": "return-literal",
+      "value": "只做多",
+      "line": 26,
+      "text": "return \"只做多\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-table.tsx",
+      "column": 19,
+      "kind": "aria-title",
+      "value": "打开 Studio",
+      "line": 92,
+      "text": "aria-label=\"打开 Studio\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-workbench.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "请填写标的",
+      "line": 167,
+      "text": "toastError(\"请填写标的\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-workbench.tsx",
+      "column": 9,
+      "kind": "toast-call",
+      "value": "已保存(v${(updated.data as StrategyData).version ?? \"?\"})",
+      "line": 283,
+      "text": "toastSuccess(`已保存(v${(updated.data as StrategyData).version ?? \"?\"})`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-workbench.tsx",
+      "column": 21,
+      "kind": "ternary-branch",
+      "value": "保存中…",
+      "line": 349,
+      "text": "{saving ? \"保存中…\" : dirty ? \"保存更改\" : \"已保存\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/strategy-workbench.tsx",
+      "column": 17,
+      "kind": "toast-call",
+      "value": "已回滚到该版本",
+      "line": 377,
+      "text": "toastSuccess(\"已回滚到该版本\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/strategy/studio-toolbar.tsx",
+      "column": 20,
+      "kind": "ternary-branch",
+      "value": "部署中...",
+      "line": 79,
+      "text": "{deploying ? \"部署中...\" : \"部署\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/account-panel.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "已导出 (策略 ${data.strategies_count} / 会话 ${data.chat_sessions_count})",
+      "line": 48,
+      "text": "toastSuccess(`已导出 (策略 ${data.strategies_count} / 会话 ${data.chat_sessions_count})`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/account-panel.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "已撤销删除请求",
+      "line": 75,
+      "text": "toastSuccess(\"已撤销删除请求\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/account-panel.tsx",
+      "column": 14,
+      "kind": "aria-title",
+      "value": "账户管理",
+      "line": 87,
+      "text": "<V17Card title=\"账户管理\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/account-panel.tsx",
+      "column": 64,
+      "kind": "ternary-branch",
+      "value": "\\n… (截断)",
+      "line": 164,
+      "text": "{JSON.stringify(exportData.data).length > 2000 ? \"\\n… (截断)\" : \"\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/chat-sessions-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "会话概览",
+      "line": 55,
+      "text": "<V17Card title=\"会话概览\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/chat-sessions-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "会话列表",
+      "line": 61,
+      "text": "<V17Card title=\"会话列表\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/chat-sessions-page.tsx",
+      "column": 19,
+      "kind": "aria-title",
+      "value": "会话详情",
+      "line": 77,
+      "text": "title=\"会话详情\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/chat-sessions-page.tsx",
+      "column": 43,
+      "kind": "ternary-branch",
+      "value": " | 策略: ${detailSession.strategy_id}",
+      "line": 96,
+      "text": "{detailSession?.strategy_id ? ` | 策略: ${detailSession.strategy_id}` : \"\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/chat-sessions-page.tsx",
+      "column": 42,
+      "kind": "ternary-branch",
+      "value": " | 创建: ${detailSession.created_at.slice(0, 19).replace(\"T\", \" \")}",
+      "line": 98,
+      "text": "{detailSession?.created_at ? ` | 创建: ${detailSession.created_at.slice(0, 19).replace(\"T\", \" \")}` : \"\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/dash-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "系统总览",
+      "line": 112,
+      "text": "<V17Card title=\"系统总览\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/dash-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "市场行情 (订阅实时数据)",
+      "line": 164,
+      "text": "<V17Card title=\"市场行情 (订阅实时数据)\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/dash-page.tsx",
+      "column": 18,
+      "kind": "aria-title",
+      "value": "信号状态",
+      "line": 201,
+      "text": "<V17Card title=\"信号状态\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/dash-page.tsx",
+      "column": 18,
+      "kind": "aria-title",
+      "value": "后端聚合状态",
+      "line": 216,
+      "text": "<V17Card title=\"后端聚合状态\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/exchange-settings-panel.tsx",
+      "column": 35,
+      "kind": "ternary-branch",
+      "value": "(密钥已配对)",
+      "line": 126,
+      "text": "{secretConfigured ? \"(密钥已配对)\" : \"(缺 Secret)\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/exchange-settings-panel.tsx",
+      "column": 39,
+      "kind": "ternary-branch",
+      "value": "留空保持不变",
+      "line": 199,
+      "text": "placeholder={configured ? \"留空保持不变\" : \"未配置\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/exchange-settings-panel.tsx",
+      "column": 17,
+      "kind": "aria-title",
+      "value": "从系统钥匙串清除已存 key",
+      "line": 210,
+      "text": "title=\"从系统钥匙串清除已存 key\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/exchange-settings-panel.tsx",
+      "column": 43,
+      "kind": "ternary-branch",
+      "value": "留空保持不变",
+      "line": 224,
+      "text": "placeholder={secretConfigured ? \"留空保持不变\" : \"未配置\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/exchange-settings-panel.tsx",
+      "column": 19,
+      "kind": "ternary-branch",
+      "value": "保存中...",
+      "line": 237,
+      "text": "{saving ? \"保存中...\" : \"保存\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/exchange-settings-panel.tsx",
+      "column": 20,
+      "kind": "ternary-branch",
+      "value": "测试中...",
+      "line": 250,
+      "text": "{probing ? \"测试中...\" : \"测试连接\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/exchange-settings-panel.tsx",
+      "column": 26,
+      "kind": "ternary-branch",
+      "value": " · 测试网",
+      "line": 258,
+      "text": "{probe.testnet ? \" · 测试网\" : \"\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/healthcheck-panel.tsx",
+      "column": 14,
+      "kind": "aria-title",
+      "value": "Healthchecks (健康检查)",
+      "line": 70,
+      "text": "<V17Card title=\"Healthchecks (健康检查)\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/healthcheck-panel.tsx",
+      "column": 17,
+      "kind": "aria-title",
+      "value": "运行 healthcheck",
+      "line": 118,
+      "text": "title=\"运行 healthcheck\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/kill-switch-panel.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "必须填 reason",
+      "line": 32,
+      "text": "toastError(\"必须填 reason\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/kill-switch-panel.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "Kill switch 已激活",
+      "line": 38,
+      "text": "toastSuccess(\"Kill switch 已激活\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/kill-switch-panel.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "必须填 reason",
+      "line": 51,
+      "text": "toastError(\"必须填 reason\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/kill-switch-panel.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "Kill switch 已释放",
+      "line": 57,
+      "text": "toastSuccess(\"Kill switch 已释放\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/kill-switch-panel.tsx",
+      "column": 14,
+      "kind": "aria-title",
+      "value": "Kill Switch (全局熔断)",
+      "line": 70,
+      "text": "<V17Card title=\"Kill Switch (全局熔断)\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+      "column": 9,
+      "kind": "toast-call",
+      "value": "实盘首单已授权(本 session 有效)",
+      "line": 43,
+      "text": "toastSuccess(\"实盘首单已授权(本 session 有效)\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+      "column": 9,
+      "kind": "toast-call",
+      "value": "授权失败: ${r.error || \"unknown\"}",
+      "line": 48,
+      "text": "toastError(`授权失败: ${r.error || \"unknown\"}`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "授权失败: ${e instanceof Error ? e.message : String(e)}",
+      "line": 51,
+      "text": "toastError(`授权失败: ${e instanceof Error ? e.message : String(e)}`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "symbol 和 quantity 必填",
+      "line": 59,
+      "text": "toastError(\"symbol 和 quantity 必填\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "限价单必须填 price",
+      "line": 63,
+      "text": "toastError(\"限价单必须填 price\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "下单成功: ${r.order_id ?? \"—\"}",
+      "line": 69,
+      "text": "toastSuccess(`下单成功: ${r.order_id ?? \"—\"}`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "下单失败: ${e instanceof Error ? e.message : String(e)}",
+      "line": 72,
+      "text": "toastError(`下单失败: ${e instanceof Error ? e.message : String(e)}`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+      "column": 14,
+      "kind": "aria-title",
+      "value": "实盘引擎控制 (Live Engine)",
+      "line": 82,
+      "text": "<V17Card title=\"实盘引擎控制 (Live Engine)\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+      "column": 21,
+      "kind": "ternary-branch",
+      "value": "已授权",
+      "line": 113,
+      "text": "{approved ? \"已授权\" : \"授权首单\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/live-engine-control-panel.tsx",
+      "column": 11,
+      "kind": "aria-title",
+      "value": "手动下单直连 LiveExecutionEngine(绕过 paper mode)",
+      "line": 123,
+      "text": "title=\"手动下单直连 LiveExecutionEngine(绕过 paper mode)\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/live-trading-status-panel.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "实盘可观测性 (Phase 5)",
+      "line": 71,
+      "text": "<V17Card title=\"实盘可观测性 (Phase 5)\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/live-trading-status-panel.tsx",
+      "column": 14,
+      "kind": "aria-title",
+      "value": "实盘可观测性 (Phase 5)",
+      "line": 85,
+      "text": "<V17Card title=\"实盘可观测性 (Phase 5)\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/live-trading-status-panel.tsx",
+      "column": 51,
+      "kind": "ternary-branch",
+      "value": "链完整",
+      "line": 164,
+      "text": "s.audit_chain_health.chain_ok ? \"链完整\" : \"链损坏\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/llm-settings-panel.tsx",
+      "column": 41,
+      "kind": "ternary-branch",
+      "value": "•••••••• 留空保持不变",
+      "line": 147,
+      "text": "llm?.api_key_configured ? \"•••••••• 留空保持不变\" : \"未配置\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/llm-settings-panel.tsx",
+      "column": 17,
+      "kind": "aria-title",
+      "value": "从系统钥匙串清除已存 key",
+      "line": 159,
+      "text": "title=\"从系统钥匙串清除已存 key\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/llm-settings-panel.tsx",
+      "column": 13,
+      "kind": "aria-title",
+      "value": "按问题类型切换模型（strategy/analysis/quick）",
+      "line": 176,
+      "text": "title=\"按问题类型切换模型（strategy/analysis/quick）\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/llm-settings-panel.tsx",
+      "column": 19,
+      "kind": "aria-title",
+      "value": "模型名",
+      "line": 201,
+      "text": "placeholder=\"模型名\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/llm-settings-panel.tsx",
+      "column": 19,
+      "kind": "ternary-branch",
+      "value": "保存中...",
+      "line": 216,
+      "text": "{saving ? \"保存中...\" : \"保存\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/marketplace-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "市场概览",
+      "line": 46,
+      "text": "<V17Card title=\"市场概览\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/marketplace-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "策略列表",
+      "line": 53,
+      "text": "<V17Card title=\"策略列表\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/mcp-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "MCP 服务器",
+      "line": 41,
+      "text": "<V17Card title=\"MCP 服务器\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/mcp-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "统计",
+      "line": 67,
+      "text": "<V17Card title=\"统计\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/mcp-tools-page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "MCP 工具",
+      "line": 40,
+      "text": "title=\"MCP 工具\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/mcp-tools-page.tsx",
+      "column": 13,
+      "kind": "aria-title",
+      "value": "刷新",
+      "line": 46,
+      "text": "aria-label=\"刷新\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/mcp-tools-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "工具列表",
+      "line": 60,
+      "text": "<V17Card title=\"工具列表\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/mcp-tools-page.tsx",
+      "column": 24,
+      "kind": "ternary-branch",
+      "value": "加载中…",
+      "line": 63,
+      "text": "{isLoading ? \"加载中…\" : \"暂无 MCP 工具（未连接服务器或已初始化）\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/memory-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "市场记忆概览",
+      "line": 36,
+      "text": "<V17Card title=\"市场记忆概览\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/memory-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "模式列表",
+      "line": 43,
+      "text": "<V17Card title=\"模式列表\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/memory-page.tsx",
+      "column": 38,
+      "kind": "ternary-branch",
+      "value": "启用",
+      "line": 55,
+      "text": "{p.enabled !== false ? \"启用\" : \"停用\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/network-settings-panel.tsx",
+      "column": 30,
+      "kind": "ternary-branch",
+      "value": "已保存，重启后生效",
+      "line": 40,
+      "text": "setMsg(proxyUrl.trim() ? \"已保存，重启后生效\" : \"已清除\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/network-settings-panel.tsx",
+      "column": 13,
+      "kind": "aria-title",
+      "value": "http://127.0.0.1:7890 或 socks5://127.0.0.1:1080",
+      "line": 62,
+      "text": "placeholder=\"http://127.0.0.1:7890 或 socks5://127.0.0.1:1080\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/network-settings-panel.tsx",
+      "column": 19,
+      "kind": "ternary-branch",
+      "value": "保存中...",
+      "line": 78,
+      "text": "{saving ? \"保存中...\" : \"保存\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notifications-page.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "请填写渠道名称",
+      "line": 62,
+      "text": "toastError(\"请填写渠道名称\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notifications-page.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "未知渠道类型",
+      "line": 67,
+      "text": "toastError(\"未知渠道类型\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notifications-page.tsx",
+      "column": 9,
+      "kind": "toast-call",
+      "value": "请填写 ${f.label}",
+      "line": 74,
+      "text": "toastError(`请填写 ${f.label}`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notifications-page.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "渠道已创建",
+      "line": 82,
+      "text": "toastSuccess(\"渠道已创建\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notifications-page.tsx",
+      "column": 9,
+      "kind": "toast-call",
+      "value": "渠道已删除",
+      "line": 108,
+      "text": "toastSuccess(\"渠道已删除\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notifications-page.tsx",
+      "column": 21,
+      "kind": "toast-call",
+      "value": "测试发送成功",
+      "line": 127,
+      "text": "if (r.tested) toastSuccess(\"测试发送成功\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notifications-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "通知概览",
+      "line": 140,
+      "text": "<V17Card title=\"通知概览\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notifications-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "通知渠道",
+      "line": 151,
+      "text": "<V17Card title=\"通知渠道\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notifications-page.tsx",
+      "column": 37,
+      "kind": "ternary-branch",
+      "value": "已启用",
+      "line": 169,
+      "text": "title={ch.enabled ? \"已启用\" : \"已停用\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notifications-page.tsx",
+      "column": 31,
+      "kind": "ternary-branch",
+      "value": "启用",
+      "line": 171,
+      "text": "{ch.enabled ? \"启用\" : \"停用\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notifications-page.tsx",
+      "column": 31,
+      "kind": "ternary-branch",
+      "value": "停用",
+      "line": 177,
+      "text": "{ch.enabled ? \"停用\" : \"启用\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notifications-page.tsx",
+      "column": 19,
+      "kind": "aria-title",
+      "value": "真发一条测试消息，验证 URL/密钥是否可用",
+      "line": 183,
+      "text": "title=\"真发一条测试消息，验证 URL/密钥是否可用\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notifications-page.tsx",
+      "column": 40,
+      "kind": "ternary-branch",
+      "value": "发送中…",
+      "line": 185,
+      "text": "{testingId === ch.id ? \"发送中…\" : \"测试发送\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notifications-page.tsx",
+      "column": 19,
+      "kind": "aria-title",
+      "value": "如 风控飞书群",
+      "line": 210,
+      "text": "placeholder=\"如 风控飞书群\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notifications-page.tsx",
+      "column": 33,
+      "kind": "ternary-branch",
+      "value": "（可选）",
+      "line": 238,
+      "text": "{f.optional ? \"（可选）\" : \"\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notifications-page.tsx",
+      "column": 25,
+      "kind": "ternary-branch",
+      "value": "添加中…",
+      "line": 254,
+      "text": "{adding ? \"添加中…\" : \"添加渠道\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notify-preferences.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "订阅已保存",
+      "line": 82,
+      "text": "toastSuccess(\"订阅已保存\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notify-preferences.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "事件订阅",
+      "line": 94,
+      "text": "<V17Card title=\"事件订阅\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/notify-preferences.tsx",
+      "column": 19,
+      "kind": "ternary-branch",
+      "value": "保存中…",
+      "line": 111,
+      "text": "{saving ? \"保存中…\" : draft ? \"保存订阅\" : \"已保存\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/public-key-panel.tsx",
+      "column": 14,
+      "kind": "aria-title",
+      "value": "加密公钥 (JWK)",
+      "line": 35,
+      "text": "<V17Card title=\"加密公钥 (JWK)\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/public-key-panel.tsx",
+      "column": 30,
+      "kind": "ternary-branch",
+      "value": "✓ 已复制",
+      "line": 57,
+      "text": "{copied === \"ok\" ? \"✓ 已复制\" : copied === \"fail\" ? \"✗ 复制失败\" : \"复制 JWK\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/runner-status-panel.tsx",
+      "column": 14,
+      "kind": "aria-title",
+      "value": "策略 Runner 状态",
+      "line": 15,
+      "text": "<V17Card title=\"策略 Runner 状态\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/set-page.tsx",
+      "column": 9,
+      "kind": "aria-title",
+      "value": "显示 market/paper/live 三路 WebSocket 连接状态浮窗",
+      "line": 51,
+      "text": "title=\"显示 market/paper/live 三路 WebSocket 连接状态浮窗\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/set-page.tsx",
+      "column": 19,
+      "kind": "ternary-branch",
+      "value": "保存中...",
+      "line": 168,
+      "text": "{saving ? \"保存中...\" : \"保存\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/shadow-profile-panel.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "必须选择 CSV 文件",
+      "line": 35,
+      "text": "toastError(\"必须选择 CSV 文件\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/shadow-profile-panel.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "已提取 shadow_id: ${r.shadow_id}",
+      "line": 42,
+      "text": "toastSuccess(`已提取 shadow_id: ${r.shadow_id}`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/shadow-profile-panel.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "必须填 shadow_id",
+      "line": 52,
+      "text": "toastError(\"必须填 shadow_id\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/shadow-profile-panel.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "shadow_id 和 window_start/end 必填",
+      "line": 68,
+      "text": "toastError(\"shadow_id 和 window_start/end 必填\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/shadow-profile-panel.tsx",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "回测完成",
+      "line": 78,
+      "text": "toastSuccess(\"回测完成\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/shadow-profile-panel.tsx",
+      "column": 14,
+      "kind": "aria-title",
+      "value": "Shadow Profile (影子画像)",
+      "line": 87,
+      "text": "<V17Card title=\"Shadow Profile (影子画像)\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/shadow-profile-panel.tsx",
+      "column": 45,
+      "kind": "ternary-branch",
+      "value": "\\n… (截断)",
+      "line": 227,
+      "text": "{renderSource.length > 3000 ? \"\\n… (截断)\" : \"\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/skill-page.tsx",
+      "column": 16,
+      "kind": "aria-title",
+      "value": "技能市场",
+      "line": 29,
+      "text": "<V17Card title=\"技能市场\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/skill-page.tsx",
+      "column": 17,
+      "kind": "aria-title",
+      "value": "状态展示(只读)",
+      "line": 51,
+      "text": "title=\"状态展示(只读)\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/system/skill-page.tsx",
+      "column": 28,
+      "kind": "ternary-branch",
+      "value": "已启用",
+      "line": 53,
+      "text": "{s.enabled ? \"已启用\" : \"未启用\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/tactical/large-trade-feed.tsx",
+      "column": 41,
+      "kind": "ternary-branch",
+      "value": "合约",
+      "line": 90,
+      "text": "{tr.market_type === \"futures\" ? \"合约\" : \"现货\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/tactical/large-trade-feed.tsx",
+      "column": 27,
+      "kind": "ternary-branch",
+      "value": "全部交易所",
+      "line": 188,
+      "text": "{ex === \"all\" ? \"全部交易所\" : ex}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/tactical/whale-transfer-feed.tsx",
+      "column": 26,
+      "kind": "ternary-branch",
+      "value": "全部",
+      "line": 140,
+      "text": "{d === \"all\" ? \"全部\" : DIRECTION_LABEL[d]}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/tactical/whale-transfer-feed.tsx",
+      "column": 44,
+      "kind": "ternary-branch",
+      "value": "${t.confirmations} 确认",
+      "line": 195,
+      "text": "{t.confirmations != null ? `${t.confirmations} 确认` : \"—\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/trade/ai-grid-config.tsx",
+      "column": 51,
+      "kind": "string-method",
+      "value": "演示",
+      "line": 105,
+      "text": "<div className={`text-[10px] ${startResult.includes(\"演示\") ? \"text-gold\" : \"text-pos\"}`}>",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/trade/ai-grid-config.tsx",
+      "column": 23,
+      "kind": "string-method",
+      "value": "演示",
+      "line": 107,
+      "text": "{startResult.includes(\"演示\") && <span className=\"feed-demo-badge ml-2\">{tr(\"演示\")}</span>}",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/trade/live_log-page.tsx",
+      "column": 39,
+      "kind": "ternary-branch",
+      "value": "买",
+      "line": 47,
+      "text": "const side = o.side === \"buy\" ? \"买\" : \"卖\";",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/trade/paper-page.tsx",
+      "column": 34,
+      "kind": "ternary-branch",
+      "value": "多",
+      "line": 103,
+      "text": "side: p.side === \"buy\" ? \"多\" : \"空\",",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/trade/paper-page.tsx",
+      "column": 34,
+      "kind": "ternary-branch",
+      "value": "买",
+      "line": 118,
+      "text": "side: o.side === \"buy\" ? \"买\" : \"卖\",",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/trade/paper-page.tsx",
+      "column": 33,
+      "kind": "equality",
+      "value": "多",
+      "line": 225,
+      "text": "const dCls = r.side === \"多\" ? \"text-pos\" : \"text-neg\";",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/trade/paper-page.tsx",
+      "column": 33,
+      "kind": "equality",
+      "value": "买",
+      "line": 252,
+      "text": "const dCls = r.side === \"买\" ? \"text-pos\" : \"text-neg\";",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/trade/trd-page.tsx",
+      "column": 36,
+      "kind": "ternary-branch",
+      "value": "买",
+      "line": 340,
+      "text": "side: o.side === \"buy\" ? \"买\" : \"卖\",",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/trade/trd-page.tsx",
+      "column": 38,
+      "kind": "ternary-branch",
+      "value": "限价",
+      "line": 341,
+      "text": "type: o.type === \"limit\" ? \"限价\" : o.type === \"market\" ? \"市价\" : (o.type ?? \"限价\"),",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/trade/trd-page.tsx",
+      "column": 66,
+      "kind": "ternary-branch",
+      "value": "多",
+      "line": 448,
+      "text": "const sideLabel = currentPosition.side === \"buy\" ? \"多\" : \"空\";",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/trade/trd-page.tsx",
+      "column": 37,
+      "kind": "equality",
+      "value": "买",
+      "line": 704,
+      "text": "const dCls = r.side === \"买\" ? \"text-pos\" : \"text-neg\";",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/trading/candlestick-chart.tsx",
+      "column": 42,
+      "kind": "ternary-branch",
+      "value": "做多",
+      "line": 555,
+      "text": "{tooltipData.side === \"long\" ? \"做多\" : \"做空\"} {symbol || \"\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/trading/market-regime-indicator.tsx",
+      "column": 72,
+      "kind": "ternary-branch",
+      "value": "加载中",
+      "line": 66,
+      "text": "<Badge className=\"bg-gray-500/20 text-gray-400\">{isLoading ? \"加载中\" : \"暂无数据\"}</Badge>",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/trading/order-form.tsx",
+      "column": 40,
+      "kind": "ternary-branch",
+      "value": "买入",
+      "line": 72,
+      "text": "toastSuccess(`${side === \"buy\" ? \"买入\" : \"卖出\"} ${quantity} ${symbol} 已提交`)",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/trading/order-form.tsx",
+      "column": 9,
+      "kind": "toast-call",
+      "value": "下单失败: ${err.message}",
+      "line": 77,
+      "text": "toastError(`下单失败: ${err.message}`)",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/trading/orderbook-panel.tsx",
+      "column": 33,
+      "kind": "ternary-branch",
+      "value": "数量(${baseCurrency})",
+      "line": 166,
+      "text": "const qtyLabel = baseCurrency ? `数量(${baseCurrency})` : \"数量\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/trading/position-panel.tsx",
+      "column": 33,
+      "kind": "ternary-branch",
+      "value": "多",
+      "line": 47,
+      "text": "{p.side === \"buy\" ? \"多\" : \"空\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/trading/position-table-embedded.tsx",
+      "column": 28,
+      "kind": "ternary-branch",
+      "value": "买",
+      "line": 35,
+      "text": "side: o.side === \"buy\" ? \"买\" : \"卖\",",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/trading/position-table-embedded.tsx",
+      "column": 28,
+      "kind": "ternary-branch",
+      "value": "多",
+      "line": 49,
+      "text": "side: p.side === \"buy\" ? \"多\" : \"空\",",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/trading/position-table-embedded.tsx",
+      "column": 14,
+      "kind": "aria-title",
+      "value": "我的持仓",
+      "line": 94,
+      "text": "<V17Card title=\"我的持仓\">",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/trading/position-table-embedded.tsx",
+      "column": 32,
+      "kind": "ternary-branch",
+      "value": "挂单",
+      "line": 103,
+      "text": "{t === \"pending\" ? \"挂单\" : t === \"open\" ? \"当前持仓\" : \"历史平仓\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/trading/position-table-embedded.tsx",
+      "column": 32,
+      "kind": "ternary-branch",
+      "value": "该市场暂无挂单",
+      "line": 134,
+      "text": "{tab === \"pending\" ? \"该市场暂无挂单\" : tab === \"open\" ? \"该市场暂无持仓\" : \"该市场暂无历史\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/trading/strategy-status.tsx",
+      "column": 22,
+      "kind": "ternary-branch",
+      "value": "已连接",
+      "line": 77,
+      "text": "{connected ? \"已连接\" : \"未连接\"}",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/watch/ashare-board-page.tsx",
+      "column": 16,
+      "kind": "bracket-key",
+      "value": "当日成交净买额",
+      "line": 176,
+      "text": "const v = r[\"当日成交净买额\"];",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/watch/ashare-board-page.tsx",
+      "column": 63,
+      "kind": "bracket-key",
+      "value": "当日成交净买额",
+      "line": 251,
+      "text": "empty={tr(\"暂无北向资金数据(未装 akshare 或数据源无此日)\")} chgKeys={[\"当日成交净买额\"]} />",
+      "class": "logic-value"
+    },
+    {
+      "file": "apps/desktop/components/watch/kf-chart.tsx",
+      "column": 59,
+      "kind": "ternary-branch",
+      "value": "行情延迟",
+      "line": 1383,
+      "text": "<span className=\"kf-stale-badge\">{tr(wsDegraded ? \"行情延迟\" : \"延迟\")}</span>",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/watch/parts/dex-query.tsx",
+      "column": 3,
+      "kind": "aria-title",
+      "value": "输入地址 / 符号…",
+      "line": 54,
+      "text": "placeholder = \"输入地址 / 符号…\",",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/watch/us-radar-page.tsx",
+      "column": 44,
+      "kind": "return-literal",
+      "value": "多",
+      "line": 49,
+      "text": "if (sig === \"long\" || sig === \"bullish\") return \"多\";",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/watch/us-radar-page.tsx",
+      "column": 45,
+      "kind": "return-literal",
+      "value": "空",
+      "line": 50,
+      "text": "if (sig === \"short\" || sig === \"bearish\") return \"空\";",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/watch/us-radar-page.tsx",
+      "column": 3,
+      "kind": "return-literal",
+      "value": "中",
+      "line": 51,
+      "text": "return \"中\";",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/watch/us-radar-snapshot-page.tsx",
+      "column": 44,
+      "kind": "return-literal",
+      "value": "多",
+      "line": 43,
+      "text": "if (sig === \"long\" || sig === \"bullish\") return \"多\";",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/watch/us-radar-snapshot-page.tsx",
+      "column": 45,
+      "kind": "return-literal",
+      "value": "空",
+      "line": 44,
+      "text": "if (sig === \"short\" || sig === \"bearish\") return \"空\";",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/watch/us-radar-snapshot-page.tsx",
+      "column": 3,
+      "kind": "return-literal",
+      "value": "中",
+      "line": 45,
+      "text": "return \"中\";",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/workspace/workspace-grid.tsx",
+      "column": 15,
+      "kind": "aria-title",
+      "value": "拖动以重排面板",
+      "line": 151,
+      "text": "title=\"拖动以重排面板\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/workspace/workspace-grid.tsx",
+      "column": 19,
+      "kind": "aria-title",
+      "value": "切换 panel 类型",
+      "line": 163,
+      "text": "aria-label=\"切换 panel 类型\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/workspace/workspace-layout-manager.tsx",
+      "column": 17,
+      "kind": "aria-title",
+      "value": "布局名称",
+      "line": 191,
+      "text": "placeholder=\"布局名称\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/workspace/workspace-layout-manager.tsx",
+      "column": 17,
+      "kind": "aria-title",
+      "value": "新布局名称",
+      "line": 212,
+      "text": "placeholder=\"新布局名称\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/components/workspace/workspace-layout-manager.tsx",
+      "column": 17,
+      "kind": "aria-title",
+      "value": "新布局名称",
+      "line": 254,
+      "text": "placeholder=\"新布局名称\"",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/adapters/position.ts",
+      "column": 28,
+      "kind": "ternary-branch",
+      "value": "多",
+      "line": 17,
+      "text": "side: p.side === \"buy\" ? \"多\" : p.side === \"sell\" ? \"空\" : String(p.side ?? \"\"),",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/adapters/position.ts",
+      "column": 28,
+      "kind": "ternary-branch",
+      "value": "买",
+      "line": 32,
+      "text": "side: o.side === \"buy\" ? \"买\" : o.side === \"sell\" ? \"卖\" : String(o.side ?? \"\"),",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/adapters/position.ts",
+      "column": 28,
+      "kind": "ternary-branch",
+      "value": "多",
+      "line": 48,
+      "text": "side: f.side === \"buy\" ? \"多\" : f.side === \"sell\" ? \"空\" : String(f.side ?? \"\"),",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/chart/trade-review.ts",
+      "column": 20,
+      "kind": "ternary-branch",
+      "value": "买",
+      "line": 131,
+      "text": "text: isLong ? \"买\" : \"卖\",",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/hooks/use-agent-chat.ts",
+      "column": 47,
+      "kind": "ternary-branch",
+      "value": "推理中…",
+      "line": 193,
+      "text": "setStatus(event.type === \"thinking\" ? \"推理中…\" : event.type === \"reflection\" ? \"反思中…\" : statusText(data));",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/hooks/use-agent-chat.ts",
+      "column": 29,
+      "kind": "ternary-branch",
+      "value": "发生错误",
+      "line": 257,
+      "text": "content: hasError ? \"发生错误\" : \"无响应\",",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/hooks/use-agent-chat.ts",
+      "column": 37,
+      "kind": "ternary-branch",
+      "value": "调用工具 ${d.tool}",
+      "line": 320,
+      "text": "return typeof d.tool === \"string\" ? `调用工具 ${d.tool}` : \"调用工具\";",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/hooks/use-position-actions.ts",
+      "column": 9,
+      "kind": "toast-call",
+      "value": "无持仓可平",
+      "line": 42,
+      "text": "toastError(\"无持仓可平\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/hooks/use-position-actions.ts",
+      "column": 9,
+      "kind": "toast-call",
+      "value": "平仓请求已发送 (${side})",
+      "line": 79,
+      "text": "toastSuccess(`平仓请求已发送 (${side})`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/hooks/use-position-actions.ts",
+      "column": 9,
+      "kind": "toast-call",
+      "value": "平仓失败: ${msg}",
+      "line": 84,
+      "text": "toastError(`平仓失败: ${msg}`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/hooks/use-position-actions.ts",
+      "column": 9,
+      "kind": "toast-call",
+      "value": "无持仓可操作",
+      "line": 94,
+      "text": "toastError(\"无持仓可操作\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/hooks/use-position-actions.ts",
+      "column": 9,
+      "kind": "toast-call",
+      "value": "原持仓杠杆未知,使用当前输入框杠杆 ${leverage}x",
+      "line": 104,
+      "text": "toastInfo(`原持仓杠杆未知,使用当前输入框杠杆 ${leverage}x`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/hooks/use-position-actions.ts",
+      "column": 9,
+      "kind": "toast-call",
+      "value": "平仓失败: ${msg}",
+      "line": 124,
+      "text": "toastError(`平仓失败: ${msg}`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/hooks/use-position-actions.ts",
+      "column": 11,
+      "kind": "toast-call",
+      "value": "反手请求已发送",
+      "line": 139,
+      "text": "toastSuccess(\"反手请求已发送\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/hooks/use-position-actions.ts",
+      "column": 11,
+      "kind": "toast-call",
+      "value": "持仓已平,反手开仓失败,请手动开仓: ${msg}",
+      "line": 145,
+      "text": "toastError(`持仓已平,反手开仓失败,请手动开仓: ${msg}`);",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/hooks/use-position-actions.ts",
+      "column": 9,
+      "kind": "toast-call",
+      "value": "对冲请求已发送",
+      "line": 158,
+      "text": "toastSuccess(\"对冲请求已发送\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/hooks/use-risk-aware-submit.ts",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "参数已过期请重新下单",
+      "line": 89,
+      "text": "toastError(\"参数已过期请重新下单\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/hooks/use-risk-aware-submit.ts",
+      "column": 7,
+      "kind": "toast-call",
+      "value": "参数已过期请重新下单",
+      "line": 95,
+      "text": "toastError(\"参数已过期请重新下单\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/hooks/use-strategy-evidence.ts",
+      "column": 3,
+      "kind": "return-literal",
+      "value": "${tr(\"{n} 次回测\", { n: e.count })}${sharpe}${date}",
+      "line": 74,
+      "text": "return `${tr(\"{n} 次回测\", { n: e.count })}${sharpe}${date}`;",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/indicators.ts",
+      "column": 43,
+      "kind": "ternary-branch",
+      "value": "是",
+      "line": 440,
+      "text": "if (typeof v === \"boolean\") return tr(v ? \"是\" : \"否\");",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/monitor-feed.ts",
+      "column": 41,
+      "kind": "ternary-branch",
+      "value": "多",
+      "line": 123,
+      "text": "text: `${tr(\"爆单\")} ${sym} ${tr(long ? \"多\" : \"空\")} ${usd}${price}`,",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/monitor-feed.ts",
+      "column": 33,
+      "kind": "ternary-branch",
+      "value": "买",
+      "line": 135,
+      "text": "text: `${tr(\"主力\")} ${tr(buy ? \"买\" : \"卖\")} ${sym} ${formatUSD(Number(d.notional_usd ?? 0))}`,",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/quant/arb.ts",
+      "column": 36,
+      "kind": "ternary-branch",
+      "value": "做空",
+      "line": 57,
+      "text": "label: `${side === \"short\" ? \"做空\" : \"做多\"}吃费 ${round2(annualizedPct)}%`,",
+      "class": "display-site"
+    },
+    {
+      "file": "apps/desktop/lib/workspace/workspace-layouts.ts",
+      "column": 30,
+      "kind": "ternary-branch",
+      "value": "${obj.name} (导入)",
+      "line": 388,
+      "text": "const finalName = existing ? `${obj.name} (导入)` : obj.name;",
+      "class": "display-site"
+    }
+  ]
+}

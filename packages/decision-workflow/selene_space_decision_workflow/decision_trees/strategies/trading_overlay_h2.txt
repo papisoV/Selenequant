@@ -1,0 +1,44 @@
+# Trading Overlay — H2 (二次回调延续叠加物料)
+# Cleanroom original: authored for SeleneQuant (AGPL-3.0-only) from Al Brooks public
+# publications only. No text derived from any third-party codebase.
+# Sources (method basis, no verbatim quotes):
+#   - Al Brooks, "Trading Price Action Trends" (Wiley, 2011),
+#     Ch. 3-5 (pullback counting: first and second pullbacks in a leg,
+#     higher-low continuation entries).
+#   - Al Brooks, "Reading Price Charts Bar by Bar" (Wiley, 2009),
+#     Ch. 11-12 (follow-through after pullback, signal bar quality).
+# Injected ONLY when the deterministic detector flags h2 on the signal
+# window; otherwise this file is absent from the prompt.
+
+## 0. 触发条件(由确定性检测器给出)
+
+输入 overlay_patterns 含 pattern="h2" 时本文件才被注入。检测器
+给出:信号窗内最后两个摆动低点,第二个高于第一个(higher low),
+且两者之间存在收盘越过两者中位的阳线。本文件不做二次判断。
+
+## 1. H2 含义
+
+1. H2 = 上升波段中第二次回调的低点抬升——两段推动夹一次更深
+   的整理,是趋势延续的经典计数结构;
+2. 第二次回调(而非第一次)出现抬升低点,说明买方愿意在更高
+   位置接货,延续概率优于首次回调;
+3. H2 的对手结构是 H2 失败(第二低点跌破第一低点)——一旦跌破,
+   延续计数作废,结构转为区间或反转评估。
+
+## 2. 决策规则
+
+1. trend_up 状态 + h2 检测 + 状态策略已给出做多候选 → 本文件
+   放行:入场以第二低点下方的结构止损为准,R:R 交由 common_risk
+   评估,本文件不推翻;
+2. 非 trend_up 状态 + h2 检测 → h2 只作参考信号,不构成独立
+   入场理由;状态策略未给出 trade 候选时 → wait;
+3. h2 检测 + 楔形检测同时出现(二次回调发生在收缩结构内)→
+   延续逻辑与反转逻辑冲突,一律 wait,留待下一轮诊断裁决;
+4. h2 检测 + 连续性 guard 反手冷却 → wait(冷却期禁反手,h2 不豁免)。
+
+## 3. 与四窗的合成
+
+1. 惯性窗仍多头占优(bull_bars/bear_bars > 2:1)→ H2 延续读法
+   成立,正常评估;
+2. 惯性窗已翻转或均衡 → H2 降级为"可能的右肩/末端结构",目标
+   只看近期窗波段端点,且止损收紧到信号窗低点。

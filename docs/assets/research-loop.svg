@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-label="The SeleneQuant research loop: a persistent Question feeds Experiments that produce evidence and verdicts; each Experiment feeds a numbered Revision; revisions are stored in Memory with what was concluded and why; Memory is recalled automatically into the Next call, which cites and revises the conclusion.">
+  <defs>
+    <linearGradient id="loopbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#05080d"/>
+      <stop offset="0.55" stop-color="#070c13"/>
+      <stop offset="1" stop-color="#0a1018"/>
+    </linearGradient>
+    <linearGradient id="looptop" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#309cfb" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#309cfb" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#f7a07d" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="loophalo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#309cfb" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#309cfb" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="looparrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#309cfb"/>
+    </marker>
+    <marker id="looppale" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#3f5366"/>
+    </marker>
+    <style>
+      .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+      .sans { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+      .lab  { font-family: "SFMono-Regular", Consolas, Menlo, monospace; font-size: 11.5px; letter-spacing: 1.8px; fill: #5b6673; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="400" fill="url(#loopbg)"/>
+  <rect x="0" y="0" width="1200" height="1.5" fill="url(#looptop)"/>
+  <ellipse cx="1035" cy="168" rx="240" ry="150" fill="url(#loophalo)"/>
+
+  <!-- ================= column labels ================= -->
+  <g class="lab">
+    <text x="42" y="76">QUESTION</text>
+    <text x="332" y="76">EXPERIMENTS</text>
+    <text x="622" y="76">REVISION</text>
+    <text x="912" y="76">MEMORY</text>
+    <text x="622" y="236">NEXT CALL</text>
+  </g>
+
+  <!-- ================= Question ================= -->
+  <g>
+    <rect x="40" y="92" width="250" height="96" rx="11" fill="#0b121b" stroke="#1d2937"/>
+    <rect x="40" y="92" width="3.5" height="96" rx="1.75" fill="#f7a07d"/>
+    <text x="62" y="132" class="sans" font-size="16.5" font-weight="600" fill="#e9eff6">Question</text>
+    <text x="62" y="156" class="sans" font-size="13" fill="#8b95a2">(persistent)</text>
+  </g>
+
+  <!-- ================= Experiments ================= -->
+  <g>
+    <rect x="330" y="92" width="250" height="96" rx="11" fill="#0b121b" stroke="#1d2937"/>
+    <rect x="330" y="92" width="3.5" height="96" rx="1.75" fill="#5b6673"/>
+    <text x="352" y="132" class="sans" font-size="16.5" font-weight="600" fill="#e9eff6">Experiments</text>
+    <text x="352" y="156" class="sans" font-size="13" fill="#8b95a2">evidence + verdicts</text>
+  </g>
+
+  <!-- ================= Revision ================= -->
+  <g>
+    <rect x="620" y="92" width="250" height="96" rx="11" fill="#0b121b" stroke="#1d2937"/>
+    <rect x="620" y="92" width="3.5" height="96" rx="1.75" fill="#5b6673"/>
+    <text x="642" y="132" class="sans" font-size="16.5" font-weight="600" fill="#e9eff6">Revision</text>
+    <text x="642" y="156" class="sans" font-size="13" fill="#8b95a2">a numbered conclusion</text>
+  </g>
+
+  <!-- ================= Memory ================= -->
+  <g>
+    <rect x="910" y="92" width="250" height="96" rx="11" fill="#0a1219" stroke="#309cfb" stroke-opacity="0.55"/>
+    <rect x="910" y="92" width="3.5" height="96" rx="1.75" fill="#309cfb"/>
+    <circle cx="944" cy="122" r="4.4" fill="#309cfb"/>
+    <text x="958" y="127" class="sans" font-size="16.5" font-weight="600" fill="#cfe3ff">Memory</text>
+    <text x="932" y="156" class="sans" font-size="13" fill="#8b95a2">what was concluded, and why</text>
+  </g>
+
+  <!-- ================= Next call ================= -->
+  <g>
+    <rect x="620" y="252" width="250" height="96" rx="11" fill="#0b121b" stroke="#1d2937"/>
+    <rect x="620" y="252" width="3.5" height="96" rx="1.75" fill="#5b6673"/>
+    <text x="642" y="292" class="sans" font-size="16.5" font-weight="600" fill="#e9eff6">Next call</text>
+    <text x="642" y="316" class="sans" font-size="13" fill="#8b95a2">cites and revises</text>
+  </g>
+
+  <!-- ================= forward edges ================= -->
+  <path d="M290 140 L326 140" fill="none" stroke="#309cfb" stroke-width="1.7" marker-end="url(#looparrow)"/>
+  <path d="M580 140 L616 140" fill="none" stroke="#309cfb" stroke-width="1.7" marker-end="url(#looparrow)"/>
+  <path d="M870 140 L906 140" fill="none" stroke="#309cfb" stroke-width="1.7" marker-end="url(#looparrow)"/>
+
+  <!-- ================= memory recalled into next call ================= -->
+  <path d="M1035 188 C 1035 250, 985 300, 874 300" fill="none" stroke="#309cfb" stroke-width="1.6" stroke-dasharray="7 6" marker-end="url(#looparrow)"/>
+  <g>
+    <rect x="878" y="234" width="200" height="26" rx="13" fill="#0b1620" stroke="#1d3a52"/>
+    <text x="892" y="251" class="sans" font-size="12.5" fill="#5fb0f5">recalled automatically</text>
+  </g>
+
+  <!-- ================= next call revises the conclusion ================= -->
+  <path d="M745 252 L745 192" fill="none" stroke="#309cfb" stroke-width="1.6" stroke-dasharray="7 6" marker-end="url(#looparrow)"/>
+  <text x="756" y="226" class="sans" font-size="12" fill="#7f8b98">revises</text>
+</svg>

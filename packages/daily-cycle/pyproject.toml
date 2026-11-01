@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "selene-space-daily-cycle"
+version = "0.1.0"
+description = "Daily Trading Cycle Workflow - 5-phase end-to-end research loop (renaissance concept, native selene)"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.0",
+    "pandas>=2.0",
+    "selene-space-types",
+    "selene-space-renintel",
+    "selene-space-agentstudio",
+    "selene-space-macrodata",
+    "selene-space-risk",
+    "selene-space-paper",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-asyncio>=0.21", "ruff", "mypy"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["selene_space_daily_cycle*"]

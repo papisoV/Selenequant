@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "note": "已人工复核的死字段基线（棘轮）。check_dead_fields.py 仅对基线之外的新增漂移报错；条目消失只提示刷新。刷新：python scripts/check_dead_fields.py --update-baseline",
+  "known": [
+    {
+      "file": "apps/desktop/components/research/rsch-page.tsx",
+      "type": "BackendTemplate",
+      "field": "cat",
+      "reason": "前端读 cat 但有 t.cat ?? t.category 兜底；后端因子模板出厂用 category。别名兜底，非页面空。"
+    },
+    {
+      "file": "apps/desktop/components/research/rsch-page.tsx",
+      "type": "BackendTemplate",
+      "field": "template_id",
+      "reason": "前端 id 有 t.id ?? t.template_id 兜底；后端策略出厂对象用 id 键。别名兜底。"
+    },
+    {
+      "file": "apps/desktop/components/research/rsch-page.tsx",
+      "type": "BackendTemplate",
+      "field": "winrate",
+      "reason": "前端 winrate ?? win_rate 兜底；后端出厂板块用 win_rate。别名兜底，非死字段。"
+    },
+    {
+      "file": "apps/desktop/components/research/strat-page.tsx",
+      "type": "BackendTemplate",
+      "field": "cat",
+      "reason": "同 rsch-page：cat ?? category 兜底，后端用 category。"
+    },
+    {
+      "file": "apps/desktop/components/research/strat-page.tsx",
+      "type": "BackendTemplate",
+      "field": "template_id",
+      "reason": "同 rsch-page：id ?? template_id 兜底。"
+    },
+    {
+      "file": "apps/desktop/components/research/strat-page.tsx",
+      "type": "BackendTemplate",
+      "field": "winrate",
+      "reason": "同 rsch-page：winrate ?? win_rate 兜底。"
+    },
+    {
+      "file": "apps/desktop/components/trading/position-table-embedded.tsx",
+      "type": "Position",
+      "field": "cls",
+      "reason": "误报：cls 在本文件有 cls: pnl>=0?'pos':'neg' 赋值填充（本地前端适配），但该赋值不含后端来源，故 produced=0。非后端死字段。"
+    },
+    {
+      "file": "apps/desktop/components/trading/position-table-embedded.tsx",
+      "type": "Position",
+      "field": "dur",
+      "reason": "误报：dur 是前端展示派生字段（本地适配器计算），无后端对等物。"
+    },
+    {
+      "file": "apps/desktop/components/trading/position-table-embedded.tsx",
+      "type": "Position",
+      "field": "tif",
+      "reason": "误报：tif 由 (o.type||'limit').toUpperCase().slice(0,2) 本地派生，非后端字段。"
+    },
+    {
+      "file": "apps/desktop/lib/api/alpha.ts",
+      "type": "BatchTrainParams",
+      "field": "data_file",
+      "reason": "误分类：BatchTrainParams 是**请求体**（POST /train/batch 入参），被 lib/api 泛化规则误当响应类型。data_file 是真实入参（后端 request.data_file 消费）。非死字段。"
+    },
+    {
+      "file": "apps/desktop/lib/api/ict-structure.ts",
+      "type": "IctStructureQuery",
+      "field": "pdPeriod",
+      "reason": "误分类：IctStructureQuery 是**请求侧**类型（拼 query string），被 lib/api 泛化规则误当响应类型（同 BatchTrainParams.data_file）。后端 chart.py:983 以 pd_period: int = Query(...) 声明、1014 以位置实参消费，回包只在 dealing_range 里带结果不带该参数，故无构造点 kwarg 命中。非死字段。"
+    },
+    {
+      "file": "apps/desktop/lib/api/notifications.ts",
+      "type": "ChannelFieldSpec",
+      "field": "optional",
+      "reason": "误报(checker 分类器):ChannelFieldSpec 是前端本地表单规格类型(notifications.ts 内联字面量填充,notifications-page.tsx:73,238 消费),不是 API 响应类型。checker 的\"lib/api 下声明即响应类型\"泛化规则把它误扫进来(同 BatchTrainParams 请求体误分类)。真修法是改成\"响应位置可达闭包\",但会牵动 14->32 候选需另行裁决,故先用基线棘轮记录。"
+    },
+    {
+      "file": "apps/desktop/lib/api/onchain.ts",
+      "type": "KolSignal",
+      "field": "handle",
+      "reason": "真死字段：后端 /onchain/kol 当前是占位数据（无 handle），前端渲染 handle。属未实现端点，非改名。"
+    },
+    {
+      "file": "apps/desktop/lib/api/onchain.ts",
+      "type": "WhaleTransfersResult",
+      "field": "transfers",
+      "reason": "真死字段：后端 /onchain/whales 返回占位 movements:[]，前端类型用 transfers（getWhaleTransfers 已做 transfers??movements 归一，但两者皆空）。属未实现端点。"
+    },
+    {
+      "file": "apps/desktop/lib/api/settings.ts",
+      "type": "PublicKeyJWK",
+      "field": "kid",
+      "reason": "真死字段：crypto.py public_key_jwk() 只返回 kty/alg/use/n/e，无 kid。前端 JWK 类型含可选 kid 但后端不产。"
+    }
+  ]
+}

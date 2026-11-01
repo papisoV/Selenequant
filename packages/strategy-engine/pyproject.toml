@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "selene-space-strategy"
+version = "0.1.0"
+description = "Strategy configs, validation, indicators, runtime"
+readme = {text = "Strategy configs, validation, indicators, runtime", content-type = "text/plain"}
+license = "AGPL-3.0-only"
+requires-python = ">=3.11"
+dependencies = [
+    "selene-space-types",
+    "selene-space-core",
+    "selene-space-backtest",
+    "pandas>=2.2.0",
+    "numpy>=1.26.0",
+    "pyyaml>=6.0",
+    "optuna>=3.4,<4.0",
+    "nltk>=3.8,<4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["selene_space_strategy"]

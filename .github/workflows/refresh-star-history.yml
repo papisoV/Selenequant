@@ -1,0 +1,16 @@
+name: Refresh Star History Chart
+
+on:
+  schedule:
+    - cron: "0 2 * * *"
+  push:
+    branches: [main]
+    paths: ["README.md", "README.zh-CN.md"]
+  workflow_dispatch:
+
+jobs:
+  purge-cache:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: kevincobain2000/action-camo-purge@v1

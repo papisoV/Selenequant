@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "selene-space-pulse"
+version = "0.1.0"
+description = "Stock market daily reports, dashboards, notifications, and web UI"
+requires-python = ">=3.11"
+dependencies = [
+    "selene-space-types",
+    "selene-space-core",
+    "selene-space-stock",
+    "pandas>=2.2.0",
+    "pyyaml>=6.0",
+    # llm.py 顶层 from tenacity import（重试装饰器）——原先未声明，
+    # 本地靠全局环境掩盖，CI 纯净环境下收集阶段即 ImportError。
+    "tenacity>=8.2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["selene_space_pulse"]

@@ -1,0 +1,56 @@
+# MTF Trend Confluence Strategy
+# Multi-timeframe strategy: 1h trend direction + 15m entry timing.
+# Requires MTFRuntimeAggregator wired with two StrategyRuntime instances.
+# This template declares the MTF intent (timeframes dict) so loaders can
+# wire the aggregator; the actual indicators come from ADX + EMA cross.
+
+id: template-mtf-trend
+name: MTF Trend Confluence
+type: custom
+description: >
+  Multi-timeframe trend confluence. 1h (trend, weight 0.6) + 15m (entry, weight 0.4).
+  Signal only emits when both timeframes agree (min_confluence=0.7).
+  Requires MTFRuntimeAggregator wiring at runtime — not a single-runtime strategy.
+symbols:
+  - BTC/USDT
+interval: 15m
+timeframes:
+  "1h": trend
+  "15m": entry
+parameters:
+  mtf_min_confluence: 0.7
+  mtf_require_trend_agreement: true
+  adx_period: 14
+  adx_threshold: 25
+  ema_fast: 9
+  ema_slow: 21
+
+entry_rules:
+  long:
+    - indicator: adx
+      params:
+        period: 14
+      operator: greater_than
+      comparator: 25
+    - indicator: ema
+      params:
+        period: 9
+      operator: crosses_above
+      comparator:
+        indicator: ema
+        params:
+          period: 21
+
+exit_rules:
+  close_long:
+    - indicator: adx
+      params:
+        period: 14
+      operator: less_than
+      comparator: 20
+
+risk_params:
+  stop_loss_pct: 0.04
+  take_profit_pct: 0.08
+  max_position_pct: 0.1
+  max_open_positions: 1

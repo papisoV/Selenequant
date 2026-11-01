@@ -1,0 +1,58 @@
+node_modules/
+.env
+.env.local
+*.log
+.omc/
+.claude/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+
+# Sensitive config (contains API keys, phone number)
+config.yaml
+.tgwatcher_auth
+
+# Telegram session files
+sessions/
+*.session
+*.session-journal
+
+# Database and data files
+data/
+*.db
+*.db-shm
+*.db-wal
+*.db.bak
+
+# Screenshots and temp files
+screenshot*.png
+*.png
+!tgwatcher/web/static/**/*.png
+
+# Backups
+config.yaml.bak
+data/archive/
+
+# Playwright CLI
+.playwright-cli/
+
+# One-off batch scripts and data exports (not part of runtime)
+# (historical scripts live in scripts/ — kept locally for reference, not tracked)
+scripts/_batch*.py
+scripts/insert_batch_*.py
+scripts/batch_analyze.py
+scripts/batch_review.py
+scripts/_claude_batch_analyze.py
+scripts/export_tg_factors.py
+scripts/tg_analyze_helper.py
+data/archive/*
+
+# Logs
+logs/*.log
+
+# Playwright artifacts
+node_modules/
+playwright-report/
+test-results/
+package-lock.json

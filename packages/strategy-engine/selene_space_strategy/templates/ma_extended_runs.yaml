@@ -1,0 +1,40 @@
+# MA Extended Runs Strategy
+# "8-Day Extended Runs" pattern - consecutive deviation entry
+# Buy when price was above MA for N bars then crosses below (buy the dip)
+# Sell when price was below MA for N bars then crosses above (sell the rally)
+
+id: template-ma-extended-runs
+name: MA Extended Runs
+type: ma_extended_runs
+description: >
+  Consecutive deviation entry strategy. Goes long when price has been
+  above the moving average for `deviation` consecutive bars, then crosses
+  below (expecting mean reversion). Multiple exit conditions: time-based,
+  breakthrough, ATR stop, and fixed percentage stops.
+symbols:
+  - BTC/USDT
+interval: 1h
+parameters:
+  ma_len: 10
+  ma_type: sma
+  deviation: 3
+  hold_bars: 4
+  breakthrough_lookback: 34
+  atr_len: 43
+  atr_mult: 2.871
+  stop_loss_pct: 0.12
+  take_profit_pct: 0.96
+  enable_long: true
+  enable_short: false
+
+# This strategy uses BacktestStrategyTemplate (template method pattern)
+# Entry/exit rules are handled internally by get_signal()
+entry_rules: {}
+
+exit_rules: {}
+
+risk_params:
+  stop_loss_pct: 0.12
+  take_profit_pct: 0.96
+  max_position_pct: 0.1
+  max_open_positions: 1

@@ -1,0 +1,77 @@
+# Funding Rate Arbitrage Strategy
+# When funding rate is high positive: short perp + long spot (collect funding).
+# When funding rate reverses to negative: exit position.
+# Research: analysis1 Phase 2 — year 11-100%+, 1万U minimum, highest certainty.
+
+id: template-funding-rate-arb
+name: Funding Rate Arbitrage
+name_zh: 期现资金费率套利
+type: custom
+description: >
+  Funding rate arbitrage strategy for perpetual swaps.
+  When funding rate is high positive (>0.03%), open short perp + long spot
+  to collect funding payments with delta-neutral exposure.
+  Exit when funding rate reverses to negative or basis narrows.
+  Risk: must use unified account for margin, monitor rate reversal.
+description_zh: >
+  永续合约资金费率套利策略。当费率高位正向时，做空合约+做多现货，
+  收取资金费率，Delta中性。费率反转时平仓。
+category: ARBITRAGE
+symbols:
+  - BTC/USDT
+interval: 4h
+direction: both
+parameters:
+  funding_rate_threshold: 0.0003
+  funding_rate_exit: -0.0001
+  funding_rate_z_threshold: 2.0
+  min_oi_change: 0.0
+
+entry_rules:
+  long:
+    # Positive funding rate → short perp + long spot (collect funding)
+    - indicator: funding_rate
+      params:
+        period: 1
+      operator: greater_than
+      comparator: 0.0003
+
+  short:
+    # Negative funding rate → long perp + short spot
+    - indicator: funding_rate
+      params:
+        period: 1
+      operator: less_than
+      comparator: -0.0003
+
+exit_rules:
+  close_long:
+    # Funding rate reversed to negative → exit long spot position
+    - indicator: funding_rate
+      params:
+        period: 1
+      operator: less_than
+      comparator: -0.0001
+
+  close_short:
+    # Funding rate reversed to positive → exit short perp position
+    - indicator: funding_rate
+      params:
+        period: 1
+      operator: greater_than
+      comparator: 0.0001
+
+risk_params:
+  stop_loss_pct: 0.01
+  take_profit_pct: 0.03
+  max_position_pct: 0.1
+  max_open_positions: 1
+  use_atr_stops: true
+  atr_sl_mult: 1.5
+  atr_tp_mult: 3.0
+
+tags:
+  - derivatives
+  - funding_rate
+  - arbitrage
+  - delta_neutral
